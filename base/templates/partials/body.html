@@ -1,0 +1,36 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font: Source Sans Pro -->
+    
+    {% block stylesheet %}
+        
+    
+    {% endblock stylesheet %} 
+
+    
+    
+    <title>Estandarizador</title>
+    </head>
+    <body>
+       
+        {% include 'partials/header.html' %}
+
+        {% block contenido %}
+        <img class="img-thumbnail img-fluid" src="{% static 'alimentos-ricos-en-minerales.jpg' %}" width="5550" height="20">
+        {% endblock contenido %}
+
+        {%include 'partials/footer.html' %}  
+            
+            
+    </body>
+</html>
