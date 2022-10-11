@@ -8,6 +8,9 @@ header {
     position: relative;
     margin: 0px;
 }
+.img-fondo{
+    background-image: url('../img/alimentos-ricos-en-minerales.jpg');
+}
 
 body {
     height: 400px;
