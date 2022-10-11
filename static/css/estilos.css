@@ -1,0 +1,89 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    background-color: rgb(253, 252, 252);
+    position: relative;
+    margin: 0px;
+}
+
+body {
+    height: 400px;
+    background-image: url("https://3.bp.blogspot.com/-jx4iOrTkN-o/XGCM5wiWqpI/AAAAAAAAEfQ/oenvBoXaPMsaI-XV9bFCwF-aWsKCs1f2QCLcBGAs/s1600/alimentos-ricos-en-minerales.jpg");
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+
+
+#section{
+    width: 50px;
+    margin: auto;
+    margin: top 0px;
+
+}
+
+
+
+#contenedor {
+    position: relative;
+    left: 420px;
+    top: 200px;
+
+     margin: 50;
+    padding: 100;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: 100%; 
+    height: 100%;
+    
+    
+}
+
+#central {
+    max-width: 320px;
+    width: 100%;
+}
+
+.titulo {
+    font-size: 250%;
+    color:#000000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#ingresook 
+
+
+
+#modalesConfirmacion
+
+.form-register {
+    width: 400px;
+    background: #aeb3b8de;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: rgba(233, 225, 225, 0.932);
+    box-shadow: 7px 13px 37px rgb(170, 166, 166);
+  }
+  
+  .form-register h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+
+
+footer{
+    text-align: center;
+    font-family: sans-serif;
+    color: whitesmoke;
+    width: 100%;
+    bottom: 0;
+    position:fixed 
+}
