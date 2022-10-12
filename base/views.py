@@ -6,6 +6,13 @@ def inicio(request):
     context={}
     return render(request,'ingreso.html',context)
 
+def principal(request):
+    titulo="Menu Principal"
+    context={
+        'titulo':titulo
+    }
+    return render(request,'menu.html',context)
+
 def error_404(request,exception):
     context={}
     return render(request,'404.html',context)
