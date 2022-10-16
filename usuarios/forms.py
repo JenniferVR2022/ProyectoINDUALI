@@ -1,5 +1,6 @@
+from dataclasses import field
 from django.forms import ModelForm
-from usuarios.models import  Usuario
+from usuarios.models import Usuario
 
 
 class UsuarioForm(ModelForm):
