@@ -6,4 +6,5 @@ urlpatterns = [
 path('usuario/',usuarios,name="usuarios"),
 path('crear/',usuarios_crear,name="usuarios_crear"),
 
+
 ]
