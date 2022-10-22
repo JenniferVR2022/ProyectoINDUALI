@@ -16,3 +16,4 @@ def principal(request):
 def error_404(request,exception):
     context={}
     return render(request,'404.html',context)
+

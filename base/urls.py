@@ -25,4 +25,5 @@ urlpatterns = [
     path('',inicio,name='inicio'),
     path('menu/',principal,name='menu-principal'),  
     path('usuarios/',include('usuarios.urls'))
+
 ]
