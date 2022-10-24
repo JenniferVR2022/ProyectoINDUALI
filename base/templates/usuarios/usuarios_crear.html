@@ -3,10 +3,12 @@
 {% block contenido %}
 
 <h1>Crear Usuarios</h1>
-{%csrf_token%}
-{{form}}
 
+<form method="POST">
+ {% csrf_token%}
 
-
+ {{form}}
+<input class="btn btn-success" type="submit" value="Registrar">
+</form>
 
 {% endblock contenido %}

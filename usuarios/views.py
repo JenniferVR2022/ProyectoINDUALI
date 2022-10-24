@@ -19,10 +19,10 @@ def usuarios_crear(request):
         form=UsuarioForm(request.POST)
         if form.is_valid():
             form.save()
-            print("El usuario de guardo correctamente")
+            print("El usuario se guardo correctamente")
             return redirect('usuarios')
         else:
-             print("El usuario no se guardo ")
+             print("El usuario no se almaceno ")
     else:
         form=UsuarioForm ()        
     
@@ -30,4 +30,22 @@ def usuarios_crear(request):
         "form":form
     }
     return render(request,'usuarios/usuarios-crear.html',context)
+
+def usuarios_editar(request, pk):
+    titulo="Usuarios - Editar"
+    usuario= Usuario.objects.get(id=pk)
+    if request.method == "POST":
+        form= UsuarioForm(request.POST, instance=usuario)
+        if form.is_valid():
+            form.save()
+            return redirect('usuarios')
+        else:
+            print("Error al guardar")
+    else:
+        form= UsuarioForm(instance=usuario)
+    context={
+        'titulo':titulo,
+        'form':form
+    }
+    return render(request,'partials/crear.html',context)
 

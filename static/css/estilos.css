@@ -10,7 +10,9 @@ header {
 }
 .img-fondo{
     background-image: url('../img/alimentos-ricos-en-minerales.jpg');
-}
+    opacity: 1;
+    }
+
 
 body {
     height: 400px;
@@ -19,6 +21,17 @@ body {
     background-repeat:no-repeat;
     background-position: center center;
 }
+
+.container-usuario {
+    position:fixed;
+    opacity: 0.9;
+    margin-top: 10px;
+    margin-right: 200px;
+    margin-bottom: 800px;
+    margin-left: 200px;
+    border: 2px solid black;
+}
+
 
 
 #section{
@@ -35,7 +48,7 @@ body {
     left: 420px;
     top: 200px;
 
-     margin: 50;
+    margin: 50;
     padding: 100;
     min-width: 100vw;
     min-height: 100vh;
