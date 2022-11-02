@@ -2,8 +2,13 @@ from django.shortcuts import render, redirect
 from usuarios.forms import UsuarioForm
 from usuarios.models import Usuario
 
+from django.contrib import messages
+
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required(login_url='inicio')
 def usuarios(request):
     titulo="Usuarios"
     usuarios= Usuario.objects.all()
@@ -15,6 +20,7 @@ def usuarios(request):
 
 
 def usuarios_crear(request):
+    titulo="Usuarios - Crear"
     if request.method =='POST':
         form=UsuarioForm(request.POST)
         if form.is_valid():
@@ -30,6 +36,16 @@ def usuarios_crear(request):
         "form":form
     }
     return render(request,'usuarios/usuarios-crear.html',context)
+
+
+
+
+
+
+
+
+
+
 
 def usuarios_editar(request, pk):
     titulo="Usuarios - Editar"
