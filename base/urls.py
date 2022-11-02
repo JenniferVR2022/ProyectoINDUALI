@@ -24,6 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',inicio,name='inicio'),
     path('menu/',principal,name='menu-principal'),  
-    path('usuarios/',include('usuarios.urls'))
-
+    path('usuarios/',include('usuarios.urls')),
+    path('ingrediente/',include('ingrediente.urls')),
 ]
