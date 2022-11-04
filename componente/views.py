@@ -10,4 +10,4 @@ def componente(request):
         'titulo':titulo,
         'componente':componente
     }
-    return render(request,'componente/receta.html',context)
+    return render(request,'componente/componente.html',context)

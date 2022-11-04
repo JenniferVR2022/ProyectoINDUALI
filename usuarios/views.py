@@ -39,6 +39,28 @@ def usuarios_crear(request):
 
 
 
+def usuarios_editar(request, pk):
+    titulo="Usuarios - Editar"
+    usuario=Usuario.objects.get(id=pk)
+    if request.method =='POST':
+        form=UsuarioForm(request.POST, intance=usuario)
+        if form.is_valid():
+            form.save()
+            
+            return redirect('usuarios')
+        else:
+             print("Error al guardar los cambios")
+    else:
+        form=UsuarioForm(instance=usuario)       
+    
+    context={
+        'titulo':titulo,
+        "form":form
+    }
+    return render(request,'usuarios/usuarios-editar.html',context)
+
+
+
 
 
 

@@ -22,32 +22,28 @@
     
     <title>Estandarizador</title>
     </head>
-    <body class="img-fondo">
+    
+<body class="img-fondo">
 
-    <div class="wrapper ">
-            {% include 'partials/navbar.html' %}
-            {% include 'partials/sidebar.html' %}
+<div class="wrapper ">
+        {% include 'partials/navbar.html' %}
+        {% include 'partials/sidebar.html' %}
        <!-- Content Wrapper. Contains page content -->
-     <div class="content-wrapper overflow-auto" style="height: 80%;">
+    <div class="content-wrapper overflow-auto" style="height: 80%;">
         {% include 'partials/header.html' %}
-       <div class="container">
+
+        
+    <div class="container">
             {% block contenido %}
 
             {% endblock contenido %}
             {% include 'partials/modal.html' %}
-
-        </div>
+    </div>
         {% include 'partials/toastr.html' %}
     </div>
     <!-- /.content-wrapper -->
-
-
-  
-
 </div>
 {% include 'partials/footer.html' %}
-
-
 {% include 'partials/js.html' %}
 {% block javascript %}
 
