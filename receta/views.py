@@ -5,7 +5,7 @@ from receta.forms import RecetaForm
 # Create your views here.
 def receta(request):
     titulo='Receta'
-    receta=Receta.objecto.all()
+    receta=Receta.objects.all()
     context={
         'titulo':titulo,
         'receta':receta

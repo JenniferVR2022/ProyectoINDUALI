@@ -77,7 +77,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'base.context_processors.sesion'
+                #'base.context_processors.sesion'
             ],
         },
     },
@@ -146,4 +146,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL= 'inicio-admin'
+LOGIN_REDIRECT_URL= 'principal'

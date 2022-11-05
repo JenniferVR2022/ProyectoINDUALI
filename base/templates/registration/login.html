@@ -3,8 +3,26 @@
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 {% bootstrap_messages %}
+
 <!DOCTYPE html>
 <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <!-- Google Font: Source Sans Pro -->
+    
+    {% block stylesheet %}
+        
+    
+    {% endblock stylesheet %} 
+
+    
+    
+    <title>Estandarizador</title>
+</head>
+<body class="img-fondo">
 
 <section class="vh-80 gradient-custom">
   
@@ -21,14 +39,14 @@
                 {% csrf_token %}
                 
                 <div class="form-outline form-white mb-5">
-                  <input type="email" id="typeEmailX" class="form-control form-control-lg" />
+                
                   {{form.username}}
                   <h3 <label class="form-label" for="typeEmailX">Usuario</label></h3>
                 </div>
            
                   <div class="form-outline form-white mb-1">
                   
-                    <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+                  
                     {{form.password}}
                     <h3   <label class="form-label" for="typePasswordX">Contraseña</label></h3>
                 </div>             
@@ -46,5 +64,6 @@
   </section>
 
 
+</body>
+</html>
 
-{% endblock contenido %}
