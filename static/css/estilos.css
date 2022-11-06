@@ -32,7 +32,30 @@ body {
     border: 2px solid black;
 }
 
+.container-ingrediente {
+    position:auto;
+    opacity: 0.9;
+    margin-top: 200px;
+    margin-right: 300px;
+    margin-bottom: 800px;
+    margin-left: 300px;
+    border: 2px solid black;
+}
 
+.container-tablaIngrediente{
+    position:auto;
+    opacity: 0.9;
+    margin-top: 100px;
+    margin-right: 300px;
+    margin-bottom: 800px;
+    margin-left: 300px;
+    border: 2px solid black;
+}
+
+.bigicon {
+    font-size: 35px;
+    color: #36A0FF;
+}
 
 #section{
     width: 50px;
