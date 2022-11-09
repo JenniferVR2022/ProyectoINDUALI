@@ -12,5 +12,5 @@ class Receta (models.Model):
     estado=models.CharField(max_length=1,choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
     estandar=models.CharField(max_length=50, verbose_name="Estandar")
     consecutivo=models.CharField(max_length=50, verbose_name="Consecutivo")
-    fkcodComponente=models.ForeignKey(Componente, on_delete=models.CASCADE, verbose_name="Código Componente")
+    fkcodComponente=models.ForeignKey(Componente, on_delete=models.CASCADE, verbose_name="Cod Componente")
     
