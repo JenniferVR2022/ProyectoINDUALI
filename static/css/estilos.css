@@ -26,44 +26,11 @@ body {
     position:fixed;
     opacity: 0.9;
     margin-top: 10px;
-    margin-right: 200px;
+    margin-right: 100px;
     margin-bottom: 800px;
     margin-left: 200px;
     border: 2px solid black;
 }
-
-
-.container-receta {
-    position:auto;top:100px;left:100px;
-    opacity: 0.9;
-    margin-top: 10px;
-    margin-right: 200px;
-    margin-bottom: 800px;
-    margin-left: 200px;
-    border: 2px solid black;
-}
-
-.container-ingrediente {
-    position:auto;top:100px;left:100px;
-    opacity: 0.9;
-    margin-top: 10px;
-    margin-right: 200px;
-    margin-bottom: 800px;
-    margin-left: 200px;
-    border: 2px solid black;
-}
-
-
-.container-componente {
-   
-        position:auto;top: 100px;left: 100px;
-        opacity: 0.9;
-        margin-top: 1px;
-        margin-right: 200px;
-        margin-bottom: 800px;
-        margin-left: 200px;
-        border: 2px solid black;
-    }
 
 
 

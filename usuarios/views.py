@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-@login_required(login_url='principal')
+@login_required(login_url='inicio')
 def usuarios(request):
     titulo="Usuarios"
     usuarios= Usuario.objects.all()
