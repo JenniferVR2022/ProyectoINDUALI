@@ -1,0 +1,343 @@
+{% extends 'partials/body.html' %}`
+
+{% load static %}
+{% block contenido %}
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button type="button" class="btn btn-secondary" href="">Ingredientes</button>
+    <button type="button" class="btn btn-secondary" href="">Modificar receta</button>
+  </div>
+  
+
+
+  <div class="row">
+
+  
+  <div class="container-componente" >
+    <div class="clearfix" ng-if="$index%3==2">
+    	<div class="table table-condensed">
+            <table class="table table-bordered table-hover table-sortable" id="tab_logic">
+                <center><h4>Componente</h4></center>
+				<thead>
+                  	<tr >
+                    	<th class="text-center">
+							Codigo componente
+						</th>
+                        <th class="text-center">
+							Nombre componente
+						</th>
+                       	<th class="text-center" style="border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;">
+						</th>
+					</tr>
+                   
+				</thead>
+				<tbody>
+                 
+    				<tr id='addr0' data-id="0" class="hidden">
+                        <td data-name="codReceta">
+						    <input type="text" name='codReceta'  placeholder='' class="form-control"/>
+                        </td>
+                        <td data-name="nomReceta">
+                                <input type="text" name='nombreReceta'  placeholder='' class="form-control"/>
+                        </td>
+                      
+					</tr>
+				</tbody>
+               
+			</table>
+		</div>
+	</div>
+  </div>
+
+
+  
+
+  <div class="container-receta">
+    <div class="clearfix visible-xs">
+    	<div class="table table-condensed">
+            <table class="table table-bordered table-hover table-sortable" id="tab_logic">
+                <center><h4>Receta</h4></center>
+				<thead>
+                  	<tr >
+                    	<th class="text-center">
+							Codigo receta
+
+						</th>
+                        <th class="text-center">
+							Nombre receta
+						</th>
+                        <th class="text-center">
+							Estandar
+						</th>
+						<th class="text-center">
+							Estado
+						</th>
+    					
+                        <th class="text-center">
+							Preparación
+						</th>
+        				<th class="text-center" style="border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;">
+						</th>
+					</tr>
+                   
+				</thead>
+				<tbody>
+                 
+    				<tr id='addr0' data-id="0" class="hidden">
+                        <td data-name="codReceta">
+						    <input type="text" name='codReceta'  placeholder='' class="form-control"/>
+                        </td>
+                        <td data-name="nomReceta">
+                                <input type="text" name='nombreReceta'  placeholder='' class="form-control"/>
+                        </td>
+                        <td data-name="estandar">
+						    <input type="text" name='estandar'  placeholder='' class="form-control"/>
+						</td>
+                    	<td data-name="estado">
+						    <select name="sel0">
+        				        <option value="1">Activo</option>
+        				        <option value="2">Inactivo</option>
+                            </select>
+						</td>
+                     	<td data-name="desc">
+						    <textarea name="desc0" placeholder="Descripción" class="form-control"></textarea>
+						</td>
+    					
+                        <td data-name="del">
+                            <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
+                        </td>
+					</tr>
+				</tbody>
+               
+			</table>
+		</div>
+	</div>
+  </div>
+
+
+  <div class="container-ingrediente">
+    <div class="clearfix visible-xs">
+    	<div class="table table-condensed">
+            <table class="table table-bordered table-hover table-sortable" id="tab_logic">
+                <center><h4>Ingredientes</h4></center>
+				<thead>
+                  	<tr >
+                    	<th class="text-center">
+							Código ingrediente
+						</th>
+                        <th class="text-center">
+							Nombre ingrediente
+						</th>
+                        <th class="text-center">
+							Cantidad materia prima
+						</th>
+                        <th class="text-center">
+							Código unidad medida
+						</th>
+                       	<th class="text-center">
+							Unidad Medida
+						</th>
+    					
+                       	<th class="text-center" style="border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;">
+						</th>
+					</tr>
+                   
+				</thead>
+				<tbody>
+                 
+    				<tr id='addr0' data-id="0" class="hidden">
+                        <td data-name="codIngrediente">
+						    <input type="text" name='codIngrediente'  placeholder='' class="form-control"/>
+                        </td>
+                        <td data-name="nombreIngrediente">
+                                <input type="text" name='nomIngrediente'  placeholder='' class="form-control"/>
+                        </td>
+                        <td data-name="codUnidadMedida">
+						    <input type="text" name='codUnidadMedida'  placeholder='' class="form-control"/>
+						</td>
+                        <td data-name="cantidadMateriaPrima">
+						    <input type="text" name='cantidadMateriaPrima'  placeholder='' class="form-control"/>
+						</td>
+                        <td data-name="sel">
+                            <select name="sel0">
+                               <option value="1">Gramos</option>
+                               <option value="2">Kilos</option>
+                               <option value="3">Litros</option>
+                           </select>
+                       </td>
+                      
+						
+						<td data-name="del">
+                            <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
+                        </td>
+					</tr>
+
+                      
+
+    				<tr id='addr0' data-id="0" class="hidden">
+                        <td data-name="codIngrediente">
+						    <input type="text" name='codIngrediente'  placeholder='' class="form-control"/>
+                        </td>
+                        <td data-name="nombreIngrediente">
+                                <input type="text" name='nomIngrediente'  placeholder='' class="form-control"/>
+                        </td>
+                        <td data-name="codUnidadMedida">
+						    <input type="text" name='codUnidadMedida'  placeholder='' class="form-control"/>
+						</td>
+                        <td data-name="cantidadMateriaPrima">
+						    <input type="text" name='cantidadMateriaPrima'  placeholder='' class="form-control"/>
+						</td>
+                        <td data-name="sel">
+                            <select name="sel0">
+                               <option value="1">Gramos</option>
+                               <option value="2">Kilos</option>
+                               <option value="3">Litros</option>
+                           </select>
+                       </td>
+                      
+						
+						<td data-name="del">
+                            <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
+                        </td>
+					</tr>
+
+
+
+
+                    <tr id='addr0' data-id="0" class="hidden">
+                        <td data-name="codIngrediente">
+						    <input type="text" name='codIngrediente'  placeholder='' class="form-control"/>
+                        </td>
+                        <td data-name="nombreIngrediente">
+                                <input type="text" name='nomIngrediente'  placeholder='' class="form-control"/>
+                        </td>
+                        <td data-name="codUnidadMedida">
+						    <input type="text" name='codUnidadMedida'  placeholder='' class="form-control"/>
+						</td>
+                        <td data-name="cantidadMateriaPrima">
+						    <input type="text" name='cantidadMateriaPrima'  placeholder='' class="form-control"/>
+						</td>
+                        <td data-name="sel">
+                            <select name="sel0">
+                               <option value="1">Gramos</option>
+                               <option value="2">Kilos</option>
+                               <option value="3">Litros</option>
+                           </select>
+                       </td>
+                      
+						
+						<td data-name="del">
+                            <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
+                        </td>
+					</tr>
+
+
+                    <tr id='addr0' data-id="0" class="hidden">
+                        <td data-name="codIngrediente">
+						    <input type="text" name='codIngrediente'  placeholder='' class="form-control"/>
+                        </td>
+                        <td data-name="nombreIngrediente">
+                                <input type="text" name='nomIngrediente'  placeholder='' class="form-control"/>
+                        </td>
+                        <td data-name="codUnidadMedida">
+						    <input type="text" name='codUnidadMedida'  placeholder='' class="form-control"/>
+						</td>
+                        <td data-name="cantidadMateriaPrima">
+						    <input type="text" name='cantidadMateriaPrima'  placeholder='' class="form-control"/>
+						</td>
+                        <td data-name="sel">
+                            <select name="sel0">
+                               <option value="1">Gramos</option>
+                               <option value="2">Kilos</option>
+                               <option value="3">Litros</option>
+                           </select>
+                       </td>
+                      
+						
+						<td data-name="del">
+                            <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
+                        </td>
+					</tr>
+
+
+
+                    <tr id='addr0' data-id="0" class="hidden">
+                        <td data-name="codIngrediente">
+						    <input type="text" name='codIngrediente'  placeholder='' class="form-control"/>
+                        </td>
+                        <td data-name="nombreIngrediente">
+                                <input type="text" name='nomIngrediente'  placeholder='' class="form-control"/>
+                        </td>
+                        <td data-name="codUnidadMedida">
+						    <input type="text" name='codUnidadMedida'  placeholder='' class="form-control"/>
+						</td>
+                        <td data-name="cantidadMateriaPrima">
+						    <input type="text" name='cantidadMateriaPrima'  placeholder='' class="form-control"/>
+						</td>
+                        <td data-name="sel">
+                            <select name="sel0">
+                               <option value="1">Gramos</option>
+                               <option value="2">Kilos</option>
+                               <option value="3">Litros</option>
+                           </select>
+                       </td>
+                      
+						
+						<td data-name="del">
+                            <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
+                        </td>
+					</tr>
+
+                    <tr id='addr0' data-id="0" class="hidden">
+                        <td data-name="codIngrediente">
+						    <input type="text" name='codIngrediente'  placeholder='' class="form-control"/>
+                        </td>
+                        <td data-name="nombreIngrediente">
+                                <input type="text" name='nomIngrediente'  placeholder='' class="form-control"/>
+                        </td>
+                        <td data-name="codUnidadMedida">
+						    <input type="text" name='codUnidadMedida'  placeholder='' class="form-control"/>
+						</td>
+                        <td data-name="cantidadMateriaPrima">
+						    <input type="text" name='cantidadMateriaPrima'  placeholder='' class="form-control"/>
+						</td>
+                        <td data-name="sel">
+                            <select name="sel0">
+                               <option value="1">Gramos</option>
+                               <option value="2">Kilos</option>
+                               <option value="3">Litros</option>
+                           </select>
+                       </td>
+                      
+						
+						<td data-name="del">
+                            <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
+                        </td>
+					</tr>
+
+
+
+
+
+
+
+
+				</tbody>
+               
+			</table>
+		</div>
+    </div>
+	
+    </div>  
+    <div><a id="add_row" class="btn btn-primary float-right">Adicionar Ingredientes</a>	</div>
+    </div>
+</div>
+
+{% endblock contenido %}
+
