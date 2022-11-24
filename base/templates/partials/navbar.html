@@ -9,7 +9,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
    
   <div class="container-fluid">
-    <img class="img-thumbnail img-fluid" src="{% static 'img/Logo.jpg' %}" width="120" height="30"> 
+    <li><a class="dropdown-item" href="{% url 'componente' %}" class="nav-link">Componente</a> <img class="img-thumbnail img-fluid" src="{% static 'img/Logo.jpg' %}" width="120" height="30"> 
+    </li>
     <ul><a class="navbar-brand" href="#">Estandarizador</a></ul>
   
   <form class="container-fluid justify-content-start">
@@ -34,13 +35,17 @@
                 <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
                  </button>
             <ul class="dropdown-menu">                   
-                <li><a class="dropdown-item" href="#">Nuevo</a></li>
+                <li><a class="dropdown-item" <a href="{% url 'receta' %}">Nuevo</a></li>
                 <li><a class="dropdown-item" href="#">Editar</a></li>
                 <li><a class="dropdown-item" href="#">Buscar</a></li>
                 <li><a class="dropdown-item" href="#">Exportar</a></li>
                 <li><a class="dropdown-item" href="#">Importar</a></li>
                 <li><a class="dropdown-item" href="#">Ingrediente</a></li>
-                <li><a class="dropdown-item" href="#">Componente</a></li>
+                <li><a class="dropdown-item" href="{% url 'componente' %}" class="nav-link">Componente</a>
+                </li>
+                
+
+
             </ul>
       </div>
    
@@ -52,7 +57,7 @@
 
                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item" href="#">Estandarizar</a><li>
-                    <li><a class="dropdown-item" href="#">Costos</a><li>
+                    <li><a class="dropdown-item" href="{% url 'centroCostos' %}" class="nav-link">Centro Costos</a></li>
                     <li><a class="dropdown-item" href="#">Lista de precios</a><li>
                     <li><a class="dropdown-item" href="#">Centro Costos</a><li>
                 </ul>
