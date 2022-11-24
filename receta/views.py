@@ -6,7 +6,9 @@ from receta.forms import RecetaForm
 def receta(request):
     titulo='Receta'
     receta=Receta.objects.all()
+    form=RecetaForm()
     context={
+        'form':form,
         'titulo':titulo,
         'receta':receta
     }
