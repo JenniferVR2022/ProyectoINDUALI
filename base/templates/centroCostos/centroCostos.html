@@ -1,0 +1,118 @@
+{% extends 'partials/body.html' %}`
+{% load static %}
+{% block contenido %}
+
+
+
+
+<div class="container-receta  container-fluid p-12 lg-12 bg-white text-dark row g-12 border rounded">
+      <div class="table table-condensed">
+          <table class="table table-bordered table-hover table-sortable" id="tab_logic">
+              <center><h4>Centro Costos</h4></center>
+      <thead>
+           
+          <th class="text-center">
+             Codigo
+          </th>
+          <th class="text-center">
+            Nombre receta
+          </th>
+         <th class="text-center">
+          Estado
+          </th>
+              <th class="text-center" style="border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;">
+          </th>
+        </tr>
+                 
+      </thead>
+      <tbody>
+               
+          <tr id='addr0' data-id="0" class="hidden">
+                      <td data-name="codcentroCosto">
+              <input type="text" name='codcentroCosto'  placeholder='' class="form-control"/>
+                      </td>
+                      <td data-name="nomcentroCosto">
+                              <input type="text" name='nomcentroCosto'  placeholder='' class="form-control"/>
+                      </td>
+                     <td data-name="estado">
+              <select name="sel0">
+                      <option value="1">Activo</option>
+                      <option value="2">Inactivo</option>
+                          </select>
+         
+                      <td data-name="del">
+                          <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
+                      </td>
+        </tr>
+      </tbody>
+
+      <tbody>
+               
+        <tr id='addr0' data-id="0" class="hidden">
+                    <td data-name="codcentroCosto">
+            <input type="text" name='codcentroCosto'  placeholder='' class="form-control"/>
+                    </td>
+                    <td data-name="nomcentroCosto">
+                            <input type="text" name='nomcentroCosto'  placeholder='' class="form-control"/>
+                    </td>
+                   <td data-name="estado">
+            <select name="sel0">
+                    <option value="1">Activo</option>
+                    <option value="2">Inactivo</option>
+                        </select>
+     
+          
+                    <td data-name="del">
+                        <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
+                    </td>
+      </tr>
+    </tbody>
+    <tbody>
+               
+      <tr id='addr0' data-id="0" class="hidden">
+                  <td data-name="codcentroCosto">
+          <input type="text" name='codcentroCosto'  placeholder='' class="form-control"/>
+                  </td>
+                  <td data-name="nomcentroCosto">
+                          <input type="text" name='nomcentroCosto'  placeholder='' class="form-control"/>
+                  </td>
+                 <td data-name="estado">
+          <select name="sel0">
+                  <option value="1">Activo</option>
+                  <option value="2">Inactivo</option>
+                      </select>
+   
+        
+                  <td data-name="del">
+                      <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
+                  </td>
+    </tr>
+  </tbody>
+  <tbody>
+               
+    <tr id='addr0' data-id="0" class="hidden">
+                <td data-name="codcentroCosto">
+        <input type="text" name='codcentroCosto'  placeholder='' class="form-control"/>
+                </td>
+                <td data-name="nomcentroCosto">
+                        <input type="text" name='nomcentroCosto'  placeholder='' class="form-control"/>
+                </td>
+               <td data-name="estado">
+        <select name="sel0">
+                <option value="1">Activo</option>
+                <option value="2">Inactivo</option>
+                    </select>
+ 
+      
+                <td data-name="del">
+                    <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
+                </td>
+  </tr>
+</tbody>
+
+
+    </table>
+  </div>
+</div>
+</div>
+   {% endblock contenido %}

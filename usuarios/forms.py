@@ -6,4 +6,4 @@ from usuarios.models import Usuario
 class UsuarioForm(ModelForm):
     class Meta:
         model= Usuario
-        exclude=['estado']
+        exclude=['estado','user']
