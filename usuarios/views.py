@@ -21,10 +21,9 @@ def usuarios(request):
 
 def usuarios_crear(request):
     titulo="Usuarios - Crear"
-    if request.method =='POST':
-        form=UsuarioForm(request.POST)
+    if request.method == "POST":
+        form= UsuarioForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
             print("El usuario se guardo correctamente")
             return redirect('usuarios')
         else:
@@ -35,7 +34,7 @@ def usuarios_crear(request):
     context={
         "form":form
     }
-    return render(request,'usuarios/usuarios-crear.html',context)
+    return render(request,'usuarios/usuarios_crear.html',context)
 
 
 
