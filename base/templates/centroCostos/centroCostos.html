@@ -5,114 +5,321 @@
 
 
 
-<div class="container-receta  container-fluid p-12 lg-12 bg-white text-dark row g-12 border rounded">
-      <div class="table table-condensed">
-          <table class="table table-bordered table-hover table-sortable" id="tab_logic">
-              <center><h4>Centro Costos</h4></center>
-      <thead>
-           
-          <th class="text-center">
-             Codigo
-          </th>
-          <th class="text-center">
-            Nombre receta
-          </th>
-         <th class="text-center">
-          Estado
-          </th>
-              <th class="text-center" style="border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;">
-          </th>
-        </tr>
-                 
-      </thead>
-      <tbody>
-               
-          <tr id='addr0' data-id="0" class="hidden">
-                      <td data-name="codcentroCosto">
-              <input type="text" name='codcentroCosto'  placeholder='' class="form-control"/>
-                      </td>
-                      <td data-name="nomcentroCosto">
-                              <input type="text" name='nomcentroCosto'  placeholder='' class="form-control"/>
-                      </td>
-                     <td data-name="estado">
-              <select name="sel0">
+<div class="container d-flex justify-content-center">
+  <div class="bg-white w-75 p-4 m-10 rounded">
+
+         
+<table class="table table-bordered table-hover table-sortable" id="tab_logic">
+  <thead>
+    <tr>
+                <th class="text-center">
+                      Código Centro Costos
+                  </th>
+                  <th class="text-center">
+                      Nombre Centro costos
+                  </th>
+                  <th class="text-center">
+                      Nombre  Empresa/SdeA
+                  <th class="text-center">
+                     Estado
+                  </th>
+                
+              </tr>
+             
+          </thead>
+      
+                      
+              <tr id='addr0' data-id="2" class="hidden">
+                 <td data-name="codCentroCostos">
+                  <center><h10>03</h10></center>
+                  </td>
+                  <td data-name="nombCentroCostos">
+                  INDURAL
+                 </td>
+                 <td data-name="nomEmpresa">
+                  INDURAL S.A  
+                 </td>
+                <td data-name="estado">
+                 <select name="seleccionar">
                       <option value="1">Activo</option>
                       <option value="2">Inactivo</option>
                           </select>
-         
-                      <td data-name="del">
-                          <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
-                      </td>
-        </tr>
-      </tbody>
+               </td>
+              </tr>
 
-      <tbody>
-               
-        <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codcentroCosto">
-            <input type="text" name='codcentroCosto'  placeholder='' class="form-control"/>
-                    </td>
-                    <td data-name="nomcentroCosto">
-                            <input type="text" name='nomcentroCosto'  placeholder='' class="form-control"/>
-                    </td>
-                   <td data-name="estado">
-            <select name="sel0">
+                    
+              <tr id='addr0' data-id="10" class="hidden">
+                <td data-name="codCentroCostos">
+                  <center><h10>  06 </h10></center>
+                </td>
+                <td data-name="nombCentroCostos">
+                  MELCO
+               </td>
+               <td data-name="nomEmpresa">
+                MELCO DE COLOMBIA LTDA.
+               </td>
+              <td data-name="estado">
+               <select name="seleccionar">
                     <option value="1">Activo</option>
                     <option value="2">Inactivo</option>
                         </select>
-     
-          
-                    <td data-name="del">
-                        <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
-                    </td>
-      </tr>
-    </tbody>
-    <tbody>
-               
-      <tr id='addr0' data-id="0" class="hidden">
-                  <td data-name="codcentroCosto">
-          <input type="text" name='codcentroCosto'  placeholder='' class="form-control"/>
-                  </td>
-                  <td data-name="nomcentroCosto">
-                          <input type="text" name='nomcentroCosto'  placeholder='' class="form-control"/>
-                  </td>
-                 <td data-name="estado">
-          <select name="sel0">
+             </td>
+            </tr>
+           
+            <tr id='addr0' data-id="0" class="hidden">
+              <td data-name="codCentroCostos">
+                <center><h10> 08</h10></center>
+              </td>
+              <td data-name="nombCentroCostos">
+                COLORQUIMICA
+             </td>
+             <td data-name="nomEmpresa">
+              COLORQUIMICA S.A. 
+             </td>
+            <td data-name="estado">
+             <select name="seleccionar">
                   <option value="1">Activo</option>
                   <option value="2">Inactivo</option>
                       </select>
-   
-        
-                  <td data-name="del">
-                      <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
-                  </td>
-    </tr>
-  </tbody>
-  <tbody>
-               
-    <tr id='addr0' data-id="0" class="hidden">
-                <td data-name="codcentroCosto">
-        <input type="text" name='codcentroCosto'  placeholder='' class="form-control"/>
-                </td>
-                <td data-name="nomcentroCosto">
-                        <input type="text" name='nomcentroCosto'  placeholder='' class="form-control"/>
-                </td>
-               <td data-name="estado">
-        <select name="sel0">
+           </td>
+          </tr>
+
+                       
+          <tr id='addr0' data-id="0" class="hidden">
+           <td data-name="codCentroCostos">
+            <center><h10>103 </h10></center>
+            </td>
+            <td data-name="nombCentroCostos">
+              PRODUCCION ORIENTE 
+           </td>
+           <td data-name="nomEmpresa">
+            PRODUCCION ORIENTE 
+           </td>
+          <td data-name="estado">
+           <select name="seleccionar">
                 <option value="1">Activo</option>
                 <option value="2">Inactivo</option>
                     </select>
- 
-      
-                <td data-name="del">
-                    <button name="del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'><span aria-hidden="true">×</span></button>
+         </td>
+        </tr>
+
+
+                        
+              <tr id='addr0' data-id="0" class="hidden">
+                <td data-name="codCentroCostos">
+                  <center><h10>105</h10> </center>
                 </td>
+                <td data-name="nombCentroCostos">
+                  TENNIS
+               </td>
+               <td data-name="nomEmpresa">
+                TENNIS
+               </td>
+              <td data-name="estado">
+               <select name="seleccionar">
+                    <option value="1">Activo</option>
+                    <option value="2">Inactivo</option>
+                        </select>
+             </td>
+            </tr>
+
+                        
+             <tr id='addr0' data-id="0" class="hidden">
+              <td data-name="codCentroCostos">
+              <center><h10> 106</h10></center>
+              </td>
+              <td data-name="nombCentroCostos">
+                OMYA
+             </td>
+             <td data-name="nomEmpresa">
+              OMYA
+             </td>
+            <td data-name="estado">
+             <select name="seleccionar">
+                  <option value="1">Activo</option>
+                  <option value="2">Inactivo</option>
+                      </select>
+           </td>
+          </tr>
+
+                       
+              <tr id='addr0' data-id="0" class="hidden">
+                <td data-name="codCentroCostos">
+                  107 
+                </td>
+                <td data-name="nombCentroCostos">
+                  BRENNTAG 
+               </td>
+               <td data-name="nomEmpresa">
+                BRENNTAG 
+               </td>
+              <td data-name="estado">
+               <select name="seleccionar">
+                    <option value="1">Activo</option>
+                    <option value="2">Inactivo</option>
+                        </select>
+             </td>
+            </tr>
+
+           
+            <tr id='addr0' data-id="0" class="hidden">
+              <td data-name="codCentroCostos">
+                109 
+              </td>
+              <td data-name="nombCentroCostos">
+                AUTECO  
+             </td>
+             <td data-name="nomEmpresa">
+              AUTECO  
+             </td>
+            <td data-name="estado">
+             <select name="seleccionar">
+                  <option value="1">Activo</option>
+                  <option value="2">Inactivo</option>
+                      </select>
+           </td>
+          </tr>
+
+
+           
+          <tr id='addr0' data-id="0" class="hidden">
+            <td data-name="codCentroCostos">
+              110 
+            </td>
+            <td data-name="nombCentroCostos">
+              UMO GUARNE
+           </td>
+           <td data-name="nomEmpresa">
+            UMO GUARNE
+           </td>
+          <td data-name="estado">
+           <select name="seleccionar">
+                <option value="1">Activo</option>
+                <option value="2">Inactivo</option>
+                    </select>
+         </td>
+        </tr>
+
+
+ 
+                        
+        <tr id='addr0' data-id="0" class="hidden">
+          <td data-name="codCentroCostos">
+            111  
+          </td>
+          <td data-name="nombCentroCostos">
+            KOBA SUR 
+         </td>
+         <td data-name="nomEmpresa">
+          KOBA SUR 
+         </td>
+        <td data-name="estado">
+         <select name="seleccionar">
+              <option value="1">Activo</option>
+              <option value="2">Inactivo</option>
+                  </select>
+       </td>
+      </tr>
+
+      <tr id='addr0' data-id="0" class="hidden">
+        <td data-name="codCentroCostos">
+          112  
+        </td>
+        <td data-name="nombCentroCostos">
+          KOBA NORTE 
+       <td data-name="nomEmpresa">
+        KOBA NORTE 
+       </td>
+      <td data-name="estado">
+       <select name="seleccionar">
+            <option value="1">Activo</option>
+            <option value="2">Inactivo</option>
+                </select>
+     </td>
+    </tr>
+
+
+    <tr id='addr0' data-id="0" class="hidden">
+      <td data-name="codCentroCostos">
+        114 
+      </td>
+      <td data-name="nombCentroCostos">
+        PREBEL RIONEGRO 
+     <td data-name="nomEmpresa">
+      PREBEL RIONEGRO 
+     </td>
+    <td data-name="estado">
+     <select name="seleccionar">
+          <option value="1">Activo</option>
+          <option value="2">Inactivo</option>
+              </select>
+   </td>
   </tr>
-</tbody>
+  <tr id='addr0' data-id="0" class="hidden">
+    <td data-name="codCentroCostos">
+      115
+    </td>
+    <td data-name="nombCentroCostos">
+      COLAUTO  
+   <td data-name="nomEmpresa">
+    COLAUTO  
+   </td>
+  <td data-name="estado">
+   <select name="seleccionar">
+        <option value="1">Activo</option>
+        <option value="2">Inactivo</option>
+            </select>
+ </td>
+</tr>
+
+          </tbody>
+         
+      </table>
+
+  <div><a id="add_row" class="btn btn-primary float-right">Adicionar Centro de Costos</a>	</div>
+  </div>
 
 
-    </table>
+
+
+
   </div>
 </div>
 </div>
+
+
+      
+
    {% endblock contenido %}
+                                        
+                          
+                                                 
+                                    
+                                            
+                                                   
+116       	COLDEPLAST                                                  
+117       	DAN                                                         
+119       	PREBEL COMERCIAL                                            
+120       	PREBEL PRODUCTORA                                                                                   
+127       	AUTECO PLANTA 1                                             
+128       	AUTECO AUTOPISTA 2                                          
+129       	AUTECO PLANTA 3                                             
+130       	BONEM                                                     
+15        	EL COLOMBIANO                                               
+22        	YAMAHA                                                      
+23        	INCAMETAL                                                   
+24        	LANDERS                                                     
+                   
+30        	INDUALI HOME                                            
+     
+53        	GONVARRI                                                    
+54        	PROCOPAL                                                    
+55        	INDUSTRIAS ESTRA                                            
+56        	FABRICATO                                                   
+                                                   
+80        	PAPELSA                                                     
+                                                       
+95        	COPIDROGAS                                                  
+96        	COOPETRABAN                                                 
+97        	FAMILIA                                                     
+99        	PPG                                                         
