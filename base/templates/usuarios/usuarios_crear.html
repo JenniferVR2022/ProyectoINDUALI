@@ -1,12 +1,14 @@
-{% extends 'partials/body.html' %}
-{% load static %}
+{% extends 'partials/body.html' %}`
+{% load crispy_forms_tags %}
+
 {% block contenido %}
-
-<h1>Crear Usuarios</h1>
-{%csrf_token%}
-{{form}}
-
-
-
-
+<div class="container d-flex justify-content-center">
+  <div class="bg-white w-50 p-4 m-5 rounded">
+    <form action="" method="POST" >
+      {{form|crispy}}
+      {% csrf_token %}
+      <input type="submit" value="Registrar">
+    </form>
+  </div>
+</div>
 {% endblock contenido %}
