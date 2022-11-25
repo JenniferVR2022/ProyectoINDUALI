@@ -5,7 +5,7 @@ from componente.models import Componente
 # Create your views here.
 def componente(request):
     titulo='Componente'
-    receta=Componente.objects.all()
+    componente=Componente.objects.all()
     context={
         'titulo':titulo,
         'componente':componente
