@@ -20,7 +20,7 @@ class Usuario (models.Model):
    
     class TipoUsuario(models.TextChoices):
         Administrador='Administrador', _('Administrador')
-        Estandar='Estandar', _('Estandar')
+        Super='Super', _('Super')
         Invitado='Invitado', _('Invitado')
     tipoUsuario=models.CharField(max_length=20,choices=TipoUsuario.choices, default=TipoUsuario.Invitado, verbose_name="Tipo Usuario")
        

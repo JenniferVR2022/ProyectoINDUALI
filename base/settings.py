@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'centroCostos',
     'receta',
     'componente',
+    'ingrediente',
     
     ]
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
