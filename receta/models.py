@@ -4,7 +4,7 @@ from django.core.validators import MinValueValidator
 from componente.models import Componente
 from ingrediente.models import Ingrediente
 from usuarios.models import Usuario
-from receta.models import Receta
+
 
 # from ingrediente.models import Ingrediente
 
@@ -23,8 +23,8 @@ class Receta (models.Model):
     def __str__(self):
         return self.codReceta
 
-    class RecetaDetalle(models.Model):
-       receta= models.ForeignKey(Receta, on_delete=models.CASCADE, verbose_name="Nombre Receta")
-       ingrediente= models.ForeignKey(Ingrediente, on_delete=models.CASCADE, verbose_name="Ingrediente")
+class RecetaDetalle(models.Model):
+    receta= models.ForeignKey(Receta, on_delete=models.CASCADE, verbose_name="Nombre Receta")
+    ingrediente= models.ForeignKey(Ingrediente, on_delete=models.CASCADE, verbose_name="Ingrediente") 
 
     

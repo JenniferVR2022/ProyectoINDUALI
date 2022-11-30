@@ -27,7 +27,7 @@ def componente(request):
     form_update= None
     form =RecetaForm()
 
-if request.method == "POST" and 'form-crear' in request.POST:
+    if request.method == "POST" and 'form-crear' in request.POST:
         form= RecetaForm(request.POST)
         if form.is_valid():
             super = form.save(commit=False)
@@ -46,10 +46,10 @@ if request.method == "POST" and 'form-crear' in request.POST:
             form= RecetaForm(request.POST)
             messages.error(
                 request,"Error al abrir la receta"       
-    
-      
+            )
+       
 
-if request.method == "POST" and 'form-editar' in request.POST:
+    if request.method == "POST" and 'form-editar' in request.POST :
         modal_status= 'show'
         pk_receta = request.POST['pk']
         receta= receta.objects.get(id=pk_receta)
