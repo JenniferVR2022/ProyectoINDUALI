@@ -1,10 +1,10 @@
 from django.forms import ModelForm, widgets
-from receta.models import Receta,RecetaDetalle
-from django import forms
 from django_select2 import forms as s2forms
+from ingrediente.models import Ingrediente
+from receta.models import Receta,RecetaDetalle
 
 
-class IngredientesWidget(s2forms.ModelSelect2Widget):
+class IngredienteWidget(s2forms.ModelSelect2Widget):
     search_fields ={
         "nombre__icontains",
         "id__icontains"
@@ -15,13 +15,14 @@ class RecetaForm(ModelForm):
         model= Receta
         exclude=['estado','super','estandar']
         widgets={
-           forms.TextInput(
-                attrs= {
-                    'placeholder':'nomReceta'
-                }
-            )
-        
+          'ingrediente':IngredienteWidget,
         }
 
 
-
+class RecetaDetalleForm(ModelForm):
+    class Meta:
+        model= RecetaDetalle
+        fields='__all__'
+        widgets={
+            'ingrediente':IngredienteWidget
+        }
