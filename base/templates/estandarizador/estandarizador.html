@@ -1,0 +1,184 @@
+{% extends 'partials/body.html' %}
+{% block contenido %}
+
+
+<center>
+    <section id="botonAñadir">
+    <section class="col-lg-12 button_añadir" >
+     
+       <form class="form-inline my-7 my-lg-3">
+        <button type="button" class="btn btn-primary"><i class="bi-pencil-square"></i> SELECCIONAR RECETA </button>
+        <button type="button" class="btn btn-primary"><i class="bi-pencil-square"></i> SELECCIONAR CENTRO DE COSTOS </button>
+        <button type="button" class="btn btn-primary"><i class="bi-pencil-square"></i> SELECCIONAR LISTA DE PRECIOS</button>
+        <a href="{% url 'agregar-receta'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> AGREGAR RECETA </a>
+
+      </form>
+     
+    </section >
+    </center>
+
+   
+<div class="container-estandarizador1 p-3 mb-2 bg-white text-dark row g-6 border rounded">
+    <section id="tablaUsuario">
+        <section class="col-lg-10 table">
+        <div>
+
+    <table class="table table-bordered">
+   
+     
+
+        <tr>
+            <th>Codigo Componente</th>
+            <th></th>
+            <th>Codigo Receta</th>
+            <th></th>
+            
+        </tr>
+
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nombre Componente</td>
+            <td></td>
+            <th>Nombre Receta</th>
+            <th></th>
+    
+          </tr>
+          <tr>
+            <td>Codigo Centro de Costos</td>
+            <td></td>
+            <th>Estandar Receta</th>
+            <th></th>
+    
+          </tr>
+          <tr>
+            <td>Nombre Centro de Costos</td>
+            <td></td>
+            <th>Lista Precio</th>
+            <th></th>
+           
+          </tr>
+
+      </table>
+    </div>
+  </div>
+
+
+    <div class="container-estandarizador2 p-3 mb-2 bg-white text-dark row g-6 border rounded">
+
+
+    <section id="tablaUsuario">
+      <section class="col-lg-10 table">
+      <div>
+
+<table class="table table-bordered">
+
+ 
+
+  <tr>
+      <th>Codigo</th>
+      <th>Ingredientes</th>
+      <th>Unidad</th>
+      <th>Cantidad</th>
+      <th>Costo Uni</th>
+      <th>Costo Total</th>
+      <th>Estandarizar</th>
+  </tr>
+
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+
+    </tr>
+
+
+
+   </table>
+ </div>
+</div>
+
+<div class="container-estandarizador3  p-4 mb-2 bg-white text-dark row g-6 border rounded">
+    <section id="tablaUsuario">
+        <section class="col-lg-10 table">
+        <div>
+
+    <table class="table table-bordered">
+   
+     
+
+        <tr>
+            <th>Porciones Estandar</th>
+        </tr>
+
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+
+    
+          </tr>
+      
+      </table>
+
+    </div>
+    <button type="button" class="btn btn-primary"><i class="bi bi-save-fill"></i> CREAR PEDIDO </button>
+</div>
+
+{% endblock contenido %}  
