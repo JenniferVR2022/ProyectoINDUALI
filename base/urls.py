@@ -16,16 +16,29 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import handler404
-from base.views import inicio,error_404,principal
+from base.views import error_404,principal
 
+from base.views import logout_user
+from django.contrib.auth.views import LoginView as login
+
+from django.conf import settings
+from django.conf.urls.static import static
 
 handler404= error_404
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',inicio,name='inicio'),
-    path('menu/',principal,name='menu-principal'),  
+    path('',login.as_view(),name='inicio'),
+    path('principal/',principal,name='principal'),
     path('usuarios/',include('usuarios.urls')),
+    
+    path('centroCostos/',include('centroCostos.urls')),  
+    path('componente/',include('componente.urls')),  
+    path('recetas/',include('receta.urls')), 
+  
+    path('logout/',logout_user,name="logout"),
+   
     path('ingrediente/',include('ingrediente.urls')),
     path('estandarizador/',include('estandarizador.urls')),
     path('listaPrecio/',include('listaPrecio.urls')),
-]
+    
+]+ static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)  
