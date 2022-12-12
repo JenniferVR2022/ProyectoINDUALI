@@ -32,7 +32,71 @@ body {
     border: 2px solid black;
 }
 
+.container-ingrediente {
+    position:auto;
+    opacity: 0.9;
+    margin-top: 200px;
+    margin-right: 300px;
+    margin-bottom: 800px;
+    margin-left: 300px;
+    border: 2px solid black;
+}
 
+.container-tablaIngrediente{
+    position:auto;
+    opacity: 0.9;
+    margin-top: 100px;
+    margin-right: 300px;
+    margin-bottom: 800px;
+    margin-left: 300px;
+    border: 2px solid black;
+}
+
+.container-estandarizador1{
+    position:fixed;top: 150px;left: 100px;
+    opacity: 0.9;
+    margin-top: 10px;
+    margin-right: 200px;
+    margin-bottom: 800px;
+    margin-left: 200px;
+    border: 2px solid black;
+}
+.container-estandarizador2{
+    position:fixed;top: 360px;left: 100px;
+    opacity: 0.9;
+    margin-top: 10px;
+    margin-right: 200px;
+    margin-bottom: 800px;
+    margin-left: 200px;
+    border: 2px solid black;
+}
+.container-estandarizador3{
+    position:fixed;top: 150px;left: 555px;
+    opacity: 0.9;
+    margin-top: 10px;
+    margin-right: 200px;
+    margin-bottom: 800px;
+    margin-left: 200px;
+    border: 2px solid black;
+
+}
+
+.container-verReceta{
+    position:fixed;
+    opacity: 0.9;
+    margin-top: 10px;
+    margin-right: 200px;
+    margin-bottom: 800px;
+    margin-left: 200px;
+    border: 2px solid black;
+
+}
+
+
+.bigicon {
+    font-size: 35px;
+    color: #36A0FF;
+}
 
 #section{
     width: 50px;

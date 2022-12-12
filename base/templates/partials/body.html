@@ -18,37 +18,20 @@
     
     {% endblock stylesheet %} 
 
-    
+    <link rel="stylesheet" type="text/css" href="{% static 'DataTables/datatables.min.css' %}"/>
+ 
     
     <title>Estandarizador</title>
-</head>
-    
-<body class="img-fondo">
-
-    
-
-<div class="wrapper ">
-        {% include 'partials/navbar.html' %}
-        {% include 'partials/sidebar.html' %}
+    </head>
+    <body class="img-fondo">
        
-    <div class="content-wrapper overflow-auto" >
         {% include 'partials/header.html' %}
 
-        
-    <div class="container">
-            {% block contenido %}
+        {% block contenido %}
+        {% endblock contenido %}
 
-            {% endblock contenido %}
-
- 
-</div>
-
-{% include 'partials/footer.html' %}
-{% include 'partials/js.html' %}
-{% block javascript %}
-
-{% endblock javascript %}
-
-</body>
-
+        {%include 'partials/footer.html' %}  
+            
+        {% include 'partials/js.html' %}
+    </body>
 </html>
