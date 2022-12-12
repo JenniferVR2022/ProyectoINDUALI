@@ -1,0 +1,61 @@
+{% extends 'partials/body.html' %}`
+
+{% load static %}
+{% block contenido %}
+      
+   <div class="container-usuario p-3 mb-2 bg-white text-dark row g-6 border rounded">
+  
+    <center><h3>Crear Ingrediente</h3></center>
+              <form class="row g-12" style="margin:100 ">
+                
+                <div class="col-5">
+                    <label for="inputAddress" class="form-label">Codigo Ingrediente</label>
+                    <input type="number" class="form-control" id="inputAddress" placeholder="Introduzca el codigo del ingrediente">
+                  </div>
+                  <div class="col-5">
+                    <label for="inputAddress2" class="form-label">Nombre Ingrediente</label>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="Introduzca el nombre del ingrediente"">
+                  </div>
+                  <div class="col-3">
+                      <label for="inputAddress2" class="form-label">Unidad de medida</label>
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="Introduzca la UM del ingrediente">
+                    </div>
+                <div class="col-md-4">
+                  <label for="inputAddress2" class="form-label">Cantidad de materia prima</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="Introduzca la CMP del ingrediente">
+                </div>
+              </form>
+            <center>
+              <form class="form-inline my-3 my-lg-3">
+              <button type="button" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR INGREDIENTE </button>
+            </form>
+          </center>
+            </div>
+
+            <tbody>
+
+              {% for ingrediente in ingredientes %}
+              <tr>
+          
+                {% if ingrediente.estado != '3' %}
+                <td >{{ingrediente.codIngrediente}}</td>
+                <td>{{ingrediente.nomIngrediente}}</td>
+                <td>{{ingrediente.unidadMedida}}</td>
+                <td>{{ingrediente.cantidadMateriaPrima}}</td>
+                <td>{{ingrediente.estado}}</td>
+                <td><a class="btn btn-primary" href="{% url 'ingrediente-crear' ingrediente.id  %}"><i class="fas fa-edit"></i></a>
+                  
+                </td>
+                {% endif %}
+          
+          
+          
+          
+              </tr>
+              {% endfor %}
+          
+          
+          
+            </tbody>
+          
+        {% endblock contenido %}
