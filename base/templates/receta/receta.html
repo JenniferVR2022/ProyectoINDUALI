@@ -7,11 +7,18 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<form class="form-inline my-3 my-lg-3">
+    <a href="{% url 'receta-buscar'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> BUSCAR RECETA </a>
+
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <button type="button" class="btn btn-secondary" href="">Ingredientes</button>
-    <button type="button" class="btn btn-secondary" href="">Modificar receta</button>
+    <button type="button" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR RECETA </button>
+    <button type="button" class="btn btn-primary"><i class="bi bi-card-list"></i> EDITAR RECETA </button>
+    <button type="button" class="btn btn-primary"><i class="bi bi-card-list"></i> EXPORTAR RECETA</button>
+    <button type="button" class="btn btn-primary"><i class="bi bi-card-list"></i> GUARDAR RECETA </button>
   </div>
   <form action="">
     {{form}}
