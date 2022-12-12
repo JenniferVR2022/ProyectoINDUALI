@@ -1,10 +1,7 @@
 from django.urls import path 
-from ingrediente.views import ingrediente,ingrediente_buscar
+from ingrediente.views import ingrediente,ingrediente_crear
 
 urlpatterns = [
   path('',ingrediente,name="ingrediente"), 
-  path('buscar/',ingrediente_buscar,name="ingrediente-buscar"),
+  path('crear/',ingrediente_crear,name="ingrediente-crear"),
 ]
-
-
-

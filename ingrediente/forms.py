@@ -1,9 +1,9 @@
-from dataclasses import field
 from django.forms import ModelForm
-from ingrediente.models import ingrediente
-
+from ingrediente.models import Ingrediente
 
 class IngredienteForm(ModelForm):
     class Meta:
-        model= ingrediente
-        exclude=['estado']
+          model= Ingrediente
+          exclude=['estado']
+
+

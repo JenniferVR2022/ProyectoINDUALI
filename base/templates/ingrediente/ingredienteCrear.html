@@ -31,5 +31,31 @@
             </form>
           </center>
             </div>
-              
-   {% endblock contenido %}
+
+            <tbody>
+
+              {% for ingrediente in ingredientes %}
+              <tr>
+          
+                {% if ingrediente.estado != '3' %}
+                <td >{{ingrediente.codIngrediente}}</td>
+                <td>{{ingrediente.nomIngrediente}}</td>
+                <td>{{ingrediente.unidadMedida}}</td>
+                <td>{{ingrediente.cantidadMateriaPrima}}</td>
+                <td>{{ingrediente.estado}}</td>
+                <td><a class="btn btn-primary" href="{% url 'ingrediente-crear' ingrediente.id  %}"><i class="fas fa-edit"></i></a>
+                  
+                </td>
+                {% endif %}
+          
+          
+          
+          
+              </tr>
+              {% endfor %}
+          
+          
+          
+            </tbody>
+          
+        {% endblock contenido %}
