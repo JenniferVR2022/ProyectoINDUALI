@@ -25,13 +25,24 @@
     </head>
     <body class="img-fondo">
        
+        {% include 'partials/navbar.html' %}
+        {% include 'partials/sidebar.html' %}
+
+
+    <div class="content-wrapper overflow-auto" >
         {% include 'partials/header.html' %}
 
+    <div class="container">
         {% block contenido %}
         {% endblock contenido %}
+    </div>
 
         {%include 'partials/footer.html' %}  
             
         {% include 'partials/js.html' %}
+
+        {% block javascript %}
+
+       {% endblock javascript %}
     </body>
 </html>
