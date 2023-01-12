@@ -92,10 +92,9 @@ body {
 
 }
 
-.carousel, .carousel-inner > .item > img {
-    position:fixed;top: auto;left: auto;
-    height: 850px;
-    width: 800px;
+    
+  .other-section{
+      height: 400px;
   }
 
 .bigicon {
