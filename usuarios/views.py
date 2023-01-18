@@ -56,7 +56,7 @@ def usuarios_editar(request, pk):
         'titulo':titulo,
         "form":form
     }
-    return render(request,'usuarios/usuarios-editar.html',context)
+    return render(request,'usuarios/usuarios_crear.html',context)
 
 
 

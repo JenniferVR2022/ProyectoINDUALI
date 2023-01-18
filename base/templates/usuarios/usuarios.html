@@ -21,13 +21,8 @@
       <th scope="col">Tipo Usuario</th>
       <th scope="col">Estado</th>
 
-      <th scope="col">Permisos</th>
-
-
-
     </tr>
   </thead>
-
   <tbody>
 
     {% for usuario in usuarios %}
@@ -46,7 +41,6 @@
       <td>{{usuario.estado}}</td>
 
       <td><a class="btn btn-primary" href="{% url 'usuarios-editar' usuario.id  %}"><i class="fas fa-edit"></i></a>
-      
       </td>
       {% endif %}
 

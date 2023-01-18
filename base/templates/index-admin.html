@@ -1,0 +1,56 @@
+{% extends 'partials/body.html' %}
+{% load static %}
+
+{% block contenido %}
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+          <!-- Small boxes (Stat box) -->
+          <div class="row">
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+          
+            </div>
+              <p>Usuarios Registrados</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-person-add"></i>
+                </div>
+                <a href="{% url 'inicioAdmin' %}" class="small-box-footer">Más Información <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+           
+                    
+                  </div>
+                </div><!-- /.card-header -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <!-- Morris chart - Sales -->
+                    <div class="chart" id="stock-chart" style="position: relative; height: 300px;">
+                      <canvas id="stock-chart-canvas" height="300" style="height: 300px;"></canvas>
+                    </div>
+                    
+                  </div>
+                </div><!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            
+  
+            </section>
+            <!-- /.Left col -->
+            
+          </div>
+          <!-- /.row (main row) -->
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+
+{% endblock contenido %}
+
+
+{% block javascript %}
+<script>
+  {% include 'charts/chart-stock.js' %}
+</script>
+{% endblock javascript %}
+  
