@@ -244,9 +244,11 @@ $(function () {
       ordering: true,
       searching: true,
       info: true,
-      buttons: ["copy", "csv", "excel", "pdf", "print"],
+      buttons: ["copy", "csv","pdf", "print"],
     })
     .buttons()
     .container()
     .appendTo("#tabla-general_wrapper .col-md-6:eq(0)");
 });
+
+
