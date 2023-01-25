@@ -15,60 +15,59 @@
     </section >
     </center>
 
-    <div class="container-verReceta p-3 mb-2 bg-white text-dark row g-6 border rounded">
-
-      <center>
-            <section id="tablaUsuario">
-            <section class="col-lg-10 table">
-            <div>
-    
-              <table class="table table-bordered" id="tabla-general"> 
-                <thead class="thead-dark">
-                  <tr>
-                    <th scope="col">Codigo Lista Precio</th>
-                    <th scope="col">Nombre Lista Precio</th>
-                    <th scope="col">Tipo De Poducto</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                  <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                    <tr>
-                      <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                          <td></td>
-                          <td></td>
-                        </tr>
+        <section id="tablaUsuario">
+          <section class="col-lg-12 table">
+              <div class="container text-center bg-white text-dark row g-6 border rounded">
+                <div class="row align-items-start">
+                  <div class="col-12 table-responsive">
+                    <table class="table table-bordered" id="tabla-general"> 
+                      <thead class="thead-dark">
                         <tr>
-                          <th scope="row"></th>
-                            <td></td>
-                            <td></td>
-                  </tbody>
-              </table>
-              </div>
-              </center>
-</div>
+                          <th scope="col">Codigo Lista Precio</th>
+                          <th scope="col">Nombre Lista Precio</th>
+                          <th scope="col">Tipo De Poducto</th>
+                          <th scope="col">Controles</th> 
+                          <th scope="col">Controles</th> 
+                        </tr>
+                      </thead>
+                      <tbody id="tblIngredientes">
+                        <script type="text/javascript">
+                          const $tblIngredientes = document.getElementById("tblIngredientes");
+                          const ingredientes = [
+                                  {
+                                    "id": "",
+                                    "name": "",
+                                    "unidad": "",
+                                    "stateRow": "A"
+                                  },
+                                  {
+                                    "id": "",
+                                    "name": "",
+                                    "unidad": "",
+                                    "stateRow": "A"
+                                  },
+                                  {
+                                    "id": "",
+                                    "name": "",
+                                    "unidad": "",
+                                    "stateRow": "A"
+                                  }
+                                ] ;
+            
+                                for (const items of ingredientes) {
+                                  $tblIngredientes.innerHTML +=`<tr>
+                                      <th scope="row">${items.id}</th>
+                                      <td>${items.name}</td>
+                                      <td>${items.unidad}</td>
+                                      <td>
+                                        <button type="button" class="btn btn-success">Editar</button>
+                                      </td>
+                                      <td>
+                                        <button type="button" class="btn btn-warning">Quitar</button>
+                                      </td>
+                                    </tr>`;
+                              }
+                      </script>
+
 
 {% endblock contenido %}  
