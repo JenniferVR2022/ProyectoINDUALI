@@ -4,258 +4,46 @@
 {% block contenido %}
 
 
+
 <center>
-    <section id="tabla-receta">
-        <section class="col-lg-10 table">
-        <div class="container-ingrediente">
-         <div class="row clearfix">
-            <div class="col-md-12 table-responsive">
-             <table class="table table-bordered table-hover table-sortable" id="tab_logic">
-               
-                  <thead>
-                     <tr >
-                    <th class="text-center">
-                        Código componente
-                    </th>
-                    <th class="text-center">
-                        Nombre Componente
-                    </th>
-                  
-                </tr>
-               
-            </thead>
-            <tbody>
-             
-                <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codComponente">
-                   
-                    </td>
-                    <td data-name="nomComponente">
+  
+  <section id="botonesIngrediente">
+  <section class="col-lg-12 button_añadir" >
+   
     
-                    </td>
-               
-                </tr>
+    <form class="form-inline my-3 my-lg-3">
+          <a href="{% url 'ingrediente-crear'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR COMPONENTE </a>
+    </form>
+  
+  </section > 
+   </center>
 
-                  
-
-                <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codComponente">
-                        <input type="text" name='codComponente'  placeholder='' class="form-control"/>
-                    </td>
-                    <td data-name="nomComponente">
-                            <input type="text" name='nomComponente'  placeholder='' class="form-control"/>
-                    </td>
-            
-                </tr>
-
-                <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codComponente">
+      <section id="tablaUsuario">
+      <section class="col-lg-12 table">
+          <div class="container text-center bg-white text-dark row g-6 border rounded">
+            <div class="row align-items-start">
+              <div class="col-12 table-responsive">
+                <table class="table" id="tabla-general"> 
+                  <thead class="thead-dark">
                    
-                    </td>
-                    <td data-name="nomComponente">
-                    
-                    </td>
-                 
-                    
-                </tr>
-
-                  
-
-                <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codComponente">
-                        <input type="text" name='codComponente'  placeholder='' class="form-control"/>
-                    </td>
-                    <td data-name="nomComponente">
-                            <input type="text" name='nomComponente'  placeholder='' class="form-control"/>
-                    </td>
-          
-                 
-                </tr>
-
-
-                <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codComponente">
-                   
-                    </td>
-                    <td data-name="nomComponente">
-                    
-                    </td>
-                
-                    
-                </tr>
-
-                  
-
-                <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codComponente">
-                        <input type="text" name='codComponente'  placeholder='' class="form-control"/>
-                    </td>
-                    <td data-name="nomComponente">
-                            <input type="text" name='nomComponente'  placeholder='' class="form-control"/>
-                    </td>
-            
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                           
-                </tr>
-
-
-
-                <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codComponente">
-                   
-                    </td>
-                    <td data-name="nomComponente">
-                    </td>
+                 <tr>
+                  <center><th scope="col">Código Componente</th></center>
+                  <center><th scope="col">Nombre Componente</th></center>
+                    </tr>
               
-                </tr>
 
+                  </thead>
                   
-
-                <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codComponente">
-                        <input type="text" name='codComponente'  placeholder='' class="form-control"/>
-                    </td>
-                    <td data-name="nomComponente">
-                            <input type="text" name='nomComponente'  placeholder='' class="form-control"/>
-                    </td>
-                             
-                </tr>
-
-                <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codComponente">
-                   
-                    </td>
-                    <td data-name="nomComponente">
-                   
-                                  
-                </tr>
-
-                  
-
-                <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codComponente">
-                        <input type="text" name='codComponente'  placeholder='' class="form-control"/>
-                    </td>
-                    <td data-name="nomComponente">
-                            <input type="text" name='nomComponente'  placeholder='' class="form-control"/>
-                    </td>
-            
-                </tr>
-
-                <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codComponente">
-                   
-                    </td>
-                    <td data-name="nomComponente">
-                    
-                                
-                </tr>
-
-                  
-
-                <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codComponente">
-                        <input type="text" name='codComponente'  placeholder='' class="form-control"/>
-                    </td>
-                    <td data-name="nomComponente">
-                            <input type="text" name='nomComponente'  placeholder='' class="form-control"/>
-                    </td>
-                                                
-                   
-                </tr>
-
-                <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codComponente">
-                   
-                    </td>
-                    <td data-name="nomComponente">
-                    
-                    </td>
-                                     
-                </tr>
-
-                  
-
-                <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codComponente">
-                        <input type="text" name='codComponente'  placeholder='' class="form-control"/>
-                    </td>
-                    <td data-name="nomComponente">
-                            <input type="text" name='nomComponente'  placeholder='' class="form-control"/>
-                    </td>
-                  
-                </tr>
-
-                <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codComponente">
-                   
-                    </td>
-                    <td data-name="nomComponente">
-                    
-                                   
-                </tr>
-
-                  
-
-                <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codComponente">
-                        <input type="text" name='codComponente'  placeholder='' class="form-control"/>
-                    </td>
-                    <td data-name="nomComponente">
-                            <input type="text" name='nomComponente'  placeholder='' class="form-control"/>
-                    </td>
-            
-                </tr>
-
-                <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codComponente">
-                   
-                    </td>
-                    <td data-name="nomComponente">
-                    
-                                 
-                </tr>
-
-                  
-
-                <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codComponente">
-                        <input type="text" name='codComponente'  placeholder='' class="form-control"/>
-                    </td>
-                    <td data-name="nomComponente">
-                            <input type="text" name='nomComponente'  placeholder='' class="form-control"/>
-                    </td>
-               
-                </tr>
-                <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codComponente">
-                   
-                    </td>
-                    <td data-name="nomComponente">
-                    </td>
-                    
-                </tr>
-
-                  
-
-                <tr id='addr0' data-id="0" class="hidden">
-                    <td data-name="codComponente">
-                        <input type="text" name='codComponente'  placeholder='' class="form-control"/>
-                    </td>
-                    <td data-name="nomComponente">
-                            <input type="text" name='nomComponente'  placeholder='' class="form-control"/>
-                    </td>
-          
-                </tr>
+                </table>
+              </div>
+            </div>
+        </div>
 
 
+  <tbody>
 
-            </tbody>
-           
-        </table>
-    </div>
-</div>
-</div>
 
 
 {% endblock contenido %}
+
+

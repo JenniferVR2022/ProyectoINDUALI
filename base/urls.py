@@ -41,4 +41,6 @@ urlpatterns = [
     path('estandarizador/',include('estandarizador.urls')),
     path('listaPrecio/',include('listaPrecio.urls')),
     
+    
+    
 ]+ static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)  

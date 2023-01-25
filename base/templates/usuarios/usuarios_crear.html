@@ -2,13 +2,24 @@
 {% load crispy_forms_tags %}
 
 {% block contenido %}
-<div class="container d-flex justify-content-center">
-  <div class="bg-white w-50 p-4 m-5 rounded">
-    <form action="" method="POST" >
-      {{form|crispy}}
-      {% csrf_token %}
-      <input type="submit" value="Registrar">
-    </form>
-  </div>
-</div>
+
+
+ 
+</section >
+       
+      <div class="container text-left bg-white text-dark row g-6 border rounded">
+        <div class="row align-items-start"> 
+          <div class="col-12 table-responsive">
+           <form action="" method="POST" >
+            <center><h3>Crear Usuario</h3></center>
+           {{form|crispy}}
+           {% csrf_token %}
+           <div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg btn-block">Registrar</button>
+           </div>
+           </form>
+          </div>
+        </div>
+      </div>
+
 {% endblock contenido %}
