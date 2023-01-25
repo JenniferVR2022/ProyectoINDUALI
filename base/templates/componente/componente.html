@@ -6,76 +6,42 @@
 
 
 <center>
-  <section id="botonAñadir">
+  
+  <section id="botonesIngrediente">
   <section class="col-lg-12 button_añadir" >
    
-     <form class="form-inline my-7 my-lg-3">
-      <button type="button" class="btn btn-primary"><i class="bi-pencil-square"></i> CREAR COMPONENTE </button>
-      <button type="button" class="btn btn-primary"><i class="bi-pencil-square"></i> EDITAR COMPONENTE </button>
+    
+    <form class="form-inline my-3 my-lg-3">
+          <a href="{% url 'ingrediente-crear'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR COMPONENTE </a>
     </form>
-   
-  </section>
-  </center>
-
-  <div class="container-verReceta p-4 mb-2 bg-white text-dark row g-6 border rounded">
-
-    <center>
-          <section id="tablaUsuario">
-          <section class="col-lg-12 table">
-          <div>
   
-            <table class="table table-bordered" id="tabla-general1"> 
-              <thead class="thead-dark">
-                <tr>
-                  <th scope="col">Código Componente</th>
-                  <th scope="col">Nombre Componente</th>
-                
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row"></th>
-                  <td></td>
-             
-              
-                <tr>
-                  <th scope="row"></th>
-                  <td></td>
-                
-                
-                </tr>
-                <tr>
-                  <th scope="row"></th>
-                  <td></td>
-           
-                 
-                </tr>
-                <tr>
-                <th scope="row"></th>
-                  <td></td>
-                 
-            
-                </tr>
-                  <tr>
-                    <th scope="row"></th>
-                      <td></td>
-                    
-                    
+  </section > 
+   </center>
+
+      <section id="tablaUsuario">
+      <section class="col-lg-12 table">
+          <div class="container text-center bg-white text-dark row g-6 border rounded">
+            <div class="row align-items-start">
+              <div class="col-12 table-responsive">
+                <table class="table" id="tabla-general"> 
+                  <thead class="thead-dark">
+                   
+                 <tr>
+                  <center><th scope="col">Código Componente</th></center>
+                  <center><th scope="col">Nombre Componente</th></center>
                     </tr>
-                    <tr>
-                      <th scope="row"></th>
-                        <td></td>
-                    
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                          <td></td>
-                     
-                </tbody>
-            </table>
+              
+
+                  </thead>
+                  
+                </table>
+              </div>
             </div>
-            </center>
-</div>
+        </div>
+
+
+  <tbody>
+
 
 
 {% endblock contenido %}
