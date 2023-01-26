@@ -7,75 +7,114 @@
     <section class="col-lg-12 button_añadir" >
      
       
-      <form class="form-inline my-3 my-lg-3">
+      <!-- <form class="form-inline my-3 my-lg-3">
         <a href="{% url 'ingrediente-crear'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR INGREDIENTE </a>
-        <button type="button" class="btn btn-primary"><i class="bi bi-card-list"></i> EDITAR INGREDIENTE </button>
-        
-       
-      </form>
+       </form> -->
     
     </section > 
      </center>
-
-   <center>
-    <div class="container-tablaIngrediente p-3 mb-2 bg-white text-dark row g-6 border rounded">
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+<!-- <div class="container-tablaIngrediente p-3 mb-2 bg-white text-dark row g-6 border rounded"> -->
         <section id="tablaUsuario">
-        <section class="col-lg-10 table">
-        <div>
-
+        <section class="col-lg-12 table">
+          <div class="container text-center bg-white text-dark row g-6 border rounded">
+            <div class="row align-items-start">
+              <div class="col-12 table-responsive">
           <table class="table" id="tabla-general"> 
             <thead class="thead-dark">
               <tr>
                 <th scope="col">Codigo ingrediente</th>
-                <th scope="col">Nombre ingrediente</th>
-                <th scope="col">Unidad de medida</th>
-                <th scope="col">Cantidad de materia prima</th>
+                        <th scope="col">Nombre ingrediente</th>
+                        <th scope="col">Unidad de medida</th>
+                        <th scope="col">Cantidad de materia prima</th>
+                        <th scope="col">Controles</th> 
+                        <th scope="col">Controles</th> 
               </tr>
             </thead>
-            <tbody>
+            <tbody id="tblIngredientes">
+              {% for items in ingrediente%}
               <tr>
-                <th scope="row">1</th>
-                <td>Aceite</td>
-                <td>Litros</td>
-                <td>1000</td>
+                <th scope="row">{{items.codIngrediente}}</th>
+                <td>{{items.nomIngrediente}}</td>
+                <td>{{items.unidadMedida}}</td>
+                <td>{{items.cantidadMateriaPrima}}</td>
+                <td>
+                  <button type="button" class="btn btn-success">Editar</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-warning">Inactivar</button>
+                </td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Arroz</td>
-                <td>Gramos</td>
-                <td>2000</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Frijol</td>
-                <td>Kilos</td>
-                <td>5</td>
-              </tr>
-              <tr>
-              <th scope="row">4</th>
-                <td>Lenteja</td>
-                <td>Gramos</td>
-                <td>50</td>
-              </tr>
-                <tr>
-                  <th scope="row">5</th>
-                    <td>Garbanzos</td>
-                    <td>Kilos</td>
-                    <td>80</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">6</th>
-                      <td>Spaguettis</td>
-                      <td>Kilos</td>
-                      <td>80</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                        <td>Habichuela</td>
-                        <td>Kilos</td>
-                        <td>120</td>
-              </tbody>
+              {% endfor %}
+            </tbody>
           </table>
           </div>
-          </center>
-          {% endblock contenido %}  
+        </div>
+      </div>
+       <!-- </div> -->
+       <script type="text/javascript">
+        /*const $tblIngredientes = document.getElementById("tblIngredientes");
+        const ingredientes = [
+                {
+                  "id": 1,
+                  "name": "Aceite",
+                  "unidad": "Mililitros",
+                  "cantidad": 100,
+                  "stateRow": "A"
+                },
+                {
+                  "id": 2,
+                  "name": "Arroz",
+                  "unidad": "Gramos",
+                  "cantidad": 200,
+                  "stateRow": "A"
+                },
+                {
+                  "id": 3,
+                  "name": "Frijoles",
+                  "unidad": "Kilos",
+                  "cantidad": 20,
+                  "stateRow": "A"
+                },
+                  {
+                  "id": 4,
+                  "name": "Garbanzos",
+                  "unidad": "Kilos",
+                  "cantidad": 13,
+                  "stateRow": "A"
+                },
+                  {
+                  "id": 5,
+                  "name": "Habichuela",
+                  "unidad": "kilos",
+                  "cantidad": 25,
+                  "stateRow": "A"
+                },
+                {
+                  "id": 6,
+                  "name": "Zanahoria",
+                  "unidad": "Libra",
+                  "cantidad": 40,
+                  "stateRow": "A"
+                }
+              ] ;
+
+              for (const items of ingredientes) {
+                $tblIngredientes.innerHTML +=`<tr>
+                    <th scope="row">${items.id}</th>
+                    <td>${items.name}</td>
+                    <td>${items.unidad}</td>
+                    <td>${items.cantidad}</td>
+                    <td>
+                      <button type="button" class="btn btn-success">Editar</button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-warning">Inactivar</button>
+                    </td>
+                  </tr>`;
+            }*/
+    </script>
+    {% endblock contenido %}  
