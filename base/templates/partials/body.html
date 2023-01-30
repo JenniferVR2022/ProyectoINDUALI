@@ -12,37 +12,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
     <!-- Google Font: Source Sans Pro -->
-    
     {% block stylesheet %}
-        
-    
     {% endblock stylesheet %} 
-
     <link rel="stylesheet" type="text/css" href="{% static 'DataTables/datatables.min.css' %}"/>
- 
-    
     <title>Estandarizador</title>
-    </head>
-    <body class="img-fondo">
-       
+</head>
+    <body class="img-fondo-as">
         {% include 'partials/navbar.html' %}
-        {% include 'partials/sidebar.html' %}
-
-
-    <div class="content-wrapper overflow-auto" >
-        {% include 'partials/header.html' %}
-
-    <div class="container">
-        {% block contenido %}
-        {% endblock contenido %}
-    </div>
-
+    <!-- <div class="" > -->
+        <div class="container" >
+            {% block contenido %}
+            {% endblock contenido %}
+        </div>
+    <!-- </div> -->
         {%include 'partials/footer.html' %}  
-            
         {% include 'partials/js.html' %}
-
         {% block javascript %}
-
-       {% endblock javascript %}
+        {% endblock javascript %}
     </body>
 </html>
