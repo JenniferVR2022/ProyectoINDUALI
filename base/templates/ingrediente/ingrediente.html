@@ -32,7 +32,7 @@
                       <button type="button" class="btn btn-success">Editar</button>
                     </td>
                     <td>
-                      <button type="button" class="btn btn-warning">Inactivar</button>
+                      <a type="button" class="btn btn-warning" href="{% url 'eliminar' items.id %}" role="button">Inactivar</a>
                     </td>
                   </tr>
                   {% endfor %}

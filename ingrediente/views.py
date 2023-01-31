@@ -17,6 +17,11 @@ def ingrediente_crear(request):
         return redirect('ingrediente')
     return render(request, 'ingrediente/ingredienteCrear.html', {'formulario': formulario})
 
+def eliminar(request, id):
+    ingrediente = Ingrediente.objects.get(id=id)
+    ingrediente.delete() 
+    return redirect('ingrediente')
+
 # def ingrediente_crear(request):
 #     titulo="Ingrediente - Crear"
 #     if request.method == "POST":
