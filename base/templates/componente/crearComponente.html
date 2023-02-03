@@ -1,0 +1,55 @@
+{% extends 'partials/body.html' %}`
+
+{% load static %}
+{% block contenido %}
+      
+   <div class="container-usuario p-3 mb-2 bg-white text-dark row g-6 border rounded">
+  
+    <center><h3>Crear Componente</h3></center>
+              <form class="row g-12" style="margin:100 ">
+                
+                <div class="col-5">
+                    <label for="inputAddress" class="form-label">Código Componente</label>
+                    <input type="number" class="form-control" id="inputAddress" placeholder="Introduzca el codigo del Componente">
+                  </div>
+                  <div class="col-5">
+                    <label for="inputAddress2" class="form-label">Nombre Componente</label>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="Introduzca el nombre del Componente"">
+                  </div>
+                
+              </form>
+            <center>
+              <form class="form-inline my-3 my-lg-3">
+              <button type="button" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR COMPONENTE </button>
+            </form>
+          </center>
+            </div>
+
+            <tbody>
+
+              {% for componente in componente %}
+              <tr>
+          
+                {% if componente.estado != '3' %}
+                <td>{{componente.codComponente}}</td>
+                <td>{{componente.nomComponente}}</td>
+               
+   
+                  
+                </td>
+                {% endif %}
+          
+          
+          
+          
+              </tr>
+              {% endfor %}
+          
+          
+          
+            </tbody>
+          
+        {% endblock contenido %}
+
+
+        
