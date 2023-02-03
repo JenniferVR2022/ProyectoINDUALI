@@ -7,7 +7,7 @@ from ingrediente.forms import IngredienteForm
 
 def ingrediente(request):
     ingrediente = Ingrediente.objects.all()
-    return render(request,'ingrediente/ingrediente.html',{'ingrediente': ingrediente})
+    return render(request, 'ingrediente/ingrediente.html', {'ingrediente': ingrediente})
 
 
 def ingrediente_crear(request):
@@ -17,10 +17,20 @@ def ingrediente_crear(request):
         return redirect('ingrediente')
     return render(request, 'ingrediente/ingredienteCrear.html', {'formulario': formulario})
 
+
 def eliminar(request, id):
-    ingrediente = Ingrediente.objects.get(id=id)
-    ingrediente.delete() 
+    ingrediente = ingrediente.objects.get(id=id)
+    ingrediente.delete()
     return redirect('ingrediente')
+
+
+def editar(request, id):
+    ingrediente = Ingrediente.objects.get(id=id)
+    formulario = IngredienteForm(request.POST or None, request.FILES or None, instance=ingrediente)
+    if formulario.is_valid() and request.POST:
+        formulario.save()
+        return redirect('ingrediente')
+    return render(request, 'ingrediente/editarIngrediente.html', {'formulario': formulario})
 
 # def ingrediente_crear(request):
 #     titulo="Ingrediente - Crear"

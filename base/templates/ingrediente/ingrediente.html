@@ -29,7 +29,7 @@
                     <td>{{items.unidadMedida}}</td>
                     <td>{{items.cantidadMateriaPrima}}</td>
                     <td>
-                      <button type="button" class="btn btn-success">Editar</button>
+                      <a type="button" class="btn btn-success" href="{% url 'editar' items.id %}" role="button">Editar</a>
                     </td>
                     <td>
                       <a type="button" class="btn btn-warning" href="{% url 'eliminar' items.id %}" role="button">Inactivar</a>
