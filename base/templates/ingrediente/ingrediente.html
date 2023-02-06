@@ -1,46 +1,51 @@
 {% extends 'partials/body.html' %}
 {% block contenido %}
 
- 
-    <br/>
-    <br/>
-    <br/>
-    <section id="tablaUsuario">
-      <section class="col-lg-12 table">
-        <div class="container text-center bg-white text-dark row g-6 border rounded">
-          <div class="row align-items-start">
-            <div class="col-12 table-responsive">
-              <table class="table" id="tabla-general"> 
-                <thead class="thead-dark">
-                  <tr>
-                    <th scope="col">Codigo ingrediente</th>
-                            <th scope="col">Nombre ingrediente</th>
-                            <th scope="col">Unidad de medida</th>
-                            <th scope="col">Cantidad de materia prima</th>
-                            <th scope="col">Controles</th> 
-                            <th scope="col">Controles</th> 
-                  </tr>
-                </thead>
-                <tbody id="tblIngredientes">
-                  {% for items in ingrediente%}
-                  <tr>
-                    <th scope="row">{{items.codIngrediente}}</th>
-                    <td>{{items.nomIngrediente}}</td>
-                    <td>{{items.unidadMedida}}</td>
-                    <td>{{items.cantidadMateriaPrima}}</td>
-                    <td>
-                      <a type="button" class="btn btn-success" href="{% url 'editar' items.id %}" role="button">Editar</a>
-                    </td>
-                    <td>
-                      <a type="button" class="btn btn-warning" href="{% url 'eliminar' items.id %}" role="button">Inactivar</a>
-                    </td>
-                  </tr>
-                  {% endfor %}
-                </tbody>
-              </table>
-            </div>
-          </div>
+
+<br />
+<br />
+<br />
+<form class="form-inline my-3 my-lg-3">
+  <a href="{% url 'ingrediente-crear'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR INGREDIENTE
+  </a>
+</form>
+<section id="tablaUsuario">
+  <section class="col-lg-12 table">
+    <div class="container text-center bg-white text-dark row g-6 border rounded">
+      <div class="row align-items-start">
+        <div class="col-12 table-responsive">
+          <table class="table" id="tabla-general">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Codigo ingrediente</th>
+                <th scope="col">Nombre ingrediente</th>
+                <th scope="col">Unidad de medida</th>
+                <th scope="col">Cantidad de materia prima</th>
+                <th scope="col">Controles</th>
+                <th scope="col">Controles</th>
+              </tr>
+            </thead>
+            <tbody id="tblIngredientes">
+              {% for items in ingrediente%}
+              <tr>
+                <th scope="row">{{items.codIngrediente}}</th>
+                <td>{{items.nomIngrediente}}</td>
+                <td>{{items.unidadMedida}}</td>
+                <td>{{items.cantidadMateriaPrima}}</td>
+                <td>
+                  <a type="button" class="btn btn-success" href="{% url 'editar' items.id %}" role="button">Editar</a>
+                </td>
+                <td>
+                  <a type="button" class="btn btn-warning" href="{% url 'eliminar' items.id %}"
+                    role="button">Inactivar</a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
         </div>
-      </section>
-    </section>
-    {% endblock contenido %}  
+      </div>
+    </div>
+  </section>
+</section>
+{% endblock contenido %}

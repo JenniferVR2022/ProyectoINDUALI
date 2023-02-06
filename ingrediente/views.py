@@ -26,7 +26,8 @@ def eliminar(request, id):
 
 def editar(request, id):
     ingrediente = Ingrediente.objects.get(id=id)
-    formulario = IngredienteForm(request.POST or None, request.FILES or None, instance=ingrediente)
+    formulario = IngredienteForm(
+        request.POST or None, request.FILES or None, instance=ingrediente)
     if formulario.is_valid() and request.POST:
         formulario.save()
         return redirect('ingrediente')
