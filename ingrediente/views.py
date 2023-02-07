@@ -19,7 +19,7 @@ def ingrediente_crear(request):
 
 
 def eliminar(request, id):
-    ingrediente = ingrediente.objects.get(id=id)
+    ingrediente = Ingrediente.objects.get(id=id)
     ingrediente.delete()
     return redirect('ingrediente')
 
