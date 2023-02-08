@@ -62,12 +62,6 @@ def usuarios_editar(request, pk):
 
 
 
-
-
-
-
-
-
 def usuarios_editar(request, pk):
     titulo="Usuarios - Editar"
     usuario= Usuario.objects.get(id=pk)

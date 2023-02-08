@@ -1,76 +1,74 @@
 {% extends 'partials/body.html' %}`
 
 {% load static %}
+
 {% block contenido %}
 
+<center>
+  
+  <section id="botonesReceta">
+  <section class="col-lg-12 button_añadir" >
+   
+    
+    <form class="form-inline my-3 my-lg-3">
+          <a href="{% url 'crear-receta'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR RECETA </a>
+    </form>
+  
+  </section > 
+   </center>
 
-   <center>
-    <section id="botonesIngrediente">
-    <section class="col-lg-12 button_añadir" >
-      <form class="form-inline my-3 my-lg-3">
-        <a href="{% url 'receta-crear'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR RECETA </a>
+   <br/>
+   <br/>
+   <br/>
+   <section id="tablaUsuario">
+     <section class="col-lg-12 table">
+       <div class="container text-center bg-white text-dark row g-6 border rounded">
+         <div class="row align-items-start">
+           <div class="col-12 table-responsive">
+             <table class="table table-bordered" id="tabla-general"> 
+               <thead class="thead-dark">
+                 <tr>
+                  <th scope="col">Codigo Receta</th>
+                            <th scope="col">Nombre Receta</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Estandar</th>
+                            <th scope="col">Preparación
+                           </th>
+                            <th scope="col">Controles</th> 
+                            <th scope="col">Controles</th>
+                 </tr>
+               </thead>
+           
+               <tbody id="tblReceta">
+                 {% for items in Receta%}
+                 <tr>
+                   <th scope="row">{{items.codReceta}}</th>
+                   <td>{{items.nomReceta}}</td>
+                   <td>{{items.estado}}</td>
+                   <td>{{items.estandar}}</td>
+                   <td>{{items.preparacion}}</td>
+                        <td>
+                     <button type="button" class="btn btn-success">Editar</button>
+                   </td>
+                   <td>
+                     <button type="button" class="btn btn-warning">Inactivar</button>
+                   </td>
+                 </tr>
+                 {% endfor %}
+               </tbody>
+             </table>
+           </div>
+         </div>
+       </div>
+     </section>
+   </section>
+ 
 
-            </form>
-     </section > 
-     </center>
 
-        <section id="tablaUsuario">
-        <section class="col-lg-12 table">
-            <div class="container text-center bg-white text-dark row g-6 border rounded">
-              <div class="row align-items-start">
-                <div class="col-12 table-responsive">
-                  <table class="table" id="tabla-general"> 
-                    <thead class="thead-dark">
-                      <tr>
-                        <th scope="col">Codigo Receta</th>
-                        <th scope="col">Nombre Receta</th>
-                        <th scope="col">Estado</th>
-                        <th scope="col">Estandar</th>
-                        <th scope="col">Estado</th>
-                        <th scope="col">Preparación</th>
-                        <th scope="col">Controles</th> 
-                        <th scope="col">Controles</th>
-                      </tr>
-                    </thead>
-                    <tbody id="tblUsuario">
-                     
-                      </tbody>
-                  </table>
-                </div>
-              </div>
-          </div>
-        <!-- </div> -->
-          <script type="text/javascript">
-              const $tblReceta = document.getElementById("tblReceta");
-              const receta = [
-                      {
-                        "id": 1,
-                        "codReceta": "ACEITE",
-                        "nomReceta": "mililitros",
-                        "estado": 100,
-                        "estandar": "A"
-                       
-                      
+{% endblock contenido %}
 
-                      },
-                     
-                    ] ;
 
-                    for (const items of receta) {
-                      $tblReceta.innerHTML +=`<tr>
-                          <th scope="row">${items.id}</th>
-                          <td>${items.codReceta}</td>
-                          <td>${items.nomReceta}</td>
-                          <td>${items.estado}</td>
-                          <td>${items.estandar}</td>
-                          <td>
-                            <button type="button" class="btn btn-success">Editar</button>
-                          </td>
-                          <td>
-                            <button type="button" class="btn btn-warning">Quitar</button>
-                          </td>
-                        </tr>`;
-                  }
-          </script>
-        
-    {% endblock contenido %}
+
+
+
+

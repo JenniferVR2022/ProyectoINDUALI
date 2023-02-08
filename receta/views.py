@@ -1,29 +1,17 @@
 from django.shortcuts import render, redirect
 from receta.models import Receta
-from receta.forms import RecetaForm,RecetaDetalle
-from django.contrib import messages
-from usuarios.models import Usuario
+from receta.forms import recetaForm
+
+
 
 def receta(request):
-    context={
-        
-        }
-    return render(request,'receta/receta.html',context)
+    receta = Receta.objects.all()
+    return render(request,'receta/receta.html',{'receta': receta})
 
 
 def receta_crear(request):
-    titulo="Receta - Crear"
-    if request.method == "POST":
-        form= RecetaForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('receta')
-        else:
-            print("Error")
-    else:
-        form= RecetaForm()
-    context={
-        'titulo':titulo,
-        'form':form
-    }
-    return render(request,'receta/recetaCrear.html',context)
+    formulario = recetaForm(request.POST or None, request.FILES or None)
+    if formulario.is_valid():
+        formulario.save()
+        return redirect('receta')
+    return render(request, 'receta/recetaCrear.html', {'formulario': formulario})
