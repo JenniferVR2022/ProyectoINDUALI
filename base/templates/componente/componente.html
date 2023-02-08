@@ -7,41 +7,56 @@
 
 <center>
   
-  <section id="botonesIngrediente">
+  <section id="botonesComponente">
   <section class="col-lg-12 button_añadir" >
    
     
     <form class="form-inline my-3 my-lg-3">
-          <a href="{% url 'ingrediente-crear'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR COMPONENTE </a>
+          <a href="{% url 'crear-componente'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR COMPONENTE </a>
     </form>
   
   </section > 
    </center>
 
-      <section id="tablaUsuario">
-      <section class="col-lg-12 table">
-          <div class=" text-center bg-white text-dark row g-6 border rounded">
-            <div class="row align-items-start">
-              <div class="col-12 table-responsive">
-                <table class="table" id="tabla-general"> 
-                  <thead class="thead-dark">
-                   
+   <br/>
+   <br/>
+   <br/>
+   <section id="tablaUsuario">
+     <section class="col-lg-12 table">
+       <div class="container text-center bg-white text-dark row g-6 border rounded">
+         <div class="row align-items-start">
+           <div class="col-12 table-responsive">
+             <table class="table" id="tabla-general"> 
+               <thead class="thead-dark">
                  <tr>
-                  <center><th scope="col">Código Componente</th></center>
-                  <center><th scope="col">Nombre Componente</th></center>
-                    </tr>
-              
-
-                  </thead>
-                  
-                </table>
-              </div>
-            </div>
-        </div>
-
-
-  <tbody>
-
+                   <th scope="col">Codigo Componente</th>
+                           <th scope="col">Nombre Componente</th>
+                           <th scope="col">Controles</th> 
+                           <th scope="col">Controles</th> 
+                 </tr>
+               </thead>
+               <tbody id="tblComponente">
+                 {% for items in componente%}
+                 <tr>
+                   <th scope="row">{{items.codComponente}}</th>
+                   <td>{{items.nomComponente}}</td>
+                   
+                   <td>
+                     <button type="button" class="btn btn-success">Editar</button>
+                   </td>
+                   <td>
+                     <button type="button" class="btn btn-warning">Inactivar</button>
+                   </td>
+                 </tr>
+                 {% endfor %}
+               </tbody>
+             </table>
+           </div>
+         </div>
+       </div>
+     </section>
+   </section>
+ 
 
 
 {% endblock contenido %}

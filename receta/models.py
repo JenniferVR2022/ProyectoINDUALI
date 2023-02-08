@@ -17,11 +17,14 @@ class Receta (models.Model):
           INACTIVO='0', _('Inactivo')
     estado=models.CharField(max_length=1,choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
     estandar=models.CharField(max_length=50, verbose_name="Estandar")
-    fkcodComponente=models.ForeignKey(Componente, on_delete=models.CASCADE, verbose_name="Código Componente")
-    fkcodIngrediente=models.ForeignKey(Ingrediente, on_delete=models.CASCADE, verbose_name="Código Componente")
-    super=models.ForeignKey(Usuario,verbose_name="Super",on_delete=models.CASCADE,related_name='Supervisor')
+    preparacion=models.TextField(verbose_name="Preparación", null=True)
+      
+  
+  
     def __str__(self):
-        return self.codReceta
+        fila = "Codigo: "+ self.codReceta + "Nombre: "+ self.nomReceta
+        return fila
+  
 
 class RecetaDetalle(models.Model):
       receta= models.ForeignKey(Receta, on_delete=models.CASCADE, verbose_name="Nombre Receta")
