@@ -15,33 +15,51 @@
    
     
     <form class="form-inline my-3 my-lg-3">
-          <a href="{ url ''}" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR CENTRO DE COSTOS </a>
+      <a href="{% url 'centroc-crear'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR CENTRO DE COSTOS </a>
     </form>
   
   </section > 
    </center>
 
-      <section id="tablaUsuario">
-      <section class="col-lg-12 table">
-          <div class="container text-center bg-white text-dark row g-6 border rounded">
-            <div class="row align-items-start">
-              <div class="col-12 table-responsive">
-                <table class="table table-bordered" id="tabla-general"> 
-                  <thead class="thead-dark">
-                   
+   <br/>
+   <br/>
+   <br/>
+   <section id="tablaUsuario">
+     <section class="col-lg-12 table">
+       <div class="container text-center bg-white text-dark row g-6 border rounded">
+         <div class="row align-items-start">
+           <div class="col-12 table-responsive">
+             <table class="table table-bordered" id="tabla-general"> 
+               <thead class="thead-dark">
                  <tr>
-                  <center><th scope="col">Código Centro Costos</th></center>
-                  <center><th scope="col">Nombre Centro Costos</th></center>
-                    </tr>
-                  </thead>
-                  
-                </table>
-              </div>
-            </div>
-        </div>
+                   <th scope="col">Codigo Centro de Costos</th>
+                           <th scope="col">Nombre Centro de Costos</th>
+                           <th scope="col">Controles</th> 
+                           <th scope="col">Controles</th> 
+                 </tr>
+               </thead>
+               <tbody id="tblcentroCostos">
+                 {% for items in centroCostos%}
+                 <tr>
+                   <th scope="row">{{items.codCentroCostos}}</th>
+                   <td>{{items.nomCentroCostos}}</td>
+                   <td>
+                     <button type="button" class="btn btn-success">Editar</button>
+                   </td>
+                   <td>
+                     <button type="button" class="btn btn-warning">Inactivar</button>
+                   </td>
+                 </tr>
+                 {% endfor %}
+               </tbody>
+             </table>
+           </div>
+         </div>
+       </div>
+     </section>
+   </section>
 
 
-  <tbody>
 
 
 
