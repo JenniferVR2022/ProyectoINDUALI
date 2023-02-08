@@ -17,6 +17,10 @@
     <link rel="stylesheet" type="text/css" href="{% static 'DataTables/datatables.min.css' %}"/>
     <title>Estandarizador</title>
 </head>
+
+<div class="media">
+    <img class="d-flex img-thumbnail w-80" src="{% static 'img/Cenefa.jpg' %}" width="auto" height="auto"></div>
+
     <body class="img-fondo-as">
         {% include 'partials/navbar.html' %}
     <!-- <div class="" > -->
@@ -25,9 +29,13 @@
             {% endblock contenido %}
         </div>
     <!-- </div> -->
+    
         {%include 'partials/footer.html' %}  
         {% include 'partials/js.html' %}
         {% block javascript %}
         {% endblock javascript %}
     </body>
+
+
+    
 </html>

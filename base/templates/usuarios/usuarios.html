@@ -5,35 +5,39 @@
 {% block contenido %}
 
 
-<center>
-  <section id="botonesIngrediente">
-  <section class="col-lg-12 button_añadir" >
-    <form class="form-inline my-3 my-lg-3">
-          <a href="{% url 'usuarios_crear'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR USUARIO </a>
-          <a href="{% url 'usuarios'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> EDITAR USUARIO </a>
-    </form>
-   </section > 
-   </center>
-     <section id="tablaUsuario">
-      <section class="col-lg-12 table">
-          <div class="container text-center bg-white text-dark row g-6 border rounded">
-            <div class="row align-items-start">
-              <div class="col-12 table-responsive">
-                <table class="table" id="tabla-general"> 
-                  <thead class="thead-dark">
-                    <tr>
-                      <th scope="col">Nombres</th>
-                      <th scope="col">Apellidos</th>
-                      <th scope="col">Tipo Documento</th>
-                      <th scope="col"># Documento</th>
-                      <th scope="col">Usuario</th>
-                      <th scope="col">Contraseña</th>
-                      <th scope="col">Correo Electronico</th>
-                      <th scope="col">Tipo Usuario</th>
-                      <th scope="col">Estado</th>
-                    </tr>
-                  </thead>
-                  
+    
+<form class="form-inline my-3 my-lg-3">
+  <a href="{% url 'usuarios_crear'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR USUARIO </a>
+</form>
+
+</section > 
+</center>
+
+<br/>
+<br/>
+<br/>
+<section id="tablaUsuario">
+  <section class="col-lg-12 table">
+      <div class="container text-center bg-white text-dark row g-6 border rounded">
+        <div class="row align-items-start">
+          <div class="col-12 table-responsive">
+            <table class="table" id="tabla-general"> 
+              <thead class="thead-dark">
+         <tr>
+          <th scope="col">Nombres</th>
+          <th scope="col">Apellidos</th>
+          <th scope="col">Tipo Documento</th>
+          <th scope="col"># Documento</th>
+          <th scope="col">Usuario</th>
+          <th scope="col">Contraseña</th>
+          <th scope="col">Correo Electronico</th>
+          <th scope="col">Tipo Usuario</th>
+          <th scope="col">Estado</th>
+         </tr>
+       </thead>
+     
+
+                 
                 </table>
               </div>
             </div>

@@ -1,92 +1,17 @@
 from django.shortcuts import render, redirect
-from componente.forms import ComponenteForm
 from componente.models import Componente
-from django.contrib import messages
-from usuarios.models import Usuario
-
+from componente.forms import componenteForm
 
 # Create your views here.
+
 def componente(request):
-    titulo='Componente'
-    componente=Componente.objects.all()
-    context={
-        'titulo':titulo,
-        'componente':componente
-    }
-    return render(request,'componente/componente.html',context)
+    componente = Componente.objects.all()
+    return render(request,'componente/componente.html',{'componente': componente})
 
 
-    ### cuerpo del modal ###
-    modal_title= ""
-    modal_txt= ""
-    modal_submit= ""
-    ########################
-
-    pk_receta = ""
-    tipo =None
-    form_update= None
-    form =RecetaForm()
-
-    if request.method == "POST" and 'form-crear' in request.POST:
-        form= RecetaForm(request.POST)
-        if form.is_valid():
-            super = form.save(commit=False)
-            super=Usuario.objects.get(user_id=request.user.id)
-            super.save()
-            messages.success(
-                request,f"La Receta {super.codReceta} ha sido abierta!"
-            )
-            if super.estado == 'Activo':
-                return redirect('f-d-activo', super.codReceta)
-            else:
-                return redirect('f-d-inactivo', super.codReceta)
-
-            return redirect('receta')
-        else:
-            form= RecetaForm(request.POST)
-            messages.error(
-                request,"Error al abrir la receta"       
-            )
-       
-
-    if request.method == "POST" and 'form-editar' in request.POST :
-        modal_status= 'show'
-        pk_receta = request.POST['pk']
-        receta= receta.objects.get(id=pk_receta)
-
-        ## cuerpo del modal ##
-        modal_title = f"Editar {receta}"
-        modal_submit="Editar"
-        #######################
-
-        tipo="editar"
-        form_update= recetaUpdateForm(instance=receta)
-        
-        
-        
-        if request.POST['tipo'] == 'editar':
-            pk_receta = request.POST['modal-pk']
-            receta = receta.objects.get(id=pk_receta)
-            form_update=recetaUpdateForm(request.POST, instance=receta)
-
-            if form_update.is_valid():
-                form_update.save()
-                messages.success(
-                    request,f"Se editó la receta {Receta.nomReceta} exitosamente!"
-                )
-                return redirect('receta')
-        
-    context={
-        'titulo':titulo,
-        'receta':receta,
-        'form':form,
-        'modal_status':modal_status,
-        'modal_submit': modal_submit,
-        'modal_title': modal_submit,
-        'modal_txt': modal_txt,
-        'pk': pk_receta,
-        'tipo': tipo,
-        'form_update':form_update
-
-    }
-    return render(request,'receta/receta.html',context)
+def crear_componente(request):
+    formulario = componenteForm(request.POST or None, request.FILES or None)
+    if formulario.is_valid():
+        formulario.save()
+        return redirect('componente')
+    return render(request, 'componente/crearComponente.html', {'formulario': formulario})
