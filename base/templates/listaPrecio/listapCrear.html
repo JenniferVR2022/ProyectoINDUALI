@@ -2,56 +2,46 @@
 
 {% load static %}
 {% block contenido %}
-      
-   <div class="container-usuario p-3 mb-2 bg-white text-dark row g-6 border rounded">
-  
-    <center><h3>Crear Ingrediente</h3></center>
-              <form class="row g-12" style="margin:100 ">
-                
-                <div class="col-5">
-                    <label for="inputAddress" class="form-label">Codigo Lista Precio</label>
-                    <input type="number" class="form-control" id="inputAddress" placeholder="Introduzca el codigo del ingrediente">
-                  </div>
-                  <div class="col-5">
-                    <label for="inputAddress2" class="form-label">Nombre Lista Precio</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="Introduzca el nombre del ingrediente"">
-                  </div>
-                  <div class="col-3">
-                      <label for="inputAddress2" class="form-label">Tipo De Pruducto</label>
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="Introduzca la UM del ingrediente">
-                    </div>
-              </form>
-            <center>
-              <form class="form-inline my-3 my-lg-3">
-              <button type="button" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR LISTA PRECIO </button>
-            </form>
-          </center>
-            </div>
-
-            <tbody>
-
-              {% for ingrediente in ingredientes %}
-              <tr>
-          
-                {% if ingrediente.estado != '3' %}
-                <td >{{ingrediente.codIngrediente}}</td>
-                <td>{{ingrediente.nomIngrediente}}</td>
-                <td>{{ingrediente.unidadMedida}}</td>
-                <td>{{ingrediente.cantidadMateriaPrima}}</td>
-                <td>{{ingrediente.estado}}</td>
-                <td><a class="btn btn-primary" href="{% url 'ingrediente-crear' ingrediente.id  %}"><i class="fas fa-edit"></i></a>
-                  
-                </td>
-                {% endif %}
-          
-          
-          
-          
-              </tr>
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+<section class="col-lg-12 table">
+  <div class="container container-general  p-3 mb-2 bg-white text-dark row g-6 border rounded">
+    <div class="row align-items-start">
+      <div class="col-12 ">
+        <h3 class="fw-bold mt-5 text-center">Crear Lista Precio</h3>
+        <hr class="border border-white border-2 opacity-50"/>
+        <form enctype="multipart/form-data" method="post">
+          <div class="row mt-5 p-3 shadow-lg rounded bg-white">
+            <div class="row">
+              {% csrf_token %}
+              {% for campo in formulario %}
+              <div class="col-12 col-md-6 col-xl-6 mb-3">
+                <label for="poliza" class="form-label">{{ campo.label  }}:</label>
+                <input 
+                  type="{{ campo.field.widget.input_type  }}" 
+                  class="form-control required" 
+                  id="" 
+                  name="{{ campo.name  }}" 
+                  placeholder="Escribe" 
+                >
+              </div>
               {% endfor %}
-          
-          
-          
-            </tbody>
-          
-        {% endblock contenido %}
+
+            </div>
+            <div class="col-12 help-text">{{ campo.errors }}</div>
+            <hr />
+            <div class="row text-center">
+              <div class="col-12 col-md-12 col-xl-12 mb-3">
+                <input type="submit" class="btn btn-primary" value="CREAR LISTA PRECIO">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>          
+</section>          
+  {% endblock contenido %}

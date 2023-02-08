@@ -5,3 +5,8 @@ class ListaPrecio (models.Model):
     codListaPrecio=models.CharField(max_length=50, verbose_name="Cod Lista Precio")
     nomListaPrecio=models.CharField(max_length=50, verbose_name="Nom Lista Precio")
     tipoLista=models.CharField(max_length=50, verbose_name="Tipo Lista")
+
+
+    def __str__(self):
+        fila = "Nombre: "+ self.nomListaPrecio + " - Tipo: " + self.tipoLista 
+        return fila
