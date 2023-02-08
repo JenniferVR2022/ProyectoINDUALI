@@ -33,6 +33,11 @@ def editar(request, id):
         return redirect('ingrediente')
     return render(request, 'ingrediente/editarIngrediente.html', {'formulario': formulario})
 
+
+#def logout_request(request):
+    logout(request)
+    messages.info(request, "Saliste Exitosamente")
+#return redirect("main:homepage")
 # def ingrediente_crear(request):
 #     titulo="Ingrediente - Crear"
 #     if request.method == "POST":

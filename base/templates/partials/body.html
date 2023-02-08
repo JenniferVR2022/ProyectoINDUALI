@@ -6,36 +6,38 @@
 
 <!DOCTYPE html>
 <html lang="en">
- <head>
+
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
     <!-- Google Font: Source Sans Pro -->
     {% block stylesheet %}
-    {% endblock stylesheet %} 
-    <link rel="stylesheet" type="text/css" href="{% static 'DataTables/datatables.min.css' %}"/>
+    {% endblock stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{% static 'DataTables/datatables.min.css' %}" />
     <title>Estandarizador</title>
 </head>
 
 <div class="media">
-    <img class="d-flex img-thumbnail w-80" src="{% static 'img/Cenefa.jpg' %}" width="auto" height="auto"></div>
+    <img class="d-flex img-thumbnail w-80" src="{% static 'img/Cenefa.jpg' %}" width="auto" height="auto">
+</div>
 
-    <body class="img-fondo-as">
-        {% include 'partials/navbar.html' %}
+<body class="img-fondo-as">
+    {% include 'partials/navbar.html' %}
     <!-- <div class="" > -->
-        <div class="container" >
-            {% block contenido %}
-            {% endblock contenido %}
-        </div>
+    <div class="container">
+        {% block contenido %}
+        {% endblock contenido %}
+    </div>
     <!-- </div> -->
-    
-        {%include 'partials/footer.html' %}  
-        {% include 'partials/js.html' %}
-        {% block javascript %}
-        {% endblock javascript %}
-    </body>
+
+    {%include 'partials/footer.html' %}
+    {% include 'partials/js.html' %}
+    {% block javascript %}
+    {% endblock javascript %}
+</body>
 
 
-    
+
 </html>
