@@ -41,26 +41,20 @@
                  <tr>
                    <th scope="row">{{items.codComponente}}</th>
                    <td>{{items.nomComponente}}</td>
-                   
                    <td>
-                     <button type="button" class="btn btn-success">Editar</button>
-                   </td>
-                   <td>
-                     <button type="button" class="btn btn-warning">Inactivar</button>
-                   </td>
-                 </tr>
-                 {% endfor %}
-               </tbody>
-             </table>
-           </div>
-         </div>
-       </div>
-     </section>
-   </section>
- 
-
-    <tbody>
-
-
-
-      {% endblock contenido %}
+                    <a type="button" class="btn btn-success" href="{% url 'editar-componente' items.id %}" role="button">Editar</a>
+                  </td>
+                  <td>
+                    <a type="button" class="btn btn-warning" href="{% url 'eliminar-componente' items.id %}"
+                      role="button">Inactivar</a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  {% endblock contenido %}

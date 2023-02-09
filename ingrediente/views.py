@@ -18,13 +18,13 @@ def ingrediente_crear(request):
     return render(request, 'ingrediente/ingredienteCrear.html', {'formulario': formulario})
 
 
-def eliminar(request, id):
+def eliminar(request,id):
     ingrediente = Ingrediente.objects.get(id=id)
     ingrediente.delete()
     return redirect('ingrediente')
 
 
-def editar(request, id):
+def editar(request,id):
     ingrediente = Ingrediente.objects.get(id=id)
     formulario = IngredienteForm(
         request.POST or None, request.FILES or None, instance=ingrediente)
