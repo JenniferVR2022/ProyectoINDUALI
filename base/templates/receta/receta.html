@@ -5,70 +5,59 @@
 {% block contenido %}
 
 <center>
-  
-  <section id="botonesReceta">
-  <section class="col-lg-12 button_añadir" >
-   
-    
-    <form class="form-inline my-3 my-lg-3">
-          <a href="{% url 'crear-receta'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR RECETA </a>
-    </form>
-  
-  </section > 
-   </center>
 
-   <br/>
-   <br/>
-   <br/>
-   <section id="tablaUsuario">
-     <section class="col-lg-12 table">
-       <div class="container text-center bg-white text-dark row g-6 border rounded">
-         <div class="row align-items-start">
-           <div class="col-12 table-responsive">
-             <table class="table table-bordered" id="tabla-general"> 
-               <thead class="thead-dark">
-                 <tr>
-                  <th scope="col">Codigo Receta</th>
-                            <th scope="col">Nombre Receta</th>
-                            <th scope="col">Estado</th>
-                            <th scope="col">Estandar</th>
-                            <th scope="col">Preparación
-                           </th>
-                            <th scope="col">Controles</th> 
-                            <th scope="col">Controles</th>
-                 </tr>
-               </thead>
-           
-               <tbody id="tblReceta">
-                 {% for items in Receta%}
-                 <tr>
-                   <th scope="row">{{items.codReceta}}</th>
-                   <td>{{items.nomReceta}}</td>
-                   <td>{{items.estado}}</td>
-                   <td>{{items.estandar}}</td>
-                   <td>{{items.preparacion}}</td>
-                        <td>
-                     <button type="button" class="btn btn-success">Editar</button>
-                   </td>
-                   <td>
-                     <button type="button" class="btn btn-warning">Inactivar</button>
-                   </td>
-                 </tr>
-                 {% endfor %}
-               </tbody>
-             </table>
-           </div>
-         </div>
-       </div>
-     </section>
-   </section>
- 
+  <section id="botonesReceta">
+    <section class="col-lg-12 button_añadir">
+      <a href="{% url 'crear-receta'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR RECETA </a>
+
+    </section>
+</center>
+
+<br />
+<br />
+<br />
+<section id="tablaUsuario">
+  <section class="col-lg-12 table">
+    <div class="container text-center bg-white text-dark row g-6 border rounded">
+      <div class="row align-items-start">
+        <div class="col-12 table-responsive">
+          <table class="table table-bordered" id="tabla-general">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Codigo Receta</th>
+                <th scope="col">Nombre Receta</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Estandar</th>
+                <th scope="col">Preparación</th>
+                <th scope="col">Controles</th>
+                <th scope="col">Controles</th>
+              </tr>
+            </thead>
+
+            <tbody id="tblReceta">
+              {% for items in receta%}
+              <tr>
+                <th scope="row">{{items.codReceta}}</th>
+                <td>{{items.nomReceta}}</td>
+                <td>{{items.estado}}</td>
+                <td>{{items.estandar}}</td>
+                <td>{{items.preparacion}}</td>
+                <td>
+                  <button type="button" class="btn btn-success">Editar</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-warning">Inactivar</button>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
 
 
 {% endblock contenido %}
-
-
-
-
-
-

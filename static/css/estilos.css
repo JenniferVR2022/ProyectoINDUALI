@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
 }
@@ -8,17 +8,18 @@ header {
     position: relative;
     margin: 0px;
 }
-.img-fondo{
+
+.img-fondo {
     background-image: url('../img/alimentos-ricos-en-minerales.jpg');
     opacity: 1;
-    }
+}
 
 
 body {
     height: 400px;
     background-image: url("https://3.bp.blogspot.com/-jx4iOrTkN-o/XGCM5wiWqpI/AAAAAAAAEfQ/oenvBoXaPMsaI-XV9bFCwF-aWsKCs1f2QCLcBGAs/s1600/alimentos-ricos-en-minerales.jpg");
     background-size: cover;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-position: center center;
     display: grid;
     min-height: 100vh;
@@ -26,7 +27,7 @@ body {
 }
 
 .container-usuario {
-    position:fixed;
+    position: fixed;
     opacity: 0.9;
     margin-top: 10px;
     margin-right: 100px;
@@ -36,7 +37,7 @@ body {
 }
 
 .container-ingrediente {
-    position:auto;
+    position: auto;
     opacity: 0.9;
     margin-top: 200px;
     margin-right: 300px;
@@ -45,8 +46,8 @@ body {
     border: 2px solid black;
 }
 
-.container-tablaIngrediente{
-    position:auto;
+.container-tablaIngrediente {
+    position: auto;
     opacity: 0.9;
     margin-top: 100px;
     margin-right: 300px;
@@ -55,8 +56,10 @@ body {
     border: 2px solid black;
 }
 
-.container-estandarizador1{
-    position:fixed;top: 250px;left: 100px;
+.container-estandarizador1 {
+    position: fixed;
+    top: 250px;
+    left: 100px;
     opacity: 0.9;
     margin-top: 10px;
     margin-right: 200px;
@@ -64,8 +67,11 @@ body {
     margin-left: 200px;
     border: 2px solid black;
 }
-.container-estandarizador2{
-    position:fixed;top: 460px;left: 100px;
+
+.container-estandarizador2 {
+    position: fixed;
+    top: 460px;
+    left: 100px;
     opacity: 0.9;
     margin-top: 10px;
     margin-right: 200px;
@@ -73,8 +79,11 @@ body {
     margin-left: 200px;
     border: 2px solid black;
 }
-.container-estandarizador3{
-    position:fixed;top: 250px;left: 555px;
+
+.container-estandarizador3 {
+    position: fixed;
+    top: 250px;
+    left: 555px;
     opacity: 0.9;
     margin-top: 10px;
     margin-right: 200px;
@@ -84,8 +93,8 @@ body {
 
 }
 
-.container-verReceta{
-    position:fixed;
+.container-verReceta {
+    position: fixed;
     opacity: 0.9;
     margin-top: 10px;
     margin-right: 200px;
@@ -95,17 +104,17 @@ body {
 
 }
 
-    
-  .other-section{
-      height: 400px;
-  }
+
+.other-section {
+    height: 400px;
+}
 
 .bigicon {
     font-size: 35px;
     color: #36A0FF;
 }
 
-#section{
+#section {
     width: 50px;
     margin: auto;
     margin: top 0px;
@@ -123,10 +132,10 @@ body {
     padding: 100;
     min-width: 100vw;
     min-height: 100vh;
-    width: 100%; 
+    width: 100%;
     height: 100%;
-    
-    
+
+
 }
 
 #central {
@@ -136,18 +145,12 @@ body {
 
 .titulo {
     font-size: 250%;
-    color:#000000;
+    color: #000000;
     text-align: center;
     margin-bottom: 20px;
 }
 
-#ingresook 
-
-
-
-#modalesConfirmacion
-
-.form-register {
+#ingresook #modalesConfirmacion .form-register {
     width: 400px;
     background: #aeb3b8de;
     padding: 30px;
@@ -157,19 +160,19 @@ body {
     font-family: 'calibri';
     color: rgba(233, 225, 225, 0.932);
     box-shadow: 7px 13px 37px rgb(170, 166, 166);
-  }
-  
-  .form-register h4 {
+}
+
+.form-register h4 {
     font-size: 22px;
     margin-bottom: 20px;
-  }
+}
 
 
 
-  .footer{
+.footer {
     text-align: center;
     font-family: sans-serif;
     color: whitesmoke;
     width: 100%;
-   
+
 }
