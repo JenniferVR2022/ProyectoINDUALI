@@ -1,46 +1,48 @@
 {% load static %}
 
-<div class="media">
-    <img class="img-thumbnail img-fluid" src="{% static 'img/Cenefa.jpg' %}" width="auto" height="auto">
-</div>
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'principal' %}">
-      <img class="img-thumbnail img-fluid" src="{% static 'img/Logo.jpg' %}" width="120" height="30"> 
+      <img class="img-thumbnail img-fluid" src="{% static 'img/Logo.jpg' %}" width="120" height="30">
     </a>
     <form class="container-fluid justify-content-start">
       <div class="btn-group">
         <button type="button" class="btn btn-secondary">Usuario</button>
+
         <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false"></button>
         <ul class="dropdown-menu"> 
+
+
           <li><a class="dropdown-item" <a href="{% url 'usuarios_crear' %}">Nuevo</a></li>
           <li><a class="dropdown-item" href="{% url 'usuarios' %}">Usuarios</a></li>
           
+
         </ul>
-      </div> 
+      </div>
       <div class="btn-group">
         <button type="button" class="btn btn-secondary">Receta</button>
+
         <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false"></button>
         <ul class="dropdown-menu">                   
+
           <li><a class="dropdown-item" href="{% url 'receta' %}">Recetas</a></li>
           <li><a class="dropdown-item" href="{% url 'ingrediente' %}">Ingredientes</a></li>
+
           <li><a class="dropdown-item" href="{% url 'componente' %}" class="nav-link">Componente</a></li>
         </ul>
       </div>
       <div class="btn-group">
         <button type="button" class="btn btn-secondary">Estandarizador</button>
-        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false"></button>
+        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
+          aria-expanded="false"></button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" href="#">Estandarizar</a><li>
+
+          <li><a class="dropdown-item" href="{% url 'estandarizador' %}">Estandarizar</a><li>
           <li><a class="dropdown-item" href="{% url 'centroCostos' %}" class="nav-link">Centro Costos</a></li>
-          <li><a class="dropdown-item" href="#">Lista de precios</a><li>
+          <li><a class="dropdown-item" href="{% url 'listaPrecio' %}">Lista de precios</a><li>
+
         </ul>
       </div>
-    </form> 
-  </div>   
+    </form>
+  </div>
 </nav>
-
-
-
-

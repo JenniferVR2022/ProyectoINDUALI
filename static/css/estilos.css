@@ -20,6 +20,9 @@ body {
     background-size: cover;
     background-repeat:no-repeat;
     background-position: center center;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
 }
 
 .container-usuario {
@@ -163,11 +166,10 @@ body {
 
 
 
-footer{
+  .footer{
     text-align: center;
     font-family: sans-serif;
     color: whitesmoke;
     width: 100%;
-    bottom: 0;
-    position:fixed 
+   
 }

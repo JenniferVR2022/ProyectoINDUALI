@@ -2,46 +2,48 @@
 
 {% load static %}
 {% block contenido %}
-      
-   <div class="container-usuario p-3 mb-2 bg-white text-dark row g-6 border rounded">
-  
-    <center><h3>Editar Ingrediente</h3></center>
-              <form class="row g-12" style="margin:100 ">
-                
-                <div class="col-5">
-                    <label for="inputAddress" class="form-label">Codigo Ingrediente</label>
-                    <input type="number" class="form-control" id="inputAddress" placeholder="Introduzca el codigo del ingrediente">
-                  </div>
-                  <div class="col-5">
-                    <label for="inputAddress2" class="form-label">Nombre Ingrediente</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="Introduzca el nombre del ingrediente"">
-                  </div>
-                  <div class="col-3">
-                      <label for="inputAddress2" class="form-label">Unidad de medida</label>
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="Introduzca la UM del ingrediente">
-                    </div>
-                <div class="col-md-4">
-                  <label for="inputAddress2" class="form-label">Cantidad de materia prima</label>
-                  <input type="text" class="form-control" id="inputAddress2" placeholder="Introduzca la CMP del ingrediente">
-                </div>
-              </form>
-              <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
-          Activar Ingrediente
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
-          Inactivar Ingrediente
-        </label>
-      </div>
-            <center>
-         <form class="form-inline my-3 my-lg-3">
-         <button type="button" class="btn btn-primary"><i class="bi bi-card-list"></i> Guardar Cambios </button>
-      </form>
-        </center>
+
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+<section class="col-lg-12 table">
+  <div class="container container-general  p-3 mb-2 bg-white text-dark row g-6 border rounded">
+    <div class="row align-items-start">
+      <div class="col-12 ">
+        <h3 class="fw-bold mt-5 text-center">Editar Ingrediente</h3>
+        <hr class="border border-white border-2 opacity-50"/>
+        <form enctype="multipart/form-data" method="post">
+          <div class="row mt-5 p-3 shadow-lg rounded bg-white">
+            <div class="row">
+              {% csrf_token %}
+              {% for campo in formulario %}
+              <div class="col-12 col-md-6 col-xl-6 mb-3">
+                <label for="poliza" class="form-label">{{ campo.label  }}:</label>
+                <input 
+                  type="{{ campo.field.widget.input_type  }}" 
+                  class="form-control required" 
+                  id="" 
+                  name="{{ campo.name  }}" 
+                  placeholder="Escribe" 
+                  value="{{ campo.value | default:'' }}"
+                >
+              </div>
+              {% endfor %}
+
+            </div>
+            <div class="col-12 help-text">{{ campo.errors }}</div>
+            <hr />
+            <div class="row text-center">
+              <div class="col-12 col-md-12 col-xl-12 mb-3">
+                <input type="submit" class="btn btn-primary" value="EDITAR INGREDIENTE">
+              </div>
+            </div>
           </div>
-              
-   {% endblock contenido %}
+        </form>
+      </div>
+    </div>
+  </div>          
+</section>  
+{% endblock contenido %}
