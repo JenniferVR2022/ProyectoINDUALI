@@ -20,7 +20,8 @@ def ingrediente_crear(request):
 
 def eliminar(request, id):
     ingrediente = Ingrediente.objects.get(id=id)
-    ingrediente.delete()
+    ingrediente.estado = False
+    ingrediente.save()
     return redirect('ingrediente')
 
 
@@ -34,10 +35,10 @@ def editar(request, id):
     return render(request, 'ingrediente/editarIngrediente.html', {'formulario': formulario})
 
 
-#def logout_request(request):
+# def logout_request(request):
     logout(request)
     messages.info(request, "Saliste Exitosamente")
-#return redirect("main:homepage")
+# return redirect("main:homepage")
 # def ingrediente_crear(request):
 #     titulo="Ingrediente - Crear"
 #     if request.method == "POST":

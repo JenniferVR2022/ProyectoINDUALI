@@ -27,6 +27,7 @@
             </thead>
             <tbody id="tblIngredientes">
               {% for items in ingrediente%} 
+              {% if items.estado == True %} 
               <tr>
                 <th scope="row">{{items.codIngrediente}}</th>
                 <td>{{items.nomIngrediente}}</td>
@@ -40,6 +41,7 @@
                     role="button">Inactivar</a>
                 </td>
               </tr>
+              {% endif %}
               {% endfor %}
             </tbody>
           </table>
