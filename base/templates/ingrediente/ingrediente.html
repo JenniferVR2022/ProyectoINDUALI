@@ -32,11 +32,59 @@
               <td>{{items.unidadMedida}}</td>
               <td>{{items.cantidadMateriaPrima}}</td>
               <td>
-                <a type="button" class="btn btn-success" href="{% url 'editar' items.id %}" role="button">Editar</a>
+                
+                <!-- Boton disparar Modal -->
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Editar
+                </button>
+                <!-- Inicio Modal Editar -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Registro</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        ¿Desea editar el registro seleccionado?
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                        <a type="button" class="btn btn-success" href="{% url 'editar' items.id %}"
+                          role="button">Si</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Final modal Editar -->
               </td>
               <td>
-                <a type="button" class="btn btn-warning" href="{% url 'eliminar' items.id %}"
-                  role="button">Inactivar</a>
+                <!-- Boton disparar Modal Inactivar -->
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#InactivarModal">
+                  Inactivar
+                </button>
+                <!-- Inicio Modal Inactivar -->
+                <div class="modal fade" id="InactivarModal" tabindex="-1" aria-labelledby="InactivarModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="InactivarModalLabel">Inactivar Registro</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        ¿Esta seguro que desea inactivar el registro?
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">No</button>
+                        <a type="button" class="btn btn-warning" href="{% url 'eliminar' items.id %}"
+                          role="button">Si</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Final modal Inactivar -->
               </td>
             </tr>
             {% endif %}
