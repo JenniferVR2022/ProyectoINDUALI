@@ -8,75 +8,72 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+
+
 @login_required(login_url='inicio')
 def usuarios(request):
-    titulo="Usuarios"
-    usuarios= Usuario.objects.all()
-    context={
-        'titulo':titulo,
-        'usuarios':usuarios
+    titulo = "Usuarios"
+    usuarios = Usuario.objects.all()
+    context = {
+        'titulo': titulo,
+        'usuarios': usuarios
     }
-    return render(request,'usuarios/usuarios.html',context)
+    return render(request, 'usuarios/usuarios.html', context)
 
 
 def usuarios_crear(request):
-    titulo="Usuarios - Crear"
+    titulo = "Usuarios - Crear"
     if request.method == "POST":
-        form= UsuarioForm(request.POST, request.FILES)
+        form = UsuarioForm(request.POST, request.FILES)
         if form.is_valid():
             print("El usuario se guardo correctamente")
             return redirect('usuarios')
         else:
-             print("El usuario no se almaceno ")
+            print("El usuario no se almaceno ")
     else:
-        form=UsuarioForm ()        
-    
-    context={
-        "form":form
-    }
-    return render(request,'usuarios/usuarios_crear.html',context)
+        form = UsuarioForm()
 
+    context = {
+        "form": form
+    }
+    return render(request, 'usuarios/usuarios_crear.html', context)
 
 
 def usuarios_editar(request, pk):
-    titulo="Usuarios - Editar"
-    usuario=Usuario.objects.get(id=pk)
-    if request.method =='POST':
-        form=UsuarioForm(request.POST, intance=usuario)
+    titulo = "Usuarios - Editar"
+    usuario = Usuario.objects.get(id=pk)
+    if request.method == 'POST':
+        form = UsuarioForm(request.POST, intance=usuario)
         if form.is_valid():
             form.save()
-            
+
             return redirect('usuarios')
         else:
-             print("Error al guardar los cambios")
+            print("Error al guardar los cambios")
     else:
-        form=UsuarioForm(instance=usuario)       
-    
-    context={
-        'titulo':titulo,
-        "form":form
+        form = UsuarioForm(instance=usuario)
+
+    context = {
+        'titulo': titulo,
+        "form": form
     }
-    return render(request,'usuarios/usuarios_crear.html',context)
-
-
-
+    return render(request, 'usuarios/usuarios_crear.html', context)
 
 
 def usuarios_editar(request, pk):
-    titulo="Usuarios - Editar"
-    usuario= Usuario.objects.get(id=pk)
+    titulo = "Usuarios - Editar"
+    usuario = Usuario.objects.get(id=pk)
     if request.method == "POST":
-        form= UsuarioForm(request.POST, instance=usuario)
+        form = UsuarioForm(request.POST, instance=usuario)
         if form.is_valid():
             form.save()
             return redirect('usuarios')
         else:
             print("Error al guardar")
     else:
-        form= UsuarioForm(instance=usuario)
-    context={
-        'titulo':titulo,
-        'form':form
+        form = UsuarioForm(instance=usuario)
+    context = {
+        'titulo': titulo,
+        'form': form
     }
-    return render(request,'partials/crear.html',context)
-
+    return render(request, 'partials/crear.html', context)
