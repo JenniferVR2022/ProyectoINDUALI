@@ -7,13 +7,22 @@
     <section id="botonAñadir">
     <section class="col-lg-12 button_añadir" >
      
-       <form class="form-inline my-7 my-lg-3">
-        <button type="button" class="btn btn-primary"><i class="bi-pencil-square"></i> SELECCIONAR RECETA </button>
-        <button type="button" class="btn btn-primary"><i class="bi-pencil-square"></i> SELECCIONAR CENTRO DE COSTOS </button>
-        <button type="button" class="btn btn-primary"><i class="bi-pencil-square"></i> SELECCIONAR LISTA DE PRECIOS</button>
-        <a href="{% url 'agregar-receta'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> AGREGAR RECETA </a>
+      <div class="bg-light m-3 p-3 rounded">
+        <div class="form-group">     
+          <form method="POST">
+          <label for="exampleInputEmail1">SELECCIONAR RECETA</label><br/>
+          <select class="selectpicker" data-live-search="true">
+            
+            {% for receta in recetas  %}
+            <option value="{{receta.id}}">{{receta.nomReceta}}</option>
+            {% endfor %}
+              
+          
+          </select>
+        </form>                                                                             
+         </div>
+        </div>
 
-      </form>
      
     </section >
     </center>
