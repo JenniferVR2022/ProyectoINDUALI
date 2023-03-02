@@ -1,11 +1,14 @@
 from django.shortcuts import render
-
+from receta.models import Receta
 
 # Create your views here.
 
-def estandarizador (request):
+def estandarizador (request,receta=0):
+    recetas= Receta.objects.filter(estado="1")
+    print("###########################")
+    receta_obj=Receta.objects.filter(id=receta)
     context={
-        
+        "recetas": recetas
         }
     return render(request,'estandarizador/estandarizador.html',context)
 
