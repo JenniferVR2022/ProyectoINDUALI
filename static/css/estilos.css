@@ -23,7 +23,7 @@ body {
     background-attachment: fixed;
     display: grid; 
     min-height: 100vh;
-    grid-template-rows: 90px 75px auto;
+    grid-template-rows: 80px 90px auto 80px;
     position: relative;
  
 }
@@ -71,7 +71,7 @@ body {
     margin-left: 200px;
     border: 2px solid black;
 }
-
+    
 .container-estandarizador2 {
     position: absolute;
     top: 460px;
@@ -174,16 +174,18 @@ body {
 
 
 .footer {
-    text-align: center;
-    font-family: sans-serif;
+    background-image: url('../img/Cenefa.jpg'); 
+    background-repeat: repeat-x;
+    background-size: cover;
     color: whitesmoke;
-    width: 100%;
-    bottom: 0;
-    position: absolute;
+    
+
 }
 
 .media{ 
-   background-image: url('../img/Cenefa.jpg'); 
+    background-image: url('../img/Cenefa.jpg'); 
    background-repeat: repeat-x;
    background-size: cover;
+    color: whitesmoke;   
+   
 }
