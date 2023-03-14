@@ -1,6 +1,9 @@
 {% extends 'partials/body.html' %}
 {% block contenido %}
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
 
      
@@ -18,17 +21,18 @@
           </select>
           </form>  
           
-          <form method="POST">
-            <label for="exampleInputEmail1">SELECCIONAR CENTRO DE COSTOS</label><br/>
-            <select class="selectpicker" data-live-search="true">
-              
-              {% for CentroCosto in centroCostos  %}
-              <option value="{{centroCostos.id}}">{{centroCosto.nomCentroCostos}}</option>
-              {% endfor %}
-                
+          <select id="centroCosto">
+            {% for centroCosto in centroCostos %}
+              <option value="{{ centroCosto.id }}">{{ centroCosto.nomCentroCostos }}</option>
+            {% endfor %}
+          </select>
+          
+          <script>
+            $(document).ready(function() {
+              $('#centroCosto').select2();
+            });
+          </script>
             
-            </select>
-            </form>      
 
             <form method="POST">
               <label for="exampleInputEmail1">SELECCIONAR LISTA DE PRECIOS</label><br/>
@@ -198,5 +202,6 @@
 </div>
 
 </section>
+
 
 {% endblock contenido %}  
