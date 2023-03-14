@@ -38,8 +38,8 @@
               <label for="exampleInputEmail1">SELECCIONAR LISTA DE PRECIOS</label><br/>
               <select class="selectpicker" data-live-search="true">
                 
-                {% for receta in recetas  %}
-                <option value="{{receta.id}}">{{receta.nomReceta}}</option>
+                {% for listaPrecio in listaPrecios %}
+                <option value="{{listaPrecio.id}}">{{listaPrecio.nomListaPrecio}}</option>
                 {% endfor %}
                   
               
