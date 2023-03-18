@@ -28,7 +28,27 @@ body {
  
 }
 
-
+#seccion-formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+  
+  
+  #idListaPrecio, #idCentroCostos, #idReceta {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  #btn-agregar-receta {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  
+  
+  
 
 .container-usuario {
     position: fixed;

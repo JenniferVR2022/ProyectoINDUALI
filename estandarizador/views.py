@@ -1,16 +1,22 @@
 from django.shortcuts import render
+from estandarizador.models import Estandarizador
+from listaPrecio.models import ListaPrecio
+from centroCostos.models import CentroCosto
 from receta.models import Receta
 
-# Create your views here.
+def estandarizador(request):
+    lista_precios = ListaPrecio.objects.values_list('nomListaPrecio', flat=True)
+    centro_costos = CentroCosto.objects.values_list('nomCentroCostos', flat=True)
+    recetas = Receta.objects.values_list('nomReceta', flat=True)
 
-def estandarizador (request,receta=0):
-    recetas= Receta.objects.filter(estado="1")
-    print("###########################")
-    receta_obj=Receta.objects.filter(id=receta)
-    context={
-        "recetas": recetas
-        }
-    return render(request,'estandarizador/estandarizador.html',context)
+    context = {
+        'lista_precios': lista_precios,
+        'centro_costos': centro_costos,
+        'recetas': recetas,
+    }
+
+    return render(request, 'estandarizador/estandarizador.html', context)
+
 
 
 def agregar_receta(request):
