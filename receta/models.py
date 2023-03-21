@@ -16,9 +16,8 @@ class Receta (models.Model):
     estado=models.CharField(max_length=1,choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
     estandar=models.CharField(max_length=50, verbose_name="Estandar")
     preparacion=models.TextField(verbose_name="Preparación", null=True)
+    
       
-  
-  
     def __str__(self):
         fila = "Codigo: "+ self.codReceta + "Nombre: "+ self.nomReceta
         return fila
