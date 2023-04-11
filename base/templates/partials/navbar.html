@@ -37,6 +37,18 @@
           <li>
         </ul>
       </div>
+      <div class="flex-grow-1 d-flex align-items-center ml-auto">
+        <div class id="perfil"></div>
+        <div class="flex-shrink-0 dropdown">
+          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://img.freepik.com/iconos-gratis/usuario_318-522234.jpg?size=338&ext=jpg&uid=R90929373&ga=GA1.1.641344063.1674585076&semt=ais" alt="user" width="32" height="32" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="dropdownUser2" style="">
+            <li><a class="dropdown-item" href="{% url 'logout' %}">Salir</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
     </form>
   </div>
 </nav>

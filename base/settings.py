@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
-
+from django.urls import reverse_lazy
 
 
 
@@ -156,4 +156,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL= 'principal'
+LOGIN_REDIRECT_URL= reverse_lazy ('principal')
+AUTH_USER_MODEL = 'usuarios.Usuario'

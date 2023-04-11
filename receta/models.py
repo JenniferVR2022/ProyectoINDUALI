@@ -7,21 +7,24 @@ from ingrediente.models import Ingrediente
 from usuarios.models import Usuario
 
 # Create your models here.
-class Receta (models.Model):
-    codReceta=models.CharField(max_length=50, verbose_name="Código Receta")
-    nomReceta=models.CharField(max_length=50, verbose_name="Nombre Receta")
+class Receta(models.Model):
+    codReceta = models.CharField(max_length=50, verbose_name="Código Receta")
+    nomReceta = models.CharField(max_length=50, verbose_name="Nombre Receta")
+    
     class Estado(models.TextChoices):
-      ACTIVO='1', _('Activo')
-      INACTIVO='0', _('Inactivo')
-    estado=models.CharField(max_length=1,choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
-    estandar=models.CharField(max_length=50, verbose_name="Estandar")
-    preparacion=models.TextField(verbose_name="Preparación", null=True)
-      
-  
-  
+        ACTIVO = 'True', 'Activo'
+        INACTIVO = 'False', 'Inactivo'
+        
+    estado = models.CharField(max_length=10, choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
+    estandar = models.CharField(max_length=50, verbose_name="Estandar")
+    preparacion = models.TextField(verbose_name="Preparación", null=True)
+    codComponente = models.OneToOneField(Componente, on_delete=models.CASCADE)
+    ingrediente = models.ForeignKey(Ingrediente, on_delete=models.CASCADE)
+
     def __str__(self):
-        fila = "Codigo: "+ self.codReceta + "Nombre: "+ self.nomReceta
+        fila = "Codigo: " + self.codReceta + " Nombre: " + self.nomReceta
         return fila
+  
   
 
 # class RecetaDetalle(models.Model):

@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
-@login_required(login_url='inicio')
+
 def usuarios(request):
     titulo = "Usuarios"
     usuarios = Usuario.objects.all()
@@ -77,3 +77,5 @@ def usuarios_editar(request, pk):
         'form': form
     }
     return render(request, 'partials/crear.html', context)
+
+

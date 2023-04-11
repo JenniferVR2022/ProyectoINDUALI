@@ -1,7 +1,7 @@
 from django.forms import ModelForm, widgets
 from django_select2 import forms as s2forms
 from receta.models import Receta
-
+from django import forms
 
 class IngredienteWidget(s2forms.ModelSelect2Widget):
     search_fields ={
@@ -10,7 +10,12 @@ class IngredienteWidget(s2forms.ModelSelect2Widget):
     }
 
 
-
+class RecetaForm(forms.ModelForm):
+    estado = forms.ChoiceField(choices=Receta.Estado.choices)
+    
+    class Meta:
+        model = Receta
+        fields = ['codReceta', 'nomReceta', 'estado', 'estandar', 'preparacion', 'codComponente', 'ingrediente']
 
 
 
