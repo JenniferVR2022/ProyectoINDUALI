@@ -9,15 +9,12 @@ def receta(request):
     receta = Receta.objects.all()
     return render(request,'receta/receta.html',{'receta': receta})
 
-
 def receta_crear(request):
     formulario = recetaForm(request.POST or None, request.FILES or None)
     if formulario.is_valid():
         formulario.save()
         return redirect('receta')
     return render(request, 'receta/recetaCrear.html', {'formulario': formulario})
-from django.views.decorators.http import require_POST
-
 
 def receta_agregar(request):
     Ingredientes = Ingrediente.objects.values_list('nomIngrediente', flat=True)
@@ -26,3 +23,18 @@ def receta_agregar(request):
     }
     return render(request, 'receta/recetaAgregar.html', context)
 
+def eliminar(request,id):
+    receta = Receta.objects.get(id=id)
+    receta.estado = False
+    receta.save()
+    return redirect('receta')
+
+
+def editarR(request,id):
+    receta = Receta.objects.get(id=id)
+    formulario2 = recetaForm(
+        request.POST or None, request.FILES or None, instance=receta)
+    if formulario2.is_valid() and request.POST:
+        formulario2.save()
+        return redirect('receta')
+    return render(request, 'receta/editarReceta.html', {'formulario2': formulario2})

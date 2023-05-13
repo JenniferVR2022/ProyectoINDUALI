@@ -12,6 +12,10 @@
             <div class="mb-md-5 mt-md-4 pb-5">
               <h2 class="fw-bold mb-2 text-uppercase">Estandarizador</h2>
               <p class="text-white-50 mb-5">Por favor ingrese los datos de registro</p>
+
+
+              {% csrf_token %}
+              
               <div class="form-outline form-white mb-5">
                 <input type="email" id="typeEmailX" class="form-control form-control-lg" />
                 <h3 label class="form-label" for="typeEmailX">Usuario</label></h3>

@@ -23,6 +23,10 @@ class Receta (models.Model):
         fila = "Codigo: "+ self.codReceta + "Nombre: "+ self.nomReceta
         return fila
   
+class Meta:
+        verbose_name = "Receta"
+        verbose_name_plural = "Recetas"
+
 
 #class RecetaDetalle(models.Model):
  #      receta= models.ForeignKey(Receta, on_delete=models.CASCADE, verbose_name="Nombre Receta")
