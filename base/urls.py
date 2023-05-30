@@ -15,8 +15,7 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.conf import settings
-from django.contrib.auth.views import login,logout_then_login
-from django.contrib.auth import login,logout
+from django.contrib.auth.views import LoginView as login
 from base.views import logout_user
 from django.contrib import admin
 from django.urls import path, include
@@ -27,7 +26,7 @@ from base.views import error_404, principal
 handler404 = error_404
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', auth_views.loginViem.as_view('template_name':'base/ingreso.html'. name ='login')),
+    path('', login.as_view(), name='inicio'),
     path('logout/', logout_user, name="logout"),
     # path('logout/', views.logout_request, name="logout"),
     path('principal/', principal, name='principal'),

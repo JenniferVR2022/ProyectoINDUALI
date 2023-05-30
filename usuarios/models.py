@@ -13,15 +13,16 @@ class Usuario (models.Model):
         CC='C.C', _('Cédula de Ciudadanía')
         CE='C.E', _('Cédula de Extranjería')
         PA='P.A', _('Pasaporte')
-    tipoDocumento=models.CharField(max_length=4,choices=TipoDocumento.choices, default=TipoDocumento.CC, verbose_name="Tipo Documento")
+        OT='Otro', _('Otro Tipo de Documento')
+    tipoDocumento=models.CharField(max_length=20,choices=TipoDocumento.choices, default=TipoDocumento.CC, verbose_name="Tipo Documento")
     documento=models.CharField(unique=True, max_length=50, verbose_name="Número Documento")
-    
+    telefono=models.CharField(max_length=20, verbose_name="Teléfono")
    
     class TipoUsuario(models.TextChoices):
         Administrador='Administrador', _('Administrador')
-        Estandar='Estandar', _('Estandar')
+        Super='Super', _('Super')
         Invitado='Invitado', _('Invitado')
-    tipoUsuario=models.CharField(max_length=13,choices=TipoUsuario.choices, default=TipoUsuario.Invitado, verbose_name="Tipo Usuario")
+    tipoUsuario=models.CharField(max_length=20,choices=TipoUsuario.choices, default=TipoUsuario.Invitado, verbose_name="Tipo Usuario")
        
     class Estado(models.TextChoices):
           ACTIVO='1', _('Activo')
@@ -29,7 +30,7 @@ class Usuario (models.Model):
     estado=models.CharField(max_length=1, choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
     user=models.ForeignKey(User, on_delete= models.CASCADE)
     nombreUsuario=models.CharField(max_length=50, verbose_name="Nombre Usuario")
-    password=models.CharField(max_length=20, verbose_name="Contraseña")
+    clave=models.CharField(max_length=20, verbose_name="Contraseña")
    
     def __str__(self)->str:
         return "%s %s" %(self.nombres, self.apellidos)   

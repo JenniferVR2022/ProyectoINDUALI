@@ -4,62 +4,60 @@
 
 {% block contenido %}
 
-<div class="container-componente" >
-  <div class="clearfix" ng-if="$index%3==2">
-    <div class="table table-condensed">
-         
-<table class="table table-bordered table-hover table-sortable" id="tab_logic">
-  <thead>
-    <tr>
-      <th scope="col">Nombres</th>
-      <th scope="col">Apellidos</th>
-      <th scope="col">Tipo Documento</th>
-      <th scope="col"># Documento</th>
-      <th scope="col">Usuario</th>
-      <th scope="col">Contraseña</th>
-      <th scope="col">Correo Electronico</th>
-      <th scope="col">Tipo Usuario</th>
-      <th scope="col">Estado</th>
+<form class="form-inline my-3 my-lg-3">
+  <a href="{% url 'usuarios_crear'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR USUARIO </a>
+</form>
 
-      <th scope="col">Permisos</th>
+</section>
+<br />
+<br />
+<br />
+<section id="tablaUsuario">
+  <section class="col-lg-12 table">
+    <div class="container text-center bg-white text-dark row g-6 border rounded">
+      <div class="row align-items-start">
+        <div class="col-12 table-responsive">
+          <table class="table" id="tabla-general">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Nombres</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Tipo Documento</th>
+                <th scope="col"># Documento</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Contraseña</th>
+                <th scope="col">Correo Electronico</th>
+                <th scope="col">Tipo Usuario</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+    <tbody>
+      <br>
+      <br>
+      <br>
+      {% for usuario in usuarios %}
+      <tr>
+        {% if usuario.estado != '3' %}
+        <td class="align middle text-center"></td>
+        <td>{{usuario.nombres}}</td>
+        <td>{{usuario.apellidos}}</td>
+        <td>{{usuario.tipoDocumento}}</td>
+        <td>{{usuario.numerodocumento}}</td>
+        <td>{{usuario.usuario}}</td>
+        <td>{{usuario.clave}}</td>
+        <td>{{usuario.correoElectronico}}</td>
+        <td>{{usuario.tipoUsuario}}</td>
+        <td>{{usuario.estado}}</td>
+        <td><a class="btn btn-primary" href="{% url 'usuarios-editar' usuario.id  %}"><i class="fas fa-edit"></i></a>
+        </td>
+        {% endif %}
+      </tr>
+      {% endfor %}
+    </tbody>
+    </table>
 
-
-
-    </tr>
-  </thead>
-
-  <tbody>
-
-    {% for usuario in usuarios %}
-    <tr>
-
-      {% if usuario.estado != '3' %}
-      <td class="align middle text-center"></td>
-      <td>{{usuario.nombres}}</td>
-      <td>{{usuario.apellidos}}</td>
-      <td>{{usuario.tipoDocumento}}</td>
-      <td>{{usuario.numerodocumento}}</td>
-      <td>{{usuario.usuario}}</td>
-      <td>{{usuario.clave}}</td>
-      <td>{{usuario.correoElectronico}}</td>
-      <td>{{usuario.tipoUsuario}}</td>
-      <td>{{usuario.estado}}</td>
-
-      <td><a class="btn btn-primary" href="{% url 'usuarios-editar' usuario.id  %}"><i class="fas fa-edit"></i></a>
-      
-      </td>
-      {% endif %}
-
-
-
-
-    </tr>
-    {% endfor %}
-
-
-
-  </tbody>
-</table>
-
-{% endblock contenido %}
-
+    {% endblock contenido %}
