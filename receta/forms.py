@@ -3,15 +3,16 @@ from django_select2 import forms as s2forms
 from receta.models import Receta
 
 
+from django import forms
+
+class MyForm(forms.Form):
+    phone = forms.BooleanField(required=True)
+
 class IngredienteWidget(s2forms.ModelSelect2Widget):
     search_fields ={
         "nombre__icontains",
         "id__icontains"
     }
-
-
-
-
 
 
 class recetaForm(ModelForm):
