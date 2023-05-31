@@ -23,8 +23,6 @@ def usuarios(request):
     return render(request, 'usuarios/usuarios.html', context)
 
 
-
-
 def usuarios_crear(request):
     titulo="Usuarios - Crear"
     if request.method == "POST":
@@ -51,7 +49,6 @@ def usuarios_crear(request):
                 email=request.POST['email'],
                 tipoDocumento=request.POST['tipoDocumento'],
                 documento=request.POST['documento'],
-                telefono=request.POST['telefono'],
                 user=user,
                 rol=request.POST['rol'],
             )
