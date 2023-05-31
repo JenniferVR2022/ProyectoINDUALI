@@ -1,7 +1,10 @@
-{% if messages %}
-{% for message in messages %}
-<script type="text/javascript">
-    toastr.{ { message.tags } } ("{{ message }}");
-</script>
-{% endfor %}
-{% endif %}
+{% extends 'partials/body.html' %}
+{% load crispy_forms_tags %}
+{% block contenido %}
+<div class="container">
+<form action="" method="POST" enctype="multipart/form-data" >
+    {{form|crispy}}
+    {% csrf_token %}
+    <input class="btn btn-success" type="submit" value="Registrar">
+</form></div>
+{% endblock contenido %}

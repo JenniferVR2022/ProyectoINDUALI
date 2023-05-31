@@ -6,6 +6,8 @@ from django.contrib import messages
 
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.hashers import make_password
+from django.contrib.auth.models import Group
 
 # Create your views here.
 
@@ -21,22 +23,57 @@ def usuarios(request):
     return render(request, 'usuarios/usuarios.html', context)
 
 
+
+
 def usuarios_crear(request):
-    titulo = "Usuarios - Crear"
+    titulo="Usuarios - Crear"
     if request.method == "POST":
-        form = UsuarioForm(request.POST, request.FILES)
+        form= UsuarioForm(request.POST, request.FILES)
         if form.is_valid():
-            print("El usuario se guardo correctamente")
+            if not User.objects.filter(username=request.POST['documento']):
+                user = User.objects.create_user('nombre','email@email','pass')
+                user.username= request.POST['documento']
+                user.first_name= request.POST['nombres']
+                user.last_name= request.POST['apellidos']
+                user.email= request.POST['email']
+                user.password=make_password("@" + request.POST['nombres'][0] + request.POST['apellidos'][0] + request.POST['documento'][-4:])
+                user.save()
+                user_group = User
+                my_group= Group.objects.get(name='Normal')
+                usuario.user.groups.clear()
+                my_group.user_set.add(usuario.user)
+            else:
+                user=User.objects.get(username=request.POST['documento'])
+
+            usuario= Usuario.objects.create(
+                nombres=request.POST['nombres'],
+                apellidos=request.POST['apellidos'],
+                email=request.POST['email'],
+                tipoDocumento=request.POST['tipoDocumento'],
+                documento=request.POST['documento'],
+                telefono=request.POST['telefono'],
+                user=user,
+                rol=request.POST['rol'],
+            )
             return redirect('usuarios')
         else:
-            print("El usuario no se almaceno ")
+            form = UsuarioForm(request.POST,request.FILES)
     else:
-        form = UsuarioForm()
-
-    context = {
-        "form": form
+        form= UsuarioForm()
+    context={
+        'titulo':titulo,
+        'form':form
     }
-    return render(request, 'usuarios/usuarios_crear.html', context)
+    return render(request,'partials/crear.html',context)
+
+
+
+
+
+
+
+
+
 
 
 def usuarios_editar(request, pk):
