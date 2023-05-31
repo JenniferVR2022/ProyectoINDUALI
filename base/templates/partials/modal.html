@@ -27,3 +27,22 @@
         </div>
     </div>
 </div>
+
+
+
+
+<div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">¿Desea guardar los cambios?</h3>
+                <button class="close" type="button" aria-dismiss="modal" aria-label="Close"></button>
+            </div>
+              <div class="modal-body">
+                {{ form.as_p }}
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
+                <button class="btn btn-primary" type="submit">Confirmación</button>
+              </div>
+       </div>
+</div>

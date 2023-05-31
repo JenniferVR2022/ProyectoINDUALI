@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
-from django.urls import reverse_lazy
+
 
 
 
@@ -96,12 +96,8 @@ WSGI_APPLICATION = 'base.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE':   'django.db.backends.mysql',
-        'NAME':     'induali2023',
-        'USER':     'induali2023',
-        'PASSWORD': 'Induali2023',
-        'HOST':     'db4free.net',
-        'PORT': 3306,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -156,5 +152,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL= reverse_lazy ('principal')
-AUTH_USER_MODEL = 'usuarios.Usuario'
+LOGIN_URL= 'inicio'
+LOGIN_REDIRECT_URL= 'principal'

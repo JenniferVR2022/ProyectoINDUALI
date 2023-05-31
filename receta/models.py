@@ -7,28 +7,29 @@ from ingrediente.models import Ingrediente
 from usuarios.models import Usuario
 
 # Create your models here.
-class Receta(models.Model):
-    codReceta = models.CharField(max_length=50, verbose_name="Código Receta")
-    nomReceta = models.CharField(max_length=50, verbose_name="Nombre Receta")
-    
+class Receta (models.Model):
+    codReceta=models.CharField(unique=True,max_length=50, verbose_name="Código Receta")
+    nomReceta=models.CharField(max_length=50, verbose_name="Nombre Receta")
     class Estado(models.TextChoices):
-        ACTIVO = 'True', 'Activo'
-        INACTIVO = 'False', 'Inactivo'
-        
-    estado = models.CharField(max_length=10, choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
-    estandar = models.CharField(max_length=50, verbose_name="Estandar")
-    preparacion = models.TextField(verbose_name="Preparación", null=True)
-    codComponente = models.OneToOneField(Componente, on_delete=models.CASCADE)
-    ingrediente = models.ForeignKey(Ingrediente, on_delete=models.CASCADE)
-
+      ACTIVO='1', _('Activo')
+      INACTIVO='0', _('Inactivo')
+    estado=models.CharField(max_length=1,choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
+    estandar=models.CharField(max_length=50, verbose_name="Estandar")
+    preparacion=models.TextField(verbose_name="Preparación", null=True)
+    
+  
+  
     def __str__(self):
-        fila = "Codigo: " + self.codReceta + " Nombre: " + self.nomReceta
+        fila = "Codigo: "+ self.codReceta + "Nombre: "+ self.nomReceta
         return fila
   
-  
+class Meta:
+        verbose_name = "Receta"
+        verbose_name_plural = "Recetas"
 
-# class RecetaDetalle(models.Model):
-#       receta= models.ForeignKey(Receta, on_delete=models.CASCADE, verbose_name="Nombre Receta")
-#       ingrediente= models.ForeignKey(Ingrediente, on_delete=models.CASCADE, verbose_name="Ingrediente") 
+
+#class RecetaDetalle(models.Model):
+ #      receta= models.ForeignKey(Receta, on_delete=models.CASCADE, verbose_name="Nombre Receta")
+  #     ingrediente= models.ForeignKey(Ingrediente, on_delete=models.CASCADE, verbose_name="Ingrediente") 
 
     

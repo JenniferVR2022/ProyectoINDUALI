@@ -14,3 +14,7 @@ class Ingrediente (models.Model):
     def __str__(self):
         fila = "Nombre: "+ self.nomIngrediente + " - Unidad: " + self.unidadMedida 
         return fila
+    
+    class Meta:
+        verbose_name = "Ingrediente"
+        verbose_name_plural = "Ingredientes"

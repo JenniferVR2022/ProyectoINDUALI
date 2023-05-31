@@ -32,6 +32,7 @@
                 <th scope="col">Preparación</th>
                 <th scope="col">Controles</th>
                 <th scope="col">Controles</th>
+                <th scope="col">Controles</th>
               </tr>
             </thead>
 
@@ -43,11 +44,45 @@
                 <td>{{items.estado}}</td>
                 <td>{{items.estandar}}</td>
                 <td>{{items.preparacion}}</td>
-                <td>
-                  <button type="button" class="btn btn-success">Editar</button>
-                </td>
+                
+
+  <!-- Boton disparar Modal -->
+  <td>
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Editar
+  </button>
+  <!-- Inicio Modal Editar -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Registro</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ¿Desea editar el registro seleccionado?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+          <a type="button" class="btn btn-success" href="{% url 'editarR' items.id %}"
+            role="button">Si</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Final modal Editar -->
+</td>
+
                 <td>
                   <button type="button" class="btn btn-warning">Inactivar</button>
+                 
+                </td>
+                
+                <td>
+                  <button type="button" class="btn btn-info"><a href="{% url 'receta-agregar'%}"</a> Ver Receta</button>
+                           
+              
                 </td>
               </tr>
               {% endfor %}
