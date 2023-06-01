@@ -18,11 +18,11 @@ class Usuario (models.Model):
     documento=models.CharField(unique=True, max_length=50, verbose_name="Número Documento")
     
    
-    class rol(models.TextChoices):
+    class Rol(models.TextChoices):
         Administrador='Administrador', _('Administrador')
         Estandar='Estandar', _('Estandar')
         Invitado='Invitado', _('Invitado')
-    tipoUsuario=models.CharField(max_length=13,choices=rol.choices, default=rol.Invitado, verbose_name="Rol")
+    rol=models.CharField(max_length=13,choices=Rol.choices, default=Rol.Invitado, verbose_name="Rol")
        
     class Estado(models.TextChoices):
           ACTIVO='1', _('Activo')

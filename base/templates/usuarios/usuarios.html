@@ -1,10 +1,19 @@
 {% extends 'partials/body.html' %}
 {% block contenido %}
 
-<table class="table">
+
+<br>
+<br>
+
+<div class="container-text-center bg-white text-dark row g-6 border rounded">
+  <div class="row align-items-start">
+    <div class="col-12 table-responsive">
+        <table class="table table-bordered" id="tabla-general">
+
+
   <thead>
     <tr>
-      <th class="col text-center">Foto</th>
+     
       <th scope="col">Nombres</th>
       <th scope="col">Apellidos</th>
       <th scope="col">Tipo de Documento</th>
@@ -13,18 +22,16 @@
       <th scope="col">Estado</th>
       <th scope="col">Grupo</th>
       <th scope="col">Acciones</th>
-
-
-
     </tr>
   </thead>
   <tbody>
+
+
 
     {% for usuario in usuarios %}
     <tr>
 
       {% if usuario.estado != '3' %}
-     
       <td >{{usuario.nombres}}</td>
       <td>{{usuario.apellidos}}</td>
       <td>{{usuario.tipoDocumento}}</td>
@@ -49,4 +56,7 @@
 
   </tbody>
 </table>
+</div>
+</div>
+</div>
 {% endblock contenido %}
