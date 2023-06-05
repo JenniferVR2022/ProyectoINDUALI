@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import Group
+from django.contrib import auth
 
 # Create your views here.
 
@@ -23,6 +24,7 @@ def usuarios(request):
     return render(request, 'usuarios/usuarios.html', context)
 
 
+
 def usuarios_crear(request):
     titulo="Usuarios - Crear"
     if request.method == "POST":
@@ -36,10 +38,10 @@ def usuarios_crear(request):
                 user.email= request.POST['email']
                 user.password=make_password("@" + request.POST['nombres'][0] + request.POST['apellidos'][0] + request.POST['documento'][-4:])
                 user.save()
-                user_group = User
-                my_group= Group.objects.get(name='Normal')
-                usuario.user.groups.clear()
-                my_group.user_set.add(usuario.user)
+                user_group = User.objects.get(username=request.POST['documento'])
+                my_group = Group.objects.get(name='Invitado')
+                user_group.groups.clear()
+                my_group.user_set.add(user_group)
             else:
                 user=User.objects.get(username=request.POST['documento'])
 
