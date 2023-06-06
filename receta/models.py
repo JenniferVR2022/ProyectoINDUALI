@@ -28,8 +28,8 @@ class Meta:
         verbose_name_plural = "Recetas"
 
 
-#class RecetaDetalle(models.Model):
- #      receta= models.ForeignKey(Receta, on_delete=models.CASCADE, verbose_name="Nombre Receta")
-  #     ingrediente= models.ForeignKey(Ingrediente, on_delete=models.CASCADE, verbose_name="Ingrediente") 
+class RecetaDetalle(models.Model):
+      codreceta= models.ForeignKey(Receta, on_delete=models.CASCADE, verbose_name="Código receta")
+      codingrediente= models.ForeignKey(Ingrediente, on_delete=models.CASCADE, verbose_name="Código ingrediente") 
 
     
