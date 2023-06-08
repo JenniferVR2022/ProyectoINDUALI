@@ -1,0 +1,50 @@
+{% extends 'partials/body.html' %}`
+
+{% load static %}
+
+{% block contenido %}
+
+<center>
+
+
+<br />
+<br />
+<br />
+<section id="tablaUsuario">
+  <section class="col-lg-12 table">
+    <div class="container text-center bg-white text-dark row g-6 border rounded">
+      <div class="row align-items-start">
+        <div class="col-12 table-responsive">
+          <table class="table table-bordered" id="tabla-general">
+            <thead class="thead-dark">
+             
+
+    <h1>Detalle Receta</h1>
+    <h2>{{receta.nomReceta}}</h2>
+    <p>Código de Receta: {{receta.codReceta}}</p>
+    <p>Estado: {{ receta.estado }}</p>
+    <p>Estandar: {{ receta.estandar }}</p>
+    <p>Preparación: {{ receta.preparacion }}</p>
+    <p>Codigo Ingrediente: {{ ingrediente.codIngrediente }}</p>
+
+
+    <h2>Ingredientes</h2>
+    <ul>
+    {% for ingrediente in ingredientes %}
+        <li>{{ ingrediente.nomIngrediente }} - {{ ingrediente.unidadMedida }}</li>
+    {% empty %}
+        <li>No hay ingredientes asociados a esta receta.</li>
+    {% endfor %}
+    </ul>
+
+    <thead
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+<center>
+
+{% endblock contenido %}
