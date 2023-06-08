@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from receta.models import Receta
 from receta.forms import recetaForm
 from ingrediente.models import Ingrediente
-
+from .models import Receta, Ingrediente
 
 
 def receta(request):
@@ -38,3 +38,11 @@ def editarR(request,id):
         formulario2.save()
         return redirect('receta')
     return render(request, 'receta/editarReceta.html', {'formulario2': formulario2})
+
+
+
+
+def detalle_receta(request, receta_id):
+    receta = Receta.objects.get(id=receta_id)
+    ingredientes = Ingrediente.objects.filter(receta=receta)
+    return render(request, 'detalle_receta.html', {'receta': receta, 'ingredientes': ingredientes})
