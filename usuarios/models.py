@@ -32,4 +32,4 @@ class Usuario (models.Model):
    
    
     def __str__(self)->str:
-        return "%s %s" %(self.nombres, self.apellidos)   
+        return "%s %s" %(self.nombres, self.apellidos)  

@@ -36,6 +36,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "admin_interface",
     'whitenoise.runserver_nostatic',#pip install whitenoise
     'django.contrib.admin',
     'django.contrib.auth',
@@ -53,9 +54,12 @@ INSTALLED_APPS = [
     'centroCostos',
     'receta',
     'componente',
+    "colorfield",
     
-
     ]
+
+X_FRAME_OPTIONS = "SAMEORIGIN"
+
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5" 
 

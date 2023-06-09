@@ -1,216 +1,52 @@
 
+{% extends 'partials/body.html' %}`
 
-{% extends 'partials/body.html' %}
+{% load static %}
 {% block contenido %}
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
 
-<br>
+<div class="row my-12">
+  <div class="col-md-12">
 
-<div class="container bg-white text-dark border rounded p-4" id="formulario">
-  <section id="componentes">
-    <table class="table table-bordered">
-        <tbody>
+      <div class="border bg-white p-3">
+          <h4>Agregar Recetas</h4>
+          <hr>
+        <form enctype="multipart/form-data" method="post">
+          <div class="row mt-5 p-3 shadow-lg rounded bg-white">
+            <div class="row">
+              {% csrf_token %}
+              {% for campo in formulario%}
+              <div class="col-12 col-md-6 col-xl-6 mb-3">
+                <label for="poliza" class="form-label">{{ campo.label  }}:</label>
+                <input 
+                  type="{{ campo.field.widget.input_type  }}" 
+                  class="form-control required" 
+                  id="" 
+                  name="{{ campo.name  }}" 
+                  placeholder="Escribe" 
+                >
+              </div>
+              {% endfor %}
 
-<thead class="thead-dark">
-  <th><center>CREAR RECETA</center></th>
-</thead>
-</table>
-</section>
-
-  <!-- Formulario Visual -->
-<div class="container bg-white text-dark border rounded p-12" id="formulario">
-
-  <form action="/guardar" method="post">
-    {% csrf_token %}
-
- <section id="componentes">
-    <table class="table table-bordered">
-  <thead class="thead-dark">
-    <tr>
-       <td><center>
-        <div class="form-group">
-          <span class="col-md-2 col-md-offset-2 text-center"><i
-                  class="fa fa-phone-square bigicon"></i></span>
-               <div class="col-md-10">
-                <input id="phone" name="phone" type="number" placeholder="Código Componente"
-                    class="form-control">
-               </div>
-          </div>
-        </center></td>
-        <td><center><div class="form-group">
-          <span class="col-md-2 col-md-offset-2 text-center"><i
-                  class="fa fa-phone-square bigicon"></i></span>
-            <div class="col-md-12">
-            <input id="phone" name="phone" type="number" placeholder="Nombre Componente:"
-               class="form-control">
             </div>
-          </div></center></td>
-    </tr>
-  <tr>
-    <td></td>
- </tr>
-</thead>
-</table>
-</section>
-
-<div class="container bg-white text-dark border rounded p-12" id="formulario">
-<section id="componentes">
-  <table class="table table-bordered">
-      <tbody>
-      <tr>
-            
-      <td><center> <div class="form-group">
-        <span class="col-md-1 col-md-offset-2 text-center"><i
-                class="fa fa-phone-square bigicon"></i></span>
-        <div class="col-md-30">
-            <input id="phone" name="phone" type="help_text" placeholder="Nombre Receta:"
-                class="form-control">
-        </div>
-    </div></center>
-  </td>
-  
-  
-  <td><center><div class="form-group">
-    <span class="col-md-1 col-md-offset-2 text-center"><i
-            class="fa fa-phone-square bigicon"></i></span>
-    <div class="col-md-8">
-        <input id="phone" name="phone" type="number" placeholder="Código Receta:"
-            class="form-control">
-    </div>
-</div>
-</center></td> 
-  
-<td><center> <div class="form-group">
-      <span class="col-md-1 col-md-offset-2 text-center"><i
-              class="fa fa-phone-square bigicon"></i></span>
-      <div class="col-md-8">
-          <input id="phone" name="phone" type="number" placeholder="Cantidad de unidades a estandarizar" value="0.00"
-              class="form-control">
-      </div>
-  </div><center>
-  </td>
-
-    <td><center> <div class="form-group">
-      <span class="col-md-1 col-md-offset-2 text-center"><i
-              class="fa fa-phone-square bigicon"></i></span>
-      <div class="col-md-6">
-          <input id="phone" name="phone" type="bool" placeholder="Estado"
-              class="form-control">
-      </div>
-  </div><center></td>
-   
-  
-    </tr>
-   
-     
-    </tbody>
-  </table>
-</section>
-  
-<section id="porciones">
-  <table class="table table-bordered">
-    <thead class="thead-dark">
-      <tr>
-        <td><center>Preparación</center></td>
-      </tr>
-    </thead>
-
-    <tbody>
-     <tr>
-        <td><center> <div class="form-group">
-          <span class="col-md-5 col-md-offset-2 text-center"><i
-                  class="fa fa-phone-square bigicon"></i></span>
-          <div class="col-md-14">
-              <input id="phone" name="phone" type="help_text" placeholder=""
-                  class="form-control">
+            <div class="col-5 help-text">{{ campo.errors }}</div>
+            <hr />
+            <div class="row text-center">
+              <div class="col-12 col-md-12 col-xl-12 mb-3">
+                <input type="submit" class="btn btn-primary" value="CREAR RECETA">
+              </div>
+            </div>
           </div>
-      </div></center>
-    </td>
-  </tr>
-    <tr>
-      <td><center> <div class="form-group">
-        <span class="col-md-5 col-md-offset-2 text-center"><i
-                class="fa fa-phone-square bigicon"></i></span>
-        <div class="col-md-14">
-            <input id="phone" name="phone" type="help_text" placeholder=""
-                class="form-control">
-        </div>
-    </div></center>
-  </td>
-  <tr>
-    <td><center> <div class="form-group">
-      <span class="col-md-5 col-md-offset-2 text-center"><i
-              class="fa fa-phone-square bigicon"></i></span>
-      <div class="col-md-14">
-          <input id="phone" name="phone" type="help_text" placeholder=""
-              class="form-control">
+        </form>
       </div>
-  </div></center>
-</td>
-</tr>
-<tr>
-  <td><center> <div class="form-group">
-    <span class="col-md-5 col-md-offset-2 text-center"><i
-            class="fa fa-phone-square bigicon"></i></span>
-    <div class="col-md-14">
-        <input id="phone" name="phone" type="help_text" placeholder=""
-            class="form-control">
     </div>
-</div></center>
-</td>
-</tr>
-<tr>
-  <td><center> <div class="form-group">
-    <span class="col-md-5 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
-    <div class="col-md-14">
-        <input id="phone" name="phone" type="help_text" placeholder=""
-            class="form-control">
-    </div>
-    </div></center>
-  </td>
- </tr>
-<tr>
-  <td><center> <div class="form-group">
-    <span class="col-md-5 col-md-offset-2 text-center"><i
-            class="fa fa-phone-square bigicon"></i></span>
-    <div class="col-md-14">
-        <input id="phone" name="phone" type="help_text" placeholder=""
-            class="form-control">
-    </div>
-    </div></center>
-  </td>
-</tr>
 
-    </tbody>
-  </table>
-</section>
-
-
-
-   
-<tr><td><center><form class="form-inline my-3 my-lg-3"><a href="{% url 'receta-agregar'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> AGREGAR INGREDIENTE</a>
-</form><section id="tablaUsuario"></center></td>
-
-<td><center><form class="form-inline my-3 my-lg-3"><button type="submit" class="btn btn-primary">GUARDAR RECETA</button></form><section id="tablaUsuario"></center></td></tr>
-
-
-
-
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</section>
-</section>
-{% endblock contenido %}  
-
-
-
-
-
-
-
-
+  
+  {% endblock contenido %}
 
 
 

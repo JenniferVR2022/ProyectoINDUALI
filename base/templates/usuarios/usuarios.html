@@ -16,6 +16,7 @@
      
       <th scope="col">Nombres</th>
       <th scope="col">Apellidos</th>
+      <th scope="col">Correo Electrònico</th>
       <th scope="col">Tipo de Documento</th>
       <th scope="col"># Documento</th>
       <th scope="col">Rol</th>
@@ -34,6 +35,7 @@
       {% if usuario.estado != '3' %}
       <td >{{usuario.nombres}}</td>
       <td>{{usuario.apellidos}}</td>
+      <td>{{usuario.email}}</td>
       <td>{{usuario.tipoDocumento}}</td>
       <td>{{usuario.documento}}</td>
       <td>{{usuario.rol}}</td>

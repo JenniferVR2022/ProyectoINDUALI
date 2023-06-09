@@ -15,7 +15,8 @@ class IngredienteWidget(s2forms.ModelSelect2Widget):
     }
 
 
-class recetaForm(ModelForm):
+class recetaForm(forms.ModelForm):
     class Meta:
         model= Receta
-        exclude=['CodReceta']
+        fields = '__all__'
+    
