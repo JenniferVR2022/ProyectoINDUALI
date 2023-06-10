@@ -38,12 +38,14 @@
           <li>
           <li><a class="dropdown-item" href="{% url 'centroCostos' %}" class="nav-link">Centro Costos</a></li>
           <li><a class="dropdown-item" href="{% url 'listaPrecio' %}">Lista de precios</a>
-          <li>
+                               
         </ul>
       </div>
     </form>
   </div>
 
-
+  <li class="nav-item d-none d-sm-inline-block">
+    <a href="{% url 'logout' %}" class="nav-link text-danger">Cerrar Sesión</a>
+  </li>
 </ul>
 </nav>

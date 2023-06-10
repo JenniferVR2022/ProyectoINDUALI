@@ -10,11 +10,15 @@ def receta(request):
     return render(request,'receta/receta.html',{'receta': receta})
 
 def receta_crear(request):
-    formulario = recetaForm(request.POST or None, request.FILES or None)
-    if formulario.is_valid():
-        formulario.save()
-        return redirect('receta')
-    return render(request, 'receta/recetaCrear.html', {'formulario': formulario})
+    if request.method == 'POST':
+        form = recetaForm(request.POST, request.FILES)
+        if form.is_valid():
+            receta = form.save()
+            return redirect('detalle_receta', pk=receta.pk)
+    else:
+        form = recetaForm()
+    return render(request, 'receta/recetaCrear.html', {'form': form})
+
 
 def receta_agregar(request):
     Ingredientes = Ingrediente.objects.values_list('nomIngrediente', flat=True)
@@ -39,10 +43,6 @@ def editarR(request,id):
         return redirect('receta')
     return render(request, 'receta/editarReceta.html', {'formulario2': formulario2})
 
-
-
-
-def detalle_receta(request, receta_id):
-    receta = Receta.objects.get(id=receta_id)
-    ingredientes = Ingrediente.objects.filter(receta=receta)
-    return render(request, 'detalle_receta.html', {'receta': receta, 'ingredientes': ingredientes})
+def detalle_receta(request, pk):
+    receta = Receta.objects.get(pk=pk)
+    return render(request, 'receta/detalle_receta.html', {'receta': receta})

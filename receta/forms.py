@@ -19,4 +19,4 @@ class recetaForm(forms.ModelForm):
     class Meta:
         model= Receta
         fields = '__all__'
-    
+        exclude = ('Estado',)

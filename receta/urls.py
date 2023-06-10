@@ -1,5 +1,5 @@
 from django.urls import path
-from receta.views import receta,receta_crear,receta_agregar,editarR,eliminar
+from receta.views import receta,receta_crear,receta_agregar,editarR,eliminar,detalle_receta
 from . import views
 urlpatterns = [
     path('',receta,name="receta"),
@@ -7,8 +7,14 @@ urlpatterns = [
     path('agregar/',receta_agregar,name="receta-agregar"),
     path('eliminar/<int:id>', eliminar, name="eliminar"),
     path('editarR/<int:id>', editarR, name="editarR"),
-    path('receta/<int:receta_id>/', views.detalle_receta, name='detalle_receta'),
+    path('detalle-receta/<int:pk>/', detalle_receta, name='detalle_receta'),
+
 ]
+
+
+
+
+
 
 
 

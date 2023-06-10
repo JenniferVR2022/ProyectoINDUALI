@@ -16,7 +16,7 @@ class Receta (models.Model):
     estado=models.CharField(max_length=1,choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
     estandar=models.CharField(max_length=50, verbose_name="Estandar")
     preparacion=models.TextField(verbose_name="Preparación", null=True)
-    codIngrediente = models.ForeignKey(Ingrediente, on_delete=models.CASCADE, verbose_name="Código ingrediente", null=True, default=None)
+    nomIngrediente = models.ForeignKey(Ingrediente, on_delete=models.CASCADE, verbose_name="Nombre ingrediente", null=True, default=None)
   
     def __str__(self):
         fila = "Codigo: "+ self.codReceta + "Nombre: "+ self.nomReceta
@@ -26,10 +26,6 @@ class Meta:
         verbose_name = "Receta"
         verbose_name_plural = "Recetas"
 
-
-class Receta_Detalle(models.Model):
-       receta= models.ForeignKey(Receta, on_delete=models.CASCADE, verbose_name="Nombre Receta")
-       ingrediente= models.ForeignKey(Ingrediente, on_delete=models.CASCADE, verbose_name="Ingrediente") 
 
       
 

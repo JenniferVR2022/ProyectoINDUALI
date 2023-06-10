@@ -1,50 +1,62 @@
-{% extends 'partials/body.html' %}`
-
+{% extends 'partials/body.html' %}
 {% load static %}
 
 {% block contenido %}
 
-<center>
+<div class="container">
+  <center>
+    <br>
+    <br>
+    <br>
+    <section id="tablaUsuario">
+      <section class="col-lg-12 table">
+        <div class="container text-center bg-white text-dark row g-6 border rounded">
+          <div class="row align-items-start">
+            <div class="col-12 table-responsive">
+              <table class="table table-bordered">
+                <thead class="thead-dark">
+                  <tr>
+                    <th colspan="2">
+                      <h1>Detalle Receta</h1>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Nombre Receta:</td>
+                    <td>{{ receta.nomReceta }}</td>
+                  </tr>
+                  <tr>
+                    <td>Código de Receta:</td>
+                    <td>{{ receta.codReceta }}</td>
+                  </tr>
+                  <tr>
+                    <td>Estado:</td>
+                    <td>{{ receta.estado }}</td>
+                  </tr>
+                  <tr>
+                    <td>Estandar:</td>
+                    <td>{{ receta.estandar }}</td>
+                  </tr>
+                  <tr>
+                    <td>Preparación:</td>
+                    <td>{{ receta.preparacion }}</td>
+                  </tr>
+                  <tr>
+                    <td>Nombre Ingrediente:</td>
+                    <td>{{ ingrediente.nomIngrediente }}</td>
+                  </tr>
 
-
-<br />
-<br />
-<br />
-<section id="tablaUsuario">
-  <section class="col-lg-12 table">
-    <div class="container text-center bg-white text-dark row g-6 border rounded">
-      <div class="row align-items-start">
-        <div class="col-12 table-responsive">
-          <table class="table table-bordered" id="tabla-general">
-            <thead class="thead-dark">
-             
-
-    <h1>Detalle Receta</h1>
-    <h2>{{receta.nomReceta}}</h2>
-    <p>Código de Receta: {{receta.codReceta}}</p>
-    <p>Estado: {{ receta.estado }}</p>
-    <p>Estandar: {{ receta.estandar }}</p>
-    <p>Preparación: {{ receta.preparacion }}</p>
-    <p>Codigo Ingrediente: {{ ingrediente.codIngrediente }}</p>
-
-
-    <h2>Ingredientes</h2>
-    <ul>
-    {% for ingrediente in ingredientes %}
-        <li>{{ ingrediente.nomIngrediente }} - {{ ingrediente.unidadMedida }}</li>
-    {% empty %}
-        <li>No hay ingredientes asociados a esta receta.</li>
-    {% endfor %}
-    </ul>
-
-    <thead
-
-          </table>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-</section>
-<center>
+      </section>
+    </section>
+
+
+  </center>
+</div>
 
 {% endblock contenido %}
