@@ -25,6 +25,7 @@
           <table class="table table-bordered" id="tabla-general">
             <thead class="thead-dark">
               <tr>
+                <th scope="col">Nombre Componente</th>
                 <th scope="col">Codigo Receta</th>
                 <th scope="col">Nombre Receta</th>
                 <th scope="col">Estado</th>
@@ -40,7 +41,8 @@
             <tbody id="tblReceta">
               {% for items in receta%}
               <tr>
-                <th scope="row">{{items.codReceta}}</th>
+                <th scope="row">{{items.nomComponente}}</th>
+                <td>{{items.codReceta}}</td>
                 <td>{{items.nomReceta}}</td>
                 <td>{{items.estado}}</td>
                 <td>{{items.estandar}}</td>

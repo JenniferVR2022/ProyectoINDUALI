@@ -11,3 +11,5 @@ class Componente (models.Model):
    def __str__(self):
         fila = "Codigo: "+ self.codComponente + "Nombre: "+ self.nomComponente 
         return fila
+     
+     

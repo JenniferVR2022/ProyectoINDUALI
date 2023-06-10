@@ -8,6 +8,7 @@ from usuarios.models import Usuario
 
 # Create your models here.
 class Receta (models.Model):
+    nomComponente = models.ForeignKey(Componente, on_delete=models.CASCADE, verbose_name="Nombre Componente", null=True, default=None)
     codReceta=models.CharField(unique=True,max_length=50, verbose_name="Código Receta")
     nomReceta=models.CharField(max_length=50, verbose_name="Nombre Receta")
     class Estado(models.TextChoices):
@@ -17,7 +18,7 @@ class Receta (models.Model):
     estandar=models.CharField(max_length=50, verbose_name="Estandar")
     preparacion=models.TextField(verbose_name="Preparación", null=True)
     nomIngrediente = models.ForeignKey(Ingrediente, on_delete=models.CASCADE, verbose_name="Nombre ingrediente", null=True, default=None)
-  
+    
     def __str__(self):
         fila = "Codigo: "+ self.codReceta + "Nombre: "+ self.nomReceta
         return fila
