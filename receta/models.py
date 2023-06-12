@@ -26,8 +26,42 @@ class Receta (models.Model):
 class Meta:
         verbose_name = "Receta"
         verbose_name_plural = "Recetas"
+        
+import csv
+from django.db import transaction
+from .models import Receta, Componente, Ingrediente
 
+def importar_recetas_desde_csv(archivo_csv):
+    with open(archivo_csv, 'r') as csv_file:
+        reader = csv.reader(csv_file)
+        next(reader)  # Ignorar la primera fila si contiene encabezados
 
-      
+        recetas = []
+        for row in reader:
+            cod_receta = row[0]
+            nom_receta = row[1]
+            estado = row[2]
+            estandar = row[3]
+            preparacion = row[4]
 
-    
+            # Obtener objetos Componente e Ingrediente relacionados
+            nom_componente = row[5]
+            componente = Componente.objects.get(nombre=nom_componente)
+
+            nom_ingrediente = row[6]
+            ingrediente = Ingrediente.objects.get(nombre=nom_ingrediente)
+
+            receta = Receta(
+                codReceta=cod_receta,
+                nomReceta=nom_receta,
+                estado=estado,
+                estandar=estandar,
+                preparacion=preparacion,
+                nomComponente=componente,
+                nomIngrediente=ingrediente,
+            )
+            recetas.append(receta)
+
+    # Crear los objetos Receta en la base de datos en una transacción
+    with transaction.atomic():
+        Receta.objects.bulk_create(recetas)

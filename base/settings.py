@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'import_export',
     'bootstrap5',
     'crispy_forms', #pip install django-crispy-forms
     "crispy_bootstrap5", #pip install crispy-bootstrap5

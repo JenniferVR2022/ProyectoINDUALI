@@ -8,7 +8,6 @@ urlpatterns = [
     path('eliminar/<int:id>', eliminar, name="eliminar"),
     path('editarR/<int:id>', editarR, name="editarR"),
     path('detalle-receta/<int:pk>/', detalle_receta, name='detalle_receta'),
-
 ]
 
 
