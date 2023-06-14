@@ -13,13 +13,11 @@ class IngredienteWidget(s2forms.ModelSelect2Widget):
         "nombre__icontains",
         "id__icontains"
     }
-
-
+        
+  
 class recetaForm(forms.ModelForm):
+    cantidadMateriaPrima = forms.DecimalField(label="Cantidad de Materia Prima", decimal_places=2, min_value=0)
+    
     class Meta:
-        model= Receta
-        fields = '__all__'
-        exclude = ('Estado',)
-        
-        
-        
+        model = Receta
+        fields = ['nomComponente', 'codReceta', 'nomReceta', 'estado', 'estandar', 'preparacion', 'nomIngrediente', 'cantidadMateriaPrima']      

@@ -9,7 +9,7 @@ class Componente (models.Model):
 
 
    def __str__(self):
-        fila = "Codigo: "+ self.codComponente + "Nombre: "+ self.nomComponente 
+        fila = self.nomComponente 
         return fila
      
      
