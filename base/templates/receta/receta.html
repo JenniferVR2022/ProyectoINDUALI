@@ -4,13 +4,16 @@
 
 {% block contenido %}
 
+
+
 <center>
 
   <section id="botonesReceta">
     <br>
     <section class="col-lg-12 button_añadir">
       <a href="{% url 'crear-receta'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR RECETA </a>
-
+     
+      
     </section>
 </center>
 
@@ -25,12 +28,13 @@
           <table class="table table-bordered" id="tabla-general">
             <thead class="thead-dark">
               <tr>
+                <th scope="col">Nombre Componente</th>
                 <th scope="col">Codigo Receta</th>
                 <th scope="col">Nombre Receta</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Estandar</th>
                 <th scope="col">Preparación</th>
-                <th scope="col">Còdigo Ingrediente</th>
+                <th scope="col">Nombre Ingrediente</th>
                 <th scope="col">Controles</th>
                 <th scope="col">Controles</th>
                 <th scope="col">Controles</th>
@@ -40,12 +44,13 @@
             <tbody id="tblReceta">
               {% for items in receta%}
               <tr>
-                <th scope="row">{{items.codReceta}}</th>
+                <th scope="row">{{items.nomComponente}}</th>
+                <td>{{items.codReceta}}</td>
                 <td>{{items.nomReceta}}</td>
                 <td>{{items.estado}}</td>
                 <td>{{items.estandar}}</td>
                 <td>{{items.preparacion}}</td>
-                <td>{{items.codIngrediente}}</td>
+                <td>{{items.nomIngrediente}}</td>
                 
 
   <!-- Boton disparar Modal -->
@@ -82,10 +87,12 @@
                 </td>
                 
                 <td>
-                  <button type="button" class="btn btn-info"><a href="{% url 'receta-agregar'%}"</a> Ver Receta</button>
-                           
-              
+                  <button type="button" class="btn btn-info">
+                    <a href="{% url 'detalle_receta' pk=items.id %}">Detalle receta</a>
+                  </button>
+                    
                 </td>
+             
               </tr>
               {% endfor %}
             </tbody>
