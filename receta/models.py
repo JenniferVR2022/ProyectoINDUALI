@@ -14,7 +14,7 @@ class Receta(models.Model):
     estado = models.CharField(max_length=1, choices=Estado.choices, default=Estado.ACTIVO, verbose_name="Estado")
     estandar = models.CharField(max_length=50, verbose_name="Estandar")
     preparacion = models.TextField(verbose_name="Preparación", null=True)
-    nomIngrediente = models.ForeignKey(Ingrediente, on_delete=models.CASCADE, verbose_name="Nombre ingrediente", null=True, default=None)
+    nomIngrediente = models.ManyToManyField(Ingrediente, verbose_name="Nombre ingrediente", blank=True)
     
     # Nuevos campos
     cantidadMateriaPrima = models.DecimalField(max_digits=10, decimal_places=2, validators=[MinValueValidator(0)], verbose_name="Cantidad de Materia Prima", default=0)
@@ -22,8 +22,8 @@ class Receta(models.Model):
     
     def save(self, *args, **kwargs):
         # Cálculo del costo total
-        if self.cantidadMateriaPrima and self.nomIngrediente:
-            costo_ingrediente = float(self.nomIngrediente.costoIngrediente)
+        if self.cantidadMateriaPrima and self.nomIngrediente.exists():
+            costo_ingrediente = float(self.nomIngrediente.first().costoIngrediente)
             self.costoTotal = (self.cantidadMateriaPrima * costo_ingrediente) / float(self.estandar)
         else:
             self.costoTotal = None
@@ -36,3 +36,4 @@ class Receta(models.Model):
     class Meta:
         verbose_name = "Receta"
         verbose_name_plural = "Recetas"
+
