@@ -34,7 +34,6 @@
                 <th scope="col">Estado</th>
                 <th scope="col">Estandar</th>
                 <th scope="col">Preparación</th>
-                <th scope="col">Nombre Ingrediente</th>
                 <th scope="col">Controles</th>
                 <th scope="col">Controles</th>
                 <th scope="col">Controles</th>
@@ -49,9 +48,7 @@
                 <td>{{items.nomReceta}}</td>
                 <td>{{items.estado}}</td>
                 <td>{{items.estandar}}</td>
-                <td>{{items.preparacion}}</td>
-                <td>{{items.nomIngrediente}}</td>
-                
+                <td>{{items.preparacion}}</td>        
 
   <!-- Boton disparar Modal -->
   <td>
@@ -88,7 +85,9 @@
                 
                 <td>
                   <button type="button" class="btn btn-info">
-                    <a href="{% url 'detalle_receta' pk=items.id %}">Detalle receta</a>
+                    <a href="{% url 'detalle_receta' receta_id=items.id %}">Detalle receta</a>
+
+
                   </button>
                     
                 </td>

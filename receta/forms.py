@@ -1,6 +1,8 @@
 from django.forms import ModelForm, widgets
 from django_select2 import forms as s2forms
 from receta.models import Receta
+from django import forms
+from .models import Receta, Ingrediente
 
 
 from django import forms
@@ -14,10 +16,10 @@ class IngredienteWidget(s2forms.ModelSelect2Widget):
         "id__icontains"
     }
         
-  
 class recetaForm(forms.ModelForm):
-    cantidadMateriaPrima = forms.DecimalField(label="Cantidad de Materia Prima", decimal_places=2, min_value=0)
-    
     class Meta:
         model = Receta
-        fields = ['nomComponente', 'codReceta', 'nomReceta', 'estado', 'estandar', 'preparacion', 'nomIngrediente', 'cantidadMateriaPrima']      
+        fields = ['nomComponente', 'codReceta', 'nomReceta', 'estado', 'estandar', 'preparacion','ingredientes']
+        widgets = {
+            'ingredientes': forms.CheckboxSelectMultiple(),
+        }
