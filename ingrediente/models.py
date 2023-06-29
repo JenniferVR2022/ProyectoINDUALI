@@ -12,7 +12,7 @@ class Ingrediente (models.Model):
     estado = models.BooleanField (default=True,verbose_name="Estado")
 
     def __str__(self):
-        fila = "Nombre: "+ self.nomIngrediente + " - Unidad: " + self.unidadMedida 
+        fila = self.nomIngrediente
         return fila
     
     class Meta:

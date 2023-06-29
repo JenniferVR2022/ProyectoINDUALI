@@ -38,7 +38,7 @@
           <li>
           <li><a class="dropdown-item" href="{% url 'centroCostos' %}" class="nav-link">Centro Costos</a></li>
           <li><a class="dropdown-item" href="{% url 'listaPrecio' %}">Lista de precios</a>
-          <li>
+                               
         </ul>
       </div>
       <div class="flex-grow-1 d-flex align-items-center ml-auto">
@@ -56,6 +56,8 @@
     </form>
   </div>
 
-
+  <li class="nav-item d-none d-sm-inline-block">
+    <a href="{% url 'logout' %}" class="nav-link text-danger">Cerrar Sesión</a>
+  </li>
 </ul>
 </nav>

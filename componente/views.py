@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from componente.models import Componente
 from componente.forms import componenteForm
+from .models import Componente
 
 # Create your views here.
 
@@ -32,4 +33,9 @@ def eliminar_componente(request,id):
     componente = Componente.objects.get(id=id)
     componente.delete()
     return redirect('componente')
+
+
+def tu_vista(request):
+    componentes = Componente.objects.all()  # Obtén todos los componentes de la base de datos
+    return render(request, 'tu_template.html', {'componentes': componentes})
 
