@@ -1,32 +1,25 @@
-
-{% extends 'partials/body.html' %}`
-
+{% extends 'partials/body.html' %}
 {% load static %}
 {% block contenido %}
-</br> 
-</br> 
-</br> 
-</br> 
-</br> 
-
-<div class="row my-12">
-  <div class="col-md-12">
-
+  </br> 
+  </br> 
+  </br> 
+  </br> 
+  </br> 
+  <div class="row my-12">
+    <div class="col-md-12">
       <div class="border bg-white p-2">
-          <h4>Agregar Recetas</h4>
-          <hr>
-          <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Crear</button>
-          </form>
-  
-  {% endblock contenido %}
-
-
-
-   
-  
+        <h4>Agregar Recetas</h4>
+        <hr>
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Crear</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock contenido %}
 
 
 

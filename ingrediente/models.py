@@ -15,3 +15,5 @@ class Ingrediente(models.Model):
         verbose_name = "Ingrediente"
         verbose_name_plural = "Ingredientes"
 
+
+        

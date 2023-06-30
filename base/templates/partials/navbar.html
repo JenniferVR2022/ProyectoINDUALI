@@ -5,47 +5,60 @@
     <a class="navbar-brand" href="{% url 'principal' %}">
       <img class="img-thumbnail img-fluid" src="{% static 'img/Logo.jpg' %}" width="120" height="30">
     </a>
-    
-    
-    
 
-    <form class="container-fluid justify-content-start">
-      <div class="btn-group">
-        <button type="button" class="btn btn-secondary">Usuario</button>
-        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
-          aria-expanded="false"></button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="{% url 'usuarios_crear' %}">Nuevo</a></li>
-          <li><a class="dropdown-item" href="{% url 'usuarios' %}">Usuarios</a></li>
-        </ul>
-      </div>
-      <div class="btn-group">
-        <button type="button" class="btn btn-secondary">Receta</button>
-        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
-          aria-expanded="false"></button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="{% url 'receta' %}">Recetas</a></li>
-          <li><a class="dropdown-item" href="{% url 'ingrediente' %}">Ingredientes</a></li>
-          <li><a class="dropdown-item" href="{% url 'componente' %}" class="nav-link">Componente</a></li>
-        </ul>
-      </div>
-      <div class="btn-group">
-        <button type="button" class="btn btn-secondary">Estandarizador</button>
-        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
-          aria-expanded="false"></button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" href="{% url 'estandarizador' %}">Estandarizar</a>
-          <li>
-          <li><a class="dropdown-item" href="{% url 'centroCostos' %}" class="nav-link">Centro Costos</a></li>
-          <li><a class="dropdown-item" href="{% url 'listaPrecio' %}">Lista de precios</a>
-                               
-        </ul>
-      </div>
-    </form>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Usuario
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{% url 'usuarios_crear' %}">Nuevo</a></li>
+            <li><a class="dropdown-item" href="{% url 'usuarios' %}">Usuarios</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Receta
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{% url 'receta' %}">Recetas</a></li>
+            <li><a class="dropdown-item" href="{% url 'ingrediente' %}">Ingredientes</a></li>
+            <li><a class="dropdown-item" href="{% url 'componente' %}">Componente</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Estandarizador
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{% url 'estandarizador' %}">Estandarizar</a></li>
+            <li><a class="dropdown-item" href="{% url 'centroCostos' %}">Centro Costos</a></li>
+            <li><a class="dropdown-item" href="{% url 'listaPrecio' %}">Lista de precios</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Sesión
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{% url 'logout' %}">Cerrar Sesión</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
   </div>
-
-  <li class="nav-item d-none d-sm-inline-block">
-    <a href="{% url 'logout' %}" class="nav-link text-danger">Cerrar Sesión</a>
-  </li>
-</ul>
 </nav>

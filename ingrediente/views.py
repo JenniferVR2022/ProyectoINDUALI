@@ -35,6 +35,10 @@ def editar(request,id):
     return render(request, 'ingrediente/editarIngrediente.html', {'formulario': formulario})
 
 
+
+
+
+
 # def logout_request(request):
     logout(request)
     messages.info(request, "Saliste Exitosamente")

@@ -11,10 +11,6 @@ from centroCostos.models import CentroCosto
 class Estandarizador(models.Model):
     idEstandarizador = models.CharField(max_length=50, verbose_name="id Estandarizador")
     porcionesEstandar = models.CharField(max_length=50, verbose_name="Porciones Estandar")
-    codCentroCostos = models.ForeignKey(CentroCosto, on_delete=models.CASCADE, blank=False, null=True, verbose_name="Cod Centro Costos")
-    codReceta = models.ForeignKey(Receta, on_delete=models.CASCADE, blank=False, null=True, verbose_name="Cod Receta")
-    codListaPrecio = models.ForeignKey(ListaPrecio, on_delete=models.CASCADE, blank=False, null=True, verbose_name="Cod Lista Precio")
-    codIngrediente = models.ForeignKey(Ingrediente, on_delete=models.CASCADE, blank=False, null=True, verbose_name="Cod Ingrediente")
     nomListaPrecio = models.CharField(max_length=50, verbose_name="Nombre Lista Precio", null=True, blank=True, editable=False)
     nomCentroCostos = models.CharField(max_length=50, verbose_name="Nombre Centro Costos", null=True, blank=True, editable=False)
     nomReceta = models.CharField(max_length=50, verbose_name="Nombre Receta", null=True, blank=True, editable=False)
