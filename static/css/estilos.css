@@ -28,6 +28,19 @@ body {
  
 }
 
+/* estilos-navbar.css */
+
+@media (max-width: 767px) {
+    .navbar-collapse.collapse.show {
+      background-color: #f8f9fa;
+    }
+  
+    .navbar-nav .nav-link {
+      color: #212529;
+    }
+  }
+  
+
 #seccion-formulario {
     display: flex;
     justify-content: center;
@@ -116,6 +129,8 @@ body {
     border: 2px solid black;
 
 }
+
+
 
 .container-verReceta {
     position: fixed;
