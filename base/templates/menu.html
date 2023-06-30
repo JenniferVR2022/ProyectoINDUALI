@@ -2,51 +2,47 @@
 {% load static %}
 {% block contenido %}
 
-      <div id="Carrusel-Principal" class="carousel slide d-flex p-2" data-bs-ride="carousel" >
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#Carrusel-Principal" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#Carrusel-Principal" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#Carrusel-Principal" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="{% static 'img/carrusel1.jpg' %}" class="d-flex  w-100" alt="...">
-            <div class="carousel-caption d-none d-md-flex ">
-              <h5>Etiqueta de la primera diapositiva</h5>
-              <p>Algún contenido placeholder representativo para la primera diapositiva.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-
-            <img src="{% static 'img/carrusel2.jpg' %}" class="d-flex  w-100" alt="...">
-
-            <div class="carousel-caption d-none d-md-flex ">
-              <h5>Etiqueta de la segunda diapositiva</h5>
-              <p>Algún contenido placeholder representativo para la segunda diapositiva.</p>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-
-            <img src="{% static 'img/carrusel3.jpg' %}" class="d-flex  w-100" alt="...">
-
-            <div class="carousel-caption d-none d-md-flex ">
-            </div>
-          </div>
-
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#Carrusel-Principal" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#Carrusel-Principal" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Siguiente</span>
-        </button>
+<div id="Carrusel-Principal" class="carousel slide d-flex p-2 rounded" data-bs-ride="carousel" style="position: relative; z-index: -1;">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#Carrusel-Principal" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#Carrusel-Principal" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#Carrusel-Principal" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner rounded">
+    <div class="carousel-item active">
+      <img src="{% static 'img/carrusel1.jpg' %}" class="d-flex w-100" alt="...">
+      <div class="carousel-caption d-none d-md-flex">
+        <h5>Etiqueta de la primera diapositiva</h5>
+        <p>Algún contenido placeholder representativo para la primera diapositiva.</p>
       </div>
-<script>
-    document.body.style.backgroundImage='none';
-</script>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/carrusel2.jpg' %}" class="d-flex w-100" alt="...">
+      <div class="carousel-caption d-none d-md-flex">
+        <h5>Etiqueta de la segunda diapositiva</h5>
+        <p>Algún contenido placeholder representativo para la segunda diapositiva.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'img/carrusel3.jpg' %}" class="d-flex w-100" alt="...">
+      <div class="carousel-caption d-none d-md-flex">
+        <h5>Etiqueta de la segunda diapositiva</h5>
+        <p>Algún contenido placeholder representativo para la segunda diapositiva.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#Carrusel-Principal" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#Carrusel-Principal" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
 
+<script>
+  document.body.style.backgroundImage = 'none';
+</script>
 
 {% endblock contenido %}
