@@ -10,8 +10,6 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import Group
 from django.contrib import auth
 
-# Create your views here.
-
 
 @login_required(login_url='inicio')
 def usuarios(request):
@@ -24,7 +22,7 @@ def usuarios(request):
     return render(request, 'usuarios/usuarios.html', context)
 
 
-
+@login_required
 def usuarios_crear(request):
     titulo="Usuarios - Crear"
     if request.method == "POST":
@@ -66,7 +64,7 @@ def usuarios_crear(request):
     return render(request,'partials/crear.html',context)
 
 
-
+@login_required
 def usuarios_editar(request, pk):
     titulo="Usuarios - Editar"
     usuario= Usuario.objects.get(id=pk)

@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     "crispy_bootstrap5", #pip install crispy-bootstrap5
     'usuarios',
     'ingrediente',
-    'estandarizador',
     'listaPrecio',
     'centroCostos',
     'receta',

@@ -41,6 +41,16 @@ body {
   }
   
 
+  @media (max-width: 920px) {
+    .navbar-collapse.collapse.show {
+      background-color: #f8f9fa;
+    }
+  
+    .navbar-nav .nav-link {
+      color: #212529;
+    }
+  }
+
 #seccion-formulario {
     display: flex;
     justify-content: center;

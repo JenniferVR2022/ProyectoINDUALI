@@ -2,15 +2,14 @@
 {% load static %}
 {% block contenido %}
 
-
+<title>Lista de precios</title>
     <center>
     <section id="botonAñadir">
     <section class="col-lg-12 button_añadir" >
      
        <form class="form-inline my-7 my-lg-3">
         <a href="{% url 'listap-crear'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR LISTA PRECIO </a>
-        <button type="button" class="btn btn-primary"><i class="bi-pencil-square"></i> EDITAR LISTA PRECIOS </button>
-        <button type="button" class="btn btn-primary"><i class="bi bi-save-fill"></i> GUARDAR </button>
+        
       </form>
      
     </section >
@@ -25,11 +24,11 @@
               <table class="table table-bordered" id="tabla-general"> 
                 <thead class="thead-dark">
                   <tr>
-                    <th scope="col">Codigo Lista Precio</th>
+                    <th scope="col">Código Lista Precio</th>
                             <th scope="col">Nombre Lista Precio</th>
                             <th scope="col">Tipo de Producto</th>
                             <th scope="col">Controles</th> 
-                            <th scope="col">Controles</th> 
+                            
                   </tr>
                 </thead>
                 <tbody id="tbllistaPrecio">
@@ -38,16 +37,42 @@
                     <th scope="row">{{items.codListaPrecio}}</th>
                     <td>{{items.nomListaPrecio}}</td>
                     <td>{{items.tipoLista}}</td>
-                    <td>
-                      <button type="button" class="btn btn-success">Editar</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-warning">Inactivar</button>
-                    </td>
+                    <td>                      
+                
+                <!-- Boton disparar Modal -->
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Editar
+                </button>
+                <!-- Inicio Modal Editar -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Registro</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        ¿Desea editar el registro seleccionado?
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                        <a type="button" class="btn btn-success" href="{% url 'editar-LP' items.id %}"
+                          role="button">Si</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Final modal Editar -->    
+                    
+              </td>
+                    
+                    
                   </tr>
                   {% endfor %}
                 </tbody>
               </table>
+
             </div>
           </div>
         </div>

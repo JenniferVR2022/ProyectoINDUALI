@@ -1,6 +1,8 @@
 {% extends 'partials/body.html' %}
 {% block contenido %}
 
+<title>Ingredientes</title>
+
 <center>
   <form class="form-inline my-3 my-lg-3">
     <a href="{% url 'ingrediente-crear'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR INGREDIENTE
@@ -21,7 +23,7 @@
               <th scope="col">Costo Ingrediente</th>
               <th scope="col">Estado</th>
               <th scope="col">Controles</th>
-              <th scope="col">Controles</th>
+             
             </tr>
           </thead>
           <tbody id="tblIngredientes">
@@ -61,33 +63,7 @@
                 </div>
                 <!-- Final modal Editar -->
               </td>
-              <td>
-                <!-- Boton disparar Modal Inactivar -->
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#InactivarModal">
-                  Inactivar
-                </button>
-                <!-- Inicio Modal Inactivar -->
-                <div class="modal fade" id="InactivarModal" tabindex="-1" aria-labelledby="InactivarModalLabel"
-                  aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="InactivarModalLabel">Inactivar Registro</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                        ¿Esta seguro que desea inactivar el registro?
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">No</button>
-                        <a type="button" class="btn btn-warning" href="{% url 'eliminar' items.id %}"
-                          role="button">Si</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Final modal Inactivar -->
-              </td>
+             
             </tr>
             {% endif %}
             {% endfor %}
