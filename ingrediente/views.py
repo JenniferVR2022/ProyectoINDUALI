@@ -1,15 +1,15 @@
 from django.shortcuts import render, redirect
 from ingrediente.models import Ingrediente
 from ingrediente.forms import IngredienteForm
+from django.contrib.auth.decorators import login_required
 
 
-# Create your views here.
-
+@login_required
 def ingrediente(request):
     ingrediente = Ingrediente.objects.all()
     return render(request, 'ingrediente/ingrediente.html', {'ingrediente': ingrediente})
 
-
+@login_required
 def ingrediente_crear(request):
     formulario = IngredienteForm(request.POST or None, request.FILES or None)
     if formulario.is_valid():
@@ -17,14 +17,14 @@ def ingrediente_crear(request):
         return redirect('ingrediente')
     return render(request, 'ingrediente/ingredienteCrear.html', {'formulario': formulario})
 
-
+@login_required
 def eliminar(request,id):
     ingrediente = Ingrediente.objects.get(id=id)
     ingrediente.estado = False
     ingrediente.save()
     return redirect('ingrediente')
 
-
+@login_required
 def editar(request,id):
     ingrediente = Ingrediente.objects.get(id=id)
     formulario = IngredienteForm(

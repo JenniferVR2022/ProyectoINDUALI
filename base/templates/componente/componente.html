@@ -3,6 +3,8 @@
 {% load static %}
 {% block contenido %}
 
+<title>Componente</title>
+
 <center>
   <section id="botonesComponente">
     <section class="col-lg-12 button_añadir">
@@ -28,7 +30,7 @@
                 <th scope="col">Codigo Componente</th>
                 <th scope="col">Nombre Componente</th>
                 <th scope="col">Controles</th>
-                <th scope="col">Controles</th>
+              
               </tr>
             </thead>
             <tbody id="tblComponente">
@@ -38,9 +40,6 @@
                 <td>{{items.nomComponente}}</td>
                 <td>
                   <button type="button" class="btn btn-success">Editar</button>
-                </td>
-                <td>
-                  <button type="button" class="btn btn-warning">Inactivar</button>
                 </td>
               </tr>
               {% endfor %}

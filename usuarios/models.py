@@ -20,7 +20,6 @@ class Usuario (models.Model):
    
     class Rol(models.TextChoices):
         Administrador='Administrador', _('Administrador')
-        Estandar='Estandar', _('Estandar')
         Invitado='Invitado', _('Invitado')
     rol=models.CharField(max_length=13,choices=Rol.choices, default=Rol.Invitado, verbose_name="Rol")
        

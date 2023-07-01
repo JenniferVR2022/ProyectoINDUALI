@@ -1,7 +1,7 @@
 from django.db import models
 from componente.models import Componente
 from ingrediente.models import Ingrediente
-from usuarios.models import Usuario
+
 
 
 class Receta(models.Model):

@@ -4,7 +4,7 @@
 
 {% block contenido %}
 
-
+<title>Recetas</title>
 
 <center>
 
@@ -36,7 +36,7 @@
                 <th scope="col">Preparación</th>
                 <th scope="col">Controles</th>
                 <th scope="col">Controles</th>
-                <th scope="col">Controles</th>
+                
               </tr>
             </thead>
 
@@ -77,20 +77,12 @@
   </div>
   <!-- Final modal Editar -->
 </td>
-
-                <td>
-                  <button type="button" class="btn btn-warning">Inactivar</button>
-                 
-                </td>
-                
+                          
                 <td>
                   <button type="button" class="btn btn-info">
                     <a href="{% url 'detalle_receta' receta_id=items.id %}">Detalle receta</a>
-
-
                   </button>
-                    
-                </td>
+                 </td>
              
               </tr>
               {% endfor %}

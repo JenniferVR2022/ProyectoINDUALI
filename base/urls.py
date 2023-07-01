@@ -33,7 +33,6 @@ urlpatterns = [
     path('componente/', include('componente.urls')),
     path('recetas/', include('receta.urls')),
     path('ingrediente/', include('ingrediente.urls')),
-    path('estandarizador/', include('estandarizador.urls')),
     path('listaPrecio/', include('listaPrecio.urls')),
     
     path('logout/',logout_user,name="logout"),

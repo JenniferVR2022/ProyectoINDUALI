@@ -7,3 +7,6 @@ class listaPForm(ModelForm):
     class Meta:
         model= ListaPrecio
         exclude=['estado']
+        
+        
+

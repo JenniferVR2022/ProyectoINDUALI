@@ -2,6 +2,9 @@
 {% load static %}
 
 {% block contenido %}
+
+<title>Detalle Receta</title>
+
   <div class="container">
     <center>
       <br>
@@ -58,14 +61,7 @@
                       </th>
                     </tr>
                   </thead>
-                  <tr>
-                    <td>Cantidad Materia Prima:</td>
-                    <td>{{ receta.cantidadMateriaPrima }}</td>
-                  </tr>
-                  <tr>
-                    <td>Costo Total:</td>
-                    <td>{{ receta.costoTotal }}</td>
-                  </tr>
+                 
                   {% for ingrediente in receta.ingredientes.all %}
                     <tr>
                       <td>Ingrediente:</td>
