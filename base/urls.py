@@ -23,6 +23,7 @@ from django.conf.urls import handler404
 from base.views import error_404, principal
 from django.contrib.auth import views as auth_views
 
+
 handler404 = error_404
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,6 +35,7 @@ urlpatterns = [
     path('recetas/', include('receta.urls')),
     path('ingrediente/', include('ingrediente.urls')),
     path('listaPrecio/', include('listaPrecio.urls')),
+    path('ayuda/', include('ayuda.urls')),
     
     path('logout/',logout_user,name="logout"),
     path('',auth_views.LoginView.as_view(),name='inicio'),
@@ -42,11 +44,15 @@ urlpatterns = [
     path('reiniciar/<uid64>/<token>',auth_views.PasswordResetConfirmView.as_view(),name='pass_reset_confirm'),
     path('reiniciar/completo',auth_views.PasswordResetCompleteView.as_view(),name='pass_reset_reset_complete'),
     path('', include('django.contrib.auth.urls')),
-    
-    
-    
     path("select2/", include("django_select2.urls")),
     
     
 
+    
+    
+    
+    
+ 
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

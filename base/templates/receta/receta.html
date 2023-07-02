@@ -1,10 +1,10 @@
-{% extends 'partials/body.html' %}`
+{% extends 'partials/body.html' %}
 
 {% load static %}
 
 {% block contenido %}
 
-<title>Recetas</title>
+<title>INDUALI-ESTANDAR-Recetas</title>
 
 <center>
 
@@ -12,15 +12,14 @@
     <br>
     <section class="col-lg-12 button_añadir">
       <a href="{% url 'crear-receta'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR RECETA </a>
-     
-      
     </section>
+  </section>
 </center>
 
 <br />
 <br />
 <br />
-<section id="tablaUsuario">
+<section id="julio">
   <section class="col-lg-12 table">
     <div class="container text-center bg-white text-dark row g-6 border rounded">
       <div class="row align-items-start">
@@ -29,14 +28,13 @@
             <thead class="thead-dark">
               <tr>
                 <th scope="col">Nombre Componente</th>
-                <th scope="col">Codigo Receta</th>
+                <th scope="col">Código Receta</th>
                 <th scope="col">Nombre Receta</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Estandar</th>
                 <th scope="col">Preparación</th>
                 <th scope="col">Controles</th>
                 <th scope="col">Controles</th>
-                
               </tr>
             </thead>
 
@@ -48,42 +46,38 @@
                 <td>{{items.nomReceta}}</td>
                 <td>{{items.estado}}</td>
                 <td>{{items.estandar}}</td>
-                <td>{{items.preparacion}}</td>        
-
-  <!-- Boton disparar Modal -->
-  <td>
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Editar
-  </button>
-  <!-- Inicio Modal Editar -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Registro</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          ¿Desea editar el registro seleccionado?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
-          <a type="button" class="btn btn-success" href="{% url 'editarR' items.id %}"
-            role="button">Si</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Final modal Editar -->
-</td>
-                          
+                <td>{{items.preparacion}}</td>
+                <td>
+                  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Editar
+                  </button>
+                  <!-- Inicio Modal Editar -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Registro</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          ¿Desea editar el registro seleccionado?
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                          <a type="button" class="btn btn-success" href="{% url 'editarR' items.id %}"
+                            role="button">Si</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Final modal Editar -->
+                </td>
                 <td>
                   <button type="button" class="btn btn-info">
                     <a href="{% url 'detalle_receta' receta_id=items.id %}">Detalle receta</a>
                   </button>
-                 </td>
-             
+                </td>
               </tr>
               {% endfor %}
             </tbody>
@@ -94,6 +88,30 @@
   </section>
 </section>
 
+<style>
+  /* Estilos para pantallas de teléfono */
+  @media (max-width: 576px) {
+    #botonesReceta,
+    #julio {
+      padding: 5px;
+    }
+  }
 
+  /* Estilos para portátiles */
+  @media (min-width: 577px) and (max-width: 992px) {
+    #botonesReceta,
+    #julio {
+      padding: 20px;
+    }
+  }
+
+  /* Estilos para pantallas grandes */
+  @media (min-width: 993px) {
+    #botonesReceta,
+    #julio {
+      padding: 40px;
+    }
+  }
+</style>
 
 {% endblock contenido %}

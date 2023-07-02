@@ -6,7 +6,6 @@ from usuarios.models import Usuario
 from django.contrib.auth.decorators import login_required
 
 
-
 @login_required
 def principal(request):
     titulo="Menu principal"
@@ -41,4 +40,5 @@ def error_404(request,exception):
 def logout_user(request):
     logout(request)
     return redirect('inicio')
+
 
