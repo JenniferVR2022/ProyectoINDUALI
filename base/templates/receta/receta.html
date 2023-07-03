@@ -5,27 +5,22 @@
 {% block contenido %}
 
 <title>INDUALI-ESTANDAR-Recetas</title>
-
 <center>
-
-  <section id="botonesReceta">
-    <br>
-    <section class="col-lg-12 button_añadir">
+   <section id="botonAñadir">
+    <section class="col-lg-12 button_añadir" >
+    <form class="form-inline my-3 my-lg-3">
       <a href="{% url 'crear-receta'%}" class="btn btn-primary"><i class="bi bi-card-list"></i> CREAR RECETA </a>
-    </section>
-  </section>
-</center>
-
-<br />
-<br />
-<br />
-<section id="julio">
-  <section class="col-lg-12 table">
-    <div class="container text-center bg-white text-dark row g-6 border rounded">
+    </form>
+  </section >
+  <br/>
+  <br/>
+  <br/>
+  <section  id="tablaIngrediente">
+    <div class="container-text-center bg-white text-dark row g-6 border rounded">
       <div class="row align-items-start">
-        <div class="col-12 table-responsive">
-          <table class="table table-bordered" id="tabla-general">
-            <thead class="thead-dark">
+        <div class="col-12 table-responsive"> 
+          <table class="table" id="tabla-general">
+          <thead class="thead-dark">
               <tr>
                 <th scope="col">Nombre Componente</th>
                 <th scope="col">Código Receta</th>
@@ -37,7 +32,6 @@
                 <th scope="col">Controles</th>
               </tr>
             </thead>
-
             <tbody id="tblReceta">
               {% for items in receta%}
               <tr>
@@ -48,6 +42,8 @@
                 <td>{{items.estandar}}</td>
                 <td>{{items.preparacion}}</td>
                 <td>
+
+                  
                   <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Editar
                   </button>
@@ -87,31 +83,4 @@
     </div>
   </section>
 </section>
-
-<style>
-  /* Estilos para pantallas de teléfono */
-  @media (max-width: 576px) {
-    #botonesReceta,
-    #julio {
-      padding: 5px;
-    }
-  }
-
-  /* Estilos para portátiles */
-  @media (min-width: 577px) and (max-width: 992px) {
-    #botonesReceta,
-    #julio {
-      padding: 20px;
-    }
-  }
-
-  /* Estilos para pantallas grandes */
-  @media (min-width: 993px) {
-    #botonesReceta,
-    #julio {
-      padding: 40px;
-    }
-  }
-</style>
-
 {% endblock contenido %}

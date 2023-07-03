@@ -29,28 +29,50 @@ body {
 }
 
 
+/* responsive */
+@media (max-width: 693px) {
+    .table {
+        width: 90% !important;
+    }
+}
+
 /* estilos-navbar.css */
+.navbar {
+    position: relative;
+    z-index: 9999; /* Asegura que el navbar esté en el nivel superior */
+  }
 
-@media (max-width: 767px) {
+  @media (max-width: 767px) {
     .navbar-collapse.collapse.show {
       background-color: #f8f9fa;
+      position: relative; /* Fija el navbar en la parte superior */
+      width: 100%; /* Ajusta el ancho al 100% */
+      top: 0; /* Coloca el navbar en la parte superior */
+      left: 0; /* Coloca el navbar a la izquierda */
     }
-  
-    .navbar-nav .nav-link {
-      color: #212529;
-    }
-  }
-  
 
-  @media (max-width: 920px) {
-    .navbar-collapse.collapse.show {
-      background-color: #f8f9fa;
+
+    .navbar-nav .nav-link {
+        color: #212529;
+      }
     }
   
-    .navbar-nav .nav-link {
-      color: #212529;
+    @media (max-width: 920px) {
+      .navbar-collapse.collapse.show {
+        background-color: #f8f9fa;
+        position: relative; /* Fija el navbar en la parte superior */
+        width: 100%; /* Ajusta el ancho al 100% */
+        top: 0; /* Coloca el navbar en la parte superior */
+        left: 0; /* Coloca el navbar a la izquierda */
+      }
+  
+      .navbar-nav .nav-link {
+        color: #212529;
+      }
     }
-  }
+
+
+
 
 #seccion-formulario {
     display: flex;
@@ -235,3 +257,4 @@ body {
     color: whitesmoke;   
    
 }
+
