@@ -14,10 +14,7 @@
     <!-- Google Font: Source Sans Pro -->
 
     {% block stylesheet %}
-
-
     {% endblock stylesheet %}
-
 
     <title>Estandarizador</title>
 </head>
@@ -29,7 +26,8 @@
         <div class="row d-flex justify-content-center align-items-center ">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                 <div class="card bg-dark text-white" style="border-radius: 1rem;">
-                    <div class="card-body p-5 text-center"> <img class="img-thumbnail img-fluid" src="{% static 'img/Logo.jpg' %}" width="120" height="30">
+                    <div class="card-body p-5 text-center">
+                        <img class="img-thumbnail img-fluid" src="{% static 'img/Logo.jpg' %}" width="120" height="30">
 
                         <div class="mb-md-5 mt-md-4 pb-5">
                             <h2 class="fw-bold mb-2 text-uppercase">Estandarizador</h2>
@@ -37,6 +35,12 @@
 
                             <form method="post">
                                 {% csrf_token %}
+
+                                {% if form.errors %}
+                                    <div class="alert alert-danger" role="alert">
+                                        Hubo un error en el formulario. Por favor, verifique los campos ingresados.
+                                    </div>
+                                {% endif %}
 
                                 <div class="form-outline form-white mb-5">
                                     {{ form.username }}
@@ -60,7 +64,6 @@
         </div>
     </div>
 </section>
-
 
 <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
 <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>

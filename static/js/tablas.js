@@ -43,7 +43,6 @@ $(function () {
             _: "Mostrar %d filas",
           },
           pdf: "PDF",
-          print: "Imprimir",
           renameState: "Cambiar nombre",
           updateState: "Actualizar",
           createState: "Crear Estado",
@@ -244,7 +243,7 @@ $(function () {
       ordering: true,
       searching: true,
       info: true,
-      buttons: ["copy", "csv","pdf", "print"],
+      buttons: ["copy", "csv","pdf"],
     })
     .buttons()
     .container()

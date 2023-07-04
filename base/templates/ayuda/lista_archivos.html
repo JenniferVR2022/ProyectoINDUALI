@@ -1,0 +1,42 @@
+{% extends 'partials/body.html' %}
+
+{% block contenido %}
+
+
+<title>INDUALI-ESTANDAR-Manual de usuarios</title>
+
+</br> 
+</br> 
+</br> 
+</br> 
+</br> 
+<section  id="tablacentroCostos">
+    <div class="container-text-center bg-white text-dark row g-6 border rounded">
+      <div class="row align-items-start">
+        <div class="col-12 table-responsive"> 
+          <table class="table">
+  <h1>Manual de usuario</h1>
+  
+        <thead>
+            <tr>
+                <th>Archivo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for archivo in archivos %}
+            <tr>
+                <td>{{ archivo }}</td>
+                <td>
+                    <a href="{% url 'descargar_archivo' archivo.id %}" class="btn btn-primary">Descargar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+</div>
+{% endblock contenido %}
+

@@ -1,0 +1,25 @@
+{% extends 'partials/body.html' %}
+{% block contenido %}
+
+<title>INDUALI-ESTANDAR-Manual de usuarios</title>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subir Archivo</title>
+</head>
+<body>
+    <h1>Subir Archivo</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="archivo" required>
+        <button type="submit">Subir</button>
+    </form>
+</body>
+</html>
+
+
+
+{% endblock contenido %}
+
